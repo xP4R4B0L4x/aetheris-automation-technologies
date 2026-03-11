@@ -1,4 +1,4 @@
-import nodemailer from 'nodemailer';
+const nodemailer = require('nodemailer');
 
 const transporter = nodemailer.createTransport({
   service: 'gmail',
@@ -8,7 +8,7 @@ const transporter = nodemailer.createTransport({
   },
 });
 
-export default async function handler(req, res) {
+module.exports = async function handler(req, res) {
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' });
   }
@@ -21,10 +21,10 @@ export default async function handler(req, res) {
 
   try {
     await transporter.sendMail({
-      from: `"Aetheris Contact Form" <${process.env.GMAIL_USER}>`,
+      from: '"Aetheris Contact Form" <' + process.env.GMAIL_USER + '>',
       to: 'contact@aetherisautomationtechnologies.com',
       replyTo: email,
-      subject: `New Contact: ${name}${organization ? ' — ' + organization : ''}`,
+      subject: 'New Contact: ' + name + (organization ? ' — ' + organization : ''),
       html: `
         <h2>New message from Aetheris contact form</h2>
         <p><strong>Name:</strong> ${name}</p>
@@ -42,4 +42,4 @@ export default async function handler(req, res) {
     console.error(error);
     return res.status(500).json({ error: 'Failed to send email' });
   }
-}
+};
