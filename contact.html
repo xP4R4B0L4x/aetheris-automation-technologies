@@ -198,21 +198,30 @@ document.getElementById('contactForm').addEventListener('submit', async function
   btn.textContent = 'Sending...';
   btn.disabled = true;
 
+  const firstName = document.getElementById('firstName').value;
+  const lastName = document.getElementById('lastName').value;
+  const email = document.getElementById('email').value;
+  const org = document.getElementById('org').value;
+  const type = document.getElementById('type').value;
+  const message = document.getElementById('message').value;
+
   const body = {
-    name: (document.getElementById('firstName').value + ' ' + document.getElementById('lastName').value).trim(),
-    email: document.getElementById('email').value,
-    organization: document.getElementById('org').value,
-    role: document.getElementById('role').value,
-    message: document.getElementById('message').value,
+    access_key: '7ce02a8e-d2f7-4fab-9ccc-398d8ff96326',
+    subject: 'New Contact: ' + firstName + ' ' + lastName + (org ? ' — ' + org : ''),
+    from_name: firstName + ' ' + lastName,
+    email: email,
+    message: 'Organization: ' + (org || 'N/A') + '\nInquiry Type: ' + (type || 'N/A') + '\n\n' + message,
+    replyto: email,
   };
 
   try {
-    const res = await fetch('/api/contact', {
+    const res = await fetch('https://api.web3forms.com/submit', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(body),
     });
-    if (res.ok) {
+    const data = await res.json();
+    if (data.success) {
       this.style.display = 'none';
       document.getElementById('formSuccess').style.display = 'block';
     } else {
