@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — Ætheris Automation Technologies · Tyler, Texas</title>
+<link rel="stylesheet" href="style.css">
+<style>
+/* ── CONTACT PAGE ── */
+.contact-wrap {
+  max-width: 700px; margin: 0 auto;
+  padding: 6rem 3rem;
+}
+/* FORM */
+.form-panel {
+  background: var(--deep); border: 1px solid var(--border);
+  padding: 2.5rem;
+}
+.form-panel h3 { font-family: 'Orbitron', monospace; font-size: 1.1rem; font-weight: 600; margin-bottom: 0.5rem; }
+.form-panel .subtitle { font-size: 0.88rem; color: var(--ash); margin-bottom: 2rem; line-height: 1.6; }
+.form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.form-grid .form-group { margin-bottom: 0; }
+.form-full { grid-column: 1 / -1; }
+.form-select option { background: var(--deep); }
+.form-submit { margin-top: 1.5rem; display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; }
+.form-submit .btn { flex-shrink: 0; }
+.form-note { font-size: 0.75rem; color: var(--ash); line-height: 1.5; }
+.form-success { display: none; text-align: center; padding: 2rem; }
+.form-success-icon { font-size: 3rem; margin-bottom: 1rem; }
+.form-success h4 { font-family: 'Orbitron', monospace; font-size: 1rem; font-weight: 600; margin-bottom: 0.5rem; }
+.form-success p { font-size: 0.9rem; color: var(--ash); line-height: 1.7; }
+
+@media(max-width:600px){
+  .contact-wrap { padding: 4rem 1.5rem; }
+  .form-grid { grid-template-columns: 1fr; }
+  .form-full { grid-column: auto; }
+}
+</style>
+</head>
+<body>
+<canvas id="starfield"></canvas>
+<div class="page-wrapper">
+
+<nav class="site-nav">
+  <a class="nav-logo" href="index.html">
+    <span class="nav-hex">Æ</span>
+    <span class="nav-wordmark">Ætheris<small>Automation Technologies</small></span>
+  </a>
+  <ul class="nav-menu">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="mission.html">Our Mission</a></li>
+    <li><a href="awcmp.html">Sentinels of the Wild</a></li>
+    <li><a href="products.html">What We Build</a></li>
+    <li><a href="stakeholders.html">Stakeholders</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="community.html">Community</a></li>
+  </ul>
+  <div class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></div>
+  <a class="nav-cta" href="contact.html">Partner With Us</a>
+</nav>
+
+<main class="page-body">
+
+<div class="page-header">
+  <div class="page-header-inner">
+    <p class="ph-eyebrow">Get In Touch</p>
+    <h1 class="ph-title">Let's Build Something<br><span class="accent">That Matters</span></h1>
+    <p class="ph-lead">Whether you're a federal agency, conservation organization, transportation authority, or community partner — we want to hear from you.</p>
+  </div>
+</div>
+
+<div style="background:var(--abyss);">
+  <div class="contact-wrap fade-up">
+    <div class="form-panel">
+      <h3>Send Us a Message</h3>
+      <p class="subtitle">Tell us about your organization and how you see a potential connection to our work. We read every message personally.</p>
+
+      <form id="contactForm">
+        <div class="form-grid">
+          <div class="form-group">
+            <label class="form-label" for="firstName">First Name *</label>
+            <input class="form-input" type="text" id="firstName" required placeholder="First name">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="lastName">Last Name *</label>
+            <input class="form-input" type="text" id="lastName" required placeholder="Last name">
+          </div>
+          <div class="form-group form-full">
+            <label class="form-label" for="email">Email Address *</label>
+            <input class="form-input" type="email" id="email" required placeholder="your@organization.org">
+          </div>
+          <div class="form-group form-full">
+            <label class="form-label" for="org">Organization / Agency</label>
+            <input class="form-input" type="text" id="org" placeholder="Your organization name">
+          </div>
+          <div class="form-group form-full">
+            <label class="form-label" for="type">Nature of Inquiry *</label>
+            <select class="form-input form-select" id="type" required>
+              <option value="" disabled selected>Select one…</option>
+              <option value="federal">Federal Grant / Agency Partnership</option>
+              <option value="txdot">TxDOT / State Transportation</option>
+              <option value="local">Local Agency — Tyler / Smith County</option>
+              <option value="conservation">Conservation Organization</option>
+              <option value="tribal">Tribal Nation / Sovereign Partnership</option>
+              <option value="academic">Academic / Research Collaboration</option>
+              <option value="community">Community / Civic Organization</option>
+              <option value="pilot">Pilot Deployment — Specific Corridor</option>
+              <option value="press">Media / Press Inquiry</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          <div class="form-group form-full">
+            <label class="form-label" for="message">Your Message *</label>
+            <textarea class="form-input form-textarea" id="message" required placeholder="Tell us about your organization, the corridor or community you represent, and how you see a potential connection with Ætheris' mission…" style="min-height:150px;"></textarea>
+          </div>
+        </div>
+        <div class="form-submit">
+          <button class="btn btn--primary" type="submit">Send Message</button>
+          <p class="form-note">We keep your information private. No marketing lists, no third-party sharing. Your data is used only to respond to your inquiry.</p>
+        </div>
+      </form>
+
+      <div class="form-success" id="formSuccess">
+        <div class="form-success-icon">✅</div>
+        <h4>Message Received</h4>
+        <p>Thank you for reaching out. We read every message personally and will respond within 48 business hours. We're genuinely glad you're here.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+</main>
+
+<footer class="site-footer">
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand-hex">Æ</div>
+      <div class="footer-brand-name">Ætheris Automation Technologies</div>
+      <div class="footer-brand-sub">Sentinels of the Wild</div>
+      <p class="footer-brand-desc">AI-powered safety for every road, every life — protecting humans, wildlife, and communities through intelligent highway infrastructure.</p>
+    </div>
+    <div>
+      <div class="footer-col-title">Navigate</div>
+      <ul class="footer-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="mission.html">Our Mission</a></li>
+        <li><a href="awcmp.html">Sentinels of the Wild</a></li>
+        <li><a href="products.html">What We Build</a></li>
+        <li><a href="stakeholders.html">Stakeholders</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="community.html">Community</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="sitemap.html">Site Map</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Stakeholders</div>
+      <ul class="footer-links">
+        <li><a href="fire.html">Fire &amp; Rescue</a></li>
+        <li><a href="police.html">Law Enforcement</a></li>
+        <li><a href="ems.html">Emergency Medical</a></li>
+        <li><a href="insurance.html">Insurance</a></li>
+        <li><a href="tow.html">Towing &amp; Recovery</a></li>
+        <li><a href="dot-state.html">State DOTs</a></li>
+        <li><a href="wildlife.html">Wildlife Agencies</a></li>
+        <li><a href="community.html">Communities</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Grant Partners</div>
+      <ul class="footer-links">
+        <li><a href="usdot.html">USDOT</a></li>
+        <li><a href="fhwa.html">FHWA</a></li>
+        <li><a href="usfws.html">USFWS</a></li>
+        <li><a href="nsf.html">NSF</a></li>
+      </ul>
+      <div class="footer-col-title" style="margin-top:1.5rem;">Contact</div>
+      <ul class="footer-links">
+        <li><a href="contact.html">Tyler, Texas, USA</a></li>
+        <li><a href="contact.html">Partner Inquiries</a></li>
+        <li><a href="contact.html">Pilot Programs</a></li>
+        <li><a href="contact.html">Research Collaboration</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2026 Ætheris Automation Technologies LLC · Tyler, Texas · Privacy by Architecture</div>
+    <div class="footer-tagline">Protecting Every Life · See the Complete Path Ahead</div>
+  </div>
+</footer>
+
+</div>
+<script src="main.js"></script>
+<script>
+document.getElementById('contactForm').addEventListener('submit', async function(e) {
+  e.preventDefault();
+  const btn = this.querySelector('button[type="submit"]');
+  btn.textContent = 'Sending...';
+  btn.disabled = true;
+
+  const body = {
+    name: (document.getElementById('firstName').value + ' ' + document.getElementById('lastName').value).trim(),
+    email: document.getElementById('email').value,
+    organization: document.getElementById('org').value,
+    role: document.getElementById('role').value,
+    message: document.getElementById('message').value,
+  };
+
+  try {
+    const res = await fetch('/api/contact', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(body),
+    });
+    if (res.ok) {
+      this.style.display = 'none';
+      document.getElementById('formSuccess').style.display = 'block';
+    } else {
+      btn.textContent = 'Send Message';
+      btn.disabled = false;
+      alert('Something went wrong. Please try again.');
+    }
+  } catch (err) {
+    btn.textContent = 'Send Message';
+    btn.disabled = false;
+    alert('Network error. Please try again.');
+  }
+});
+</script>
+</body>
+</html>

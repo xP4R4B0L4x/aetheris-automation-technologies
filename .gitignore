@@ -1,0 +1,18 @@
+# Environment variables - NEVER commit these
+.env.local
+.env
+.env*.local
+
+# Dependencies
+node_modules/
+
+# Zip files
+*.zip
+
+# Python cache
+__pycache__/
+*.pyc
+
+# OS files
+.DS_Store
+Thumbs.db

@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>USDOT Partnership — Ætheris Automation Technologies</title>
+<meta name="description" content="Ætheris and the U.S. Department of Transportation — advancing the nation's roadway safety mandate through AI-powered highway infrastructure.">
+<link rel="stylesheet" href="style.css">
+<style>
+.partner-hero { padding: 5rem 3rem; background: var(--deep); border-bottom: 1px solid var(--border); }
+.partner-hero-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+.agency-seal { display: flex; flex-direction: column; align-items: flex-start; gap: 1rem; }
+.agency-emblem { width: 80px; height: 80px; border: 2px solid rgba(77,163,255,0.4); background: rgba(77,163,255,0.08); display: flex; align-items: center; justify-content: center; font-size: 2.5rem; }
+.agency-code { font-family: 'Orbitron', monospace; font-size: 2.8rem; font-weight: 900; color: var(--ion); line-height: 1; }
+.agency-name { font-family: 'Barlow Condensed', sans-serif; font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ash); line-height: 1.6; }
+.agency-desc { font-size: 0.95rem; color: var(--ash); line-height: 1.85; }
+.agency-desc strong { color: var(--frost); font-weight: 500; }
+.exchange-section { padding: 6rem 3rem; }
+.exchange-section--a { background: var(--abyss); }
+.exchange-section--b { background: var(--deep); }
+.exchange-grid { max-width: 1100px; margin: 3rem auto 0; display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--border); border: 1px solid var(--border); }
+.exchange-card { background: var(--abyss); padding: 2.5rem 2rem; position: relative; transition: background 0.3s; }
+.exchange-card:hover { background: var(--panel); }
+.exchange-card--give { background: var(--deep); }
+.exchange-card--give:hover { background: var(--panel); }
+.exchange-stripe { position: absolute; top: 0; left: 0; right: 0; height: 2px; transform: scaleX(0); transform-origin: left; transition: transform 0.4s; }
+.exchange-card:hover .exchange-stripe { transform: scaleX(1); }
+.exchange-tag { font-family: 'Barlow Condensed', sans-serif; font-size: 0.58rem; letter-spacing: 0.3em; text-transform: uppercase; margin-bottom: 0.75rem; display: block; }
+.exchange-card h4 { font-family: 'Barlow Condensed', sans-serif; font-size: 1rem; font-weight: 600; letter-spacing: 0.05em; margin-bottom: 0.5rem; color: var(--frost); }
+.exchange-card p { font-size: 0.9rem; color: var(--ash); line-height: 1.75; margin: 0; }
+.alignment-row { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem; margin-top: 3rem; }
+.align-tile { padding: 2rem; border: 1px solid var(--border); transition: border-color 0.3s, background 0.3s; }
+.align-tile:hover { border-color: rgba(77,163,255,0.3); background: var(--panel); }
+.align-tile-icon { font-size: 2rem; margin-bottom: 1rem; }
+.align-tile h3 { font-family: 'Barlow Condensed', sans-serif; font-size: 0.95rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 0.5rem; }
+.align-tile p { font-size: 0.88rem; color: var(--ash); line-height: 1.7; margin: 0; }
+@media(max-width:900px){
+  .partner-hero-inner { grid-template-columns:1fr; gap:3rem; }
+  .exchange-grid { grid-template-columns:1fr; }
+  .alignment-row { grid-template-columns:1fr; }
+}
+</style>
+</head>
+<body>
+<canvas id="starfield"></canvas>
+<div class="page-wrapper">
+
+<nav class="site-nav">
+  <a class="nav-logo" href="index.html">
+    <span class="nav-hex">Æ</span>
+    <span class="nav-wordmark">Ætheris<small>Automation Technologies</small></span>
+  </a>
+  <ul class="nav-menu">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="mission.html">Our Mission</a></li>
+    <li><a href="awcmp.html">Sentinels of the Wild</a></li>
+    <li><a href="products.html">What We Build</a></li>
+    <li><a href="stakeholders.html">Stakeholders</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="community.html">Community</a></li>
+  </ul>
+  <div class="nav-toggle"><span></span><span></span><span></span></div>
+  <a class="nav-cta" href="contact.html">Partner With Us</a>
+</nav>
+
+<main class="page-body">
+
+<div class="page-header">
+  <div class="page-header-inner">
+    <p class="ph-eyebrow">Federal Partnership</p>
+    <h1 class="ph-title">U.S. Department of<br><span class="accent">Transportation</span></h1>
+    <p class="ph-lead">Ætheris is built to serve USDOT's core mandate: zero preventable roadway fatalities. Our highway AI network advances the Department's safety, innovation, and infrastructure modernization goals simultaneously.</p>
+  </div>
+</div>
+
+<div class="partner-hero">
+  <div class="partner-hero-inner">
+    <div class="agency-seal fade-up">
+      <div class="agency-emblem">🏛️</div>
+      <div class="agency-code">USDOT</div>
+      <div class="agency-name">U.S. Department of Transportation<br>Washington, D.C.</div>
+      <div style="display:flex;gap:.75rem;flex-wrap:wrap;margin-top:.5rem;">
+        <span class="badge badge--gold"><span class="badge-dot"></span>Priority Partner</span>
+      </div>
+    </div>
+    <div class="fade-up delay-1">
+      <p class="eyebrow" style="color:var(--ion);">The Alignment</p>
+      <h2 class="section-title" style="font-size:1.8rem;">Shared Mission:<br>Zero Preventable Deaths</h2>
+      <div class="agency-desc">
+        <p>The U.S. Department of Transportation's <strong>National Roadway Safety Strategy</strong> calls for a Safe System approach — building redundancy into infrastructure so that human error does not result in death. Ætheris is purpose-built for exactly this.</p>
+        <p>Our sensor networks detect roadway departures automatically, alert approaching drivers before collisions occur, and dispatch emergency services the moment a crash happens — every layer of the Safe System addressed by one infrastructure deployment.</p>
+        <p>We are not a research project. We are a deployment-ready system seeking a federal partner to accelerate installation in the corridors that need it most.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr class="rule">
+
+<section class="exchange-section exchange-section--a">
+  <div style="max-width:1100px;margin:0 auto;">
+    <p class="eyebrow fade-up" style="color:var(--ion);">What Ætheris Brings</p>
+    <h2 class="section-title fade-up delay-1">Our Offer to USDOT</h2>
+    <p class="section-lead fade-up delay-2">Deployment-ready technology that advances every pillar of the National Roadway Safety Strategy — built for rural corridors where federal investment is needed most.</p>
+  </div>
+  <div class="exchange-grid fade-up delay-1">
+    <div class="exchange-card">
+      <div class="exchange-stripe" style="background:var(--ion);"></div>
+      <span class="exchange-tag" style="color:var(--ion);">Roadway Departure</span>
+      <h4>Automatic Crash Detection & EMS Dispatch</h4>
+      <p>WatchPost units detect vehicle departures and crashes within 200ms and fire automatic 911 CAD alerts with GPS coordinates — directly reducing the rural discovery delay that turns survivable crashes into fatalities.</p>
+    </div>
+    <div class="exchange-card">
+      <div class="exchange-stripe" style="background:var(--ion);"></div>
+      <span class="exchange-tag" style="color:var(--ion);">Driver Warning</span>
+      <h4>Real-Time Hazard Alerting</h4>
+      <p>PathSign dynamic displays activate in under one second on confirmed detections — wildlife, stalled vehicles, debris, crash scenes. Trusted warnings that drivers respond to because they only fire on real events.</p>
+    </div>
+    <div class="exchange-card">
+      <div class="exchange-stripe" style="background:var(--ion);"></div>
+      <span class="exchange-tag" style="color:var(--ion);">Infrastructure Data</span>
+      <h4>Corridor Intelligence for Planning</h4>
+      <p>Anonymized event data from every deployment feeds DOT planning systems — crash-risk mapping, seasonal hazard windows, infrastructure investment prioritization — building the evidence base for future safety decisions.</p>
+    </div>
+    <div class="exchange-card">
+      <div class="exchange-stripe" style="background:var(--ion);"></div>
+      <span class="exchange-tag" style="color:var(--ion);">Technology</span>
+      <h4>Privacy-First, FHWA-Compliant Architecture</h4>
+      <p>No cameras. No license plate recognition. No facial recognition. The system is architecturally incapable of surveillance — designed from the ground up for federal procurement and community trust.</p>
+    </div>
+    <div class="exchange-card">
+      <div class="exchange-stripe" style="background:var(--ion);"></div>
+      <span class="exchange-tag" style="color:var(--ion);">Connectivity</span>
+      <h4>Off-Grid Rural Deployment Capability</h4>
+      <p>Solar-powered, mesh-networked, satellite-uplink-capable. Ætheris operates in the corridors that lack cellular and grid infrastructure — precisely where USDOT's rural safety gap is widest.</p>
+    </div>
+    <div class="exchange-card">
+      <div class="exchange-stripe" style="background:var(--ion);"></div>
+      <span class="exchange-tag" style="color:var(--ion);">Integration</span>
+      <h4>ATMS & Open API Compatibility</h4>
+      <p>CorridorLink bridges Ætheris networks to existing Traffic Management Systems using NTCIP-compatible protocols — no custom development on the agency side, ready for integration with current DOT infrastructure.</p>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<section class="exchange-section exchange-section--b">
+  <div style="max-width:1100px;margin:0 auto;">
+    <p class="eyebrow eyebrow--gold fade-up">What USDOT Brings</p>
+    <h2 class="section-title fade-up delay-1">What This Partnership<br>Unlocks</h2>
+    <p class="section-lead fade-up delay-2">A USDOT partnership accelerates deployment, validates performance, and opens the funding pathways that bring Ætheris to the corridors that cannot wait.</p>
+  </div>
+  <div class="exchange-grid fade-up delay-1">
+    <div class="exchange-card exchange-card--give">
+      <div class="exchange-stripe" style="background:var(--gold);"></div>
+      <span class="exchange-tag" style="color:var(--gold);">Funding</span>
+      <h4>Highway Safety Innovation Grants</h4>
+      <p>USDOT administers safety innovation funding directly aligned with Ætheris's deployment mission — providing the capital needed to move from pilot corridors to scaled rural deployment.</p>
+    </div>
+    <div class="exchange-card exchange-card--give">
+      <div class="exchange-stripe" style="background:var(--gold);"></div>
+      <span class="exchange-tag" style="color:var(--gold);">Validation</span>
+      <h4>Federal Performance Certification</h4>
+      <p>USDOT validation of Ætheris performance data creates the credibility needed for state DOT adoption, municipal procurement, and international expansion — a signal the market cannot produce on its own.</p>
+    </div>
+    <div class="exchange-card exchange-card--give">
+      <div class="exchange-stripe" style="background:var(--gold);"></div>
+      <span class="exchange-tag" style="color:var(--gold);">Access</span>
+      <h4>Corridor Identification & Site Access</h4>
+      <p>USDOT's visibility across the full national highway network enables identification of the highest-priority pilot corridors — and facilitates the state and local coordination needed for rapid deployment.</p>
+    </div>
+    <div class="exchange-card exchange-card--give">
+      <div class="exchange-stripe" style="background:var(--gold);"></div>
+      <span class="exchange-tag" style="color:var(--gold);">Standards</span>
+      <h4>Procurement & Specification Pathway</h4>
+      <p>Federal procurement standards developed with USDOT input create a replicable pathway for state and county DOTs to adopt Ætheris systems — multiplying impact beyond any single deployment.</p>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<section class="exchange-section exchange-section--a">
+  <div style="max-width:1100px;margin:0 auto;">
+    <p class="eyebrow fade-up" style="color:var(--ion);">Strategic Alignment</p>
+    <h2 class="section-title fade-up delay-1">How We Advance the<br>National Roadway Safety Strategy</h2>
+  </div>
+  <div class="alignment-row">
+    <div class="align-tile fade-up">
+      <div class="align-tile-icon">🛣️</div>
+      <h3>Safer Roads</h3>
+      <p>Every Ætheris corridor deployment transforms passive infrastructure into an active safety layer — detecting hazards, warning drivers, and responding to crashes without human intervention.</p>
+    </div>
+    <div class="align-tile fade-up delay-1">
+      <div class="align-tile-icon">🚘</div>
+      <h3>Safer Vehicles</h3>
+      <p>PathSign V2X broadcast modules transmit event data directly to AV-compatible vehicles — positioning Ætheris as critical infrastructure for the autonomous vehicle transition USDOT is overseeing.</p>
+    </div>
+    <div class="align-tile fade-up delay-2">
+      <div class="align-tile-icon">🚑</div>
+      <h3>Post-Crash Care</h3>
+      <p>Automatic EMS dispatch with GPS precision addresses USDOT's post-crash care pillar directly — the seconds between crash and notification determine whether rural crashes are survivable.</p>
+    </div>
+    <div class="align-tile fade-up">
+      <div class="align-tile-icon">🌐</div>
+      <h3>Safer Speeds</h3>
+      <p>Triggered warning signs that only activate on real detections achieve the speed reductions that static signage cannot — drivers respond because the alerts are credible, not ignored through habituation.</p>
+    </div>
+    <div class="align-tile fade-up delay-1">
+      <div class="align-tile-icon">🔒</div>
+      <h3>Privacy & Equity</h3>
+      <p>No surveillance capability — by hardware design. Rural and tribal communities that bear the highest crash burden can trust that safety infrastructure will not become surveillance infrastructure.</p>
+    </div>
+    <div class="align-tile fade-up delay-2">
+      <div class="align-tile-icon">📊</div>
+      <h3>Data-Driven Planning</h3>
+      <p>Corridor event data advances USDOT's evidence-based approach to infrastructure investment — building the national dataset needed to target safety dollars where they have the most impact.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section section--void" style="text-align:center;padding:7rem 3rem;">
+  <p class="eyebrow fade-up" style="justify-content:center;color:var(--ion);">Begin the Conversation</p>
+  <h2 class="section-title fade-up delay-1">Ready to Advance<br>the Safety Strategy?</h2>
+  <p style="font-size:1.05rem;color:var(--ash);max-width:520px;margin:0 auto 2.5rem;line-height:1.8;" class="fade-up delay-2">We're seeking USDOT partnership to accelerate pilot deployment in high-priority rural corridors. Let's discuss how Ætheris can serve the national safety mandate.</p>
+  <div class="flex flex-center gap-1 fade-up delay-3" style="flex-wrap:wrap;">
+    <a class="btn btn--primary" href="contact.html">Contact Us</a>
+    <a class="btn btn--outline" href="awcmp.html">See the Technology</a>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand-hex">Æ</div>
+      <div class="footer-brand-name">Ætheris Automation Technologies</div>
+      <div class="footer-brand-sub">Sentinels of the Wild</div>
+      <p class="footer-brand-desc">AI-powered safety for every road, every life — protecting humans, wildlife, and communities through intelligent highway infrastructure.</p>
+    </div>
+    <div>
+      <div class="footer-col-title">Navigate</div>
+      <ul class="footer-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="mission.html">Our Mission</a></li>
+        <li><a href="awcmp.html">Sentinels of the Wild</a></li>
+        <li><a href="products.html">What We Build</a></li>
+        <li><a href="stakeholders.html">Stakeholders</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="sitemap.html">Site Map</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Stakeholders</div>
+      <ul class="footer-links">
+        <li><a href="fire.html">Fire &amp; Rescue</a></li>
+        <li><a href="police.html">Law Enforcement</a></li>
+        <li><a href="ems.html">Emergency Medical</a></li>
+        <li><a href="insurance.html">Insurance</a></li>
+        <li><a href="tow.html">Towing &amp; Recovery</a></li>
+        <li><a href="dot-state.html">State DOTs</a></li>
+        <li><a href="wildlife.html">Wildlife Agencies</a></li>
+        <li><a href="community.html">Communities</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Grant Partners</div>
+      <ul class="footer-links">
+        <li><a href="usdot.html">USDOT</a></li>
+        <li><a href="fhwa.html">FHWA</a></li>
+        <li><a href="usfws.html">USFWS</a></li>
+        <li><a href="nsf.html">NSF</a></li>
+      </ul>
+      <div class="footer-col-title" style="margin-top:1.5rem;">Contact</div>
+      <ul class="footer-links">
+        <li><a href="contact.html">Tyler, Texas, USA</a></li>
+        <li><a href="contact.html">Partner Inquiries</a></li>
+        <li><a href="contact.html">Pilot Programs</a></li>
+        <li><a href="contact.html">Research Collaboration</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2026 Ætheris Automation Technologies LLC · Tyler, Texas · Privacy by Architecture</div>
+    <div class="footer-tagline">Protecting Every Life · See the Complete Path Ahead</div>
+  </div>
+</footer>
+
+</div>
+<script src="main.js"></script>
+</body>
+</html>

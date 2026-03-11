@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Mission — Ætheris Automation Technologies</title>
+<meta name="description" content="Ætheris is the AI nervous system for highway infrastructure — connecting sensors, signals, and communities to protect every life on every road.">
+<link rel="stylesheet" href="style.css">
+<style>
+/* MISSION PAGE */
+.mission-hero-quote { padding: 5rem 3rem; background: var(--deep); border-bottom: 1px solid var(--border); }
+.mission-hero-quote-inner { max-width: 860px; margin: 0 auto; text-align: center; }
+.quote-mark { font-family: 'Orbitron', monospace; font-size: 5rem; font-weight: 900; color: var(--crimson); opacity: 0.15; line-height: 0.5; margin-bottom: 1rem; display: block; }
+.quote-text { font-family: 'Barlow', sans-serif; font-size: clamp(1.3rem, 2.5vw, 1.9rem); font-weight: 300; line-height: 1.6; color: var(--frost); margin-bottom: 1.5rem; }
+.quote-text em { color: var(--crimson); font-style: normal; }
+.quote-source { font-family: 'Barlow Condensed', sans-serif; font-size: 0.72rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--ash); }
+.problem-section { padding: 6rem 3rem; background: var(--abyss); }
+.problem-layout { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
+.problem-body { font-size: 1rem; color: var(--ash); line-height: 1.85; }
+.problem-body p { margin-bottom: 1.4rem; }
+.problem-body strong { color: var(--frost); font-weight: 500; }
+.crisis-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: rgba(177,31,42,0.12); border: 1px solid rgba(177,31,42,0.15); }
+.crisis-cell { background: var(--abyss); padding: 1.75rem; position: relative; overflow: hidden; transition: background 0.3s; }
+.crisis-cell:hover { background: var(--deep); }
+.crisis-cell::before { content: ''; position: absolute; top: 0; left: 0; width: 2px; height: 0; background: var(--gold); transition: height 0.4s; }
+.crisis-cell:hover::before { height: 100%; }
+.crisis-num { font-family: 'Orbitron', monospace; font-size: 2rem; font-weight: 900; color: var(--gold); line-height: 1; margin-bottom: 0.4rem; display: block; }
+.crisis-label { font-family: 'Barlow Condensed', sans-serif; font-size: 0.78rem; letter-spacing: 0.08em; color: var(--ash); line-height: 1.4; }
+.why-section { padding: 6rem 3rem; background: var(--deep); }
+.why-grid { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: repeat(3,1fr); gap: 2rem; margin-top: 3rem; }
+.why-card { padding: 2rem; border: 1px solid var(--border); transition: border-color 0.3s, background 0.3s; }
+.why-card:hover { border-color: rgba(177,31,42,0.3); background: var(--panel); }
+.why-icon { font-size: 2.2rem; margin-bottom: 1rem; }
+.why-card h3 { font-family: 'Barlow Condensed', sans-serif; font-size: 1rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 0.6rem; color: var(--frost); }
+.why-card p { font-size: 0.92rem; color: var(--ash); line-height: 1.75; }
+.vision-section { padding: 6rem 3rem; background: var(--abyss); }
+.vision-inner { max-width: 1100px; margin: 0 auto; }
+.vision-cols { display: grid; grid-template-columns: 1fr 1.2fr; gap: 5rem; align-items: center; }
+.vision-timeline { display: flex; flex-direction: column; gap: 0; }
+.vt-item { display: flex; gap: 1.5rem; padding: 1.75rem 0; border-bottom: 1px solid var(--border); }
+.vt-item:last-child { border-bottom: none; }
+.vt-num { font-family: 'Orbitron', monospace; font-size: 0.62rem; font-weight: 700; color: var(--crimson); min-width: 40px; padding-top: 0.2rem; letter-spacing: 0.1em; }
+.vt-content h4 { font-family: 'Barlow Condensed', sans-serif; font-size: 0.95rem; font-weight: 600; letter-spacing: 0.06em; margin-bottom: 0.3rem; color: var(--frost); }
+.vt-content p { font-size: 0.88rem; color: var(--ash); line-height: 1.7; margin: 0; }
+.principles-section { padding: 6rem 3rem; background: var(--deep); }
+.principles-list { max-width: 900px; margin: 3rem auto 0; display: flex; flex-direction: column; gap: 0; border: 1px solid var(--border); }
+.principle-row { display: flex; align-items: flex-start; gap: 2rem; padding: 2rem 2.5rem; border-bottom: 1px solid var(--border); transition: background 0.25s; }
+.principle-row:last-child { border-bottom: none; }
+.principle-row:hover { background: var(--panel); }
+.pr-num { font-family: 'Orbitron', monospace; font-size: 0.65rem; color: var(--crimson); letter-spacing: 0.2em; min-width: 30px; padding-top: 0.15rem; }
+.pr-icon { font-size: 1.6rem; min-width: 40px; text-align: center; }
+.pr-body h4 { font-size: 1rem; font-weight: 600; margin-bottom: 0.3rem; }
+.pr-body p { font-size: 0.9rem; color: var(--ash); line-height: 1.7; margin: 0; }
+.cta-mission { padding: 7rem 3rem; text-align: center; background: var(--abyss); position: relative; overflow: hidden; }
+.cta-mission::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 50%, rgba(177,31,42,0.06) 0%, transparent 70%); }
+.cta-mission h2 { font-family: 'Orbitron', monospace; font-size: clamp(1.8rem, 3.5vw, 3rem); font-weight: 700; margin-bottom: 1rem; position: relative; }
+.cta-mission p { font-size: 1.05rem; color: var(--ash); max-width: 540px; margin: 0 auto 2.5rem; line-height: 1.8; position: relative; }
+@media(max-width:900px){ .problem-layout, .vision-cols { grid-template-columns: 1fr; gap: 3rem; } .why-grid { grid-template-columns: 1fr; } .crisis-grid { grid-template-columns: 1fr; background: none; border: 1px solid rgba(177,31,42,.15); } .crisis-cell { border-bottom: 1px solid rgba(177,31,42,.12); } }
+</style>
+</head>
+<body>
+<canvas id="starfield"></canvas>
+<div class="page-wrapper">
+<nav class="site-nav">
+  <a class="nav-logo" href="index.html">
+    <span class="nav-hex">Æ</span>
+    <span class="nav-wordmark">Ætheris<small>Automation Technologies</small></span>
+  </a>
+  <ul class="nav-menu">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="mission.html">Our Mission</a></li>
+    <li><a href="awcmp.html">Sentinels of the Wild</a></li>
+    <li><a href="products.html">What We Build</a></li>
+    <li><a href="stakeholders.html">Stakeholders</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="community.html">Community</a></li>
+  </ul>
+  <div class="nav-toggle"><span></span><span></span><span></span></div>
+  <a class="nav-cta" href="contact.html">Partner With Us</a>
+</nav>
+<main class="page-body">
+<div class="page-header">
+  <div class="page-header-inner">
+    <p class="ph-eyebrow">Our Mission</p>
+    <h1 class="ph-title">Roads That Protect<br><span class="accent">Every Life</span></h1>
+    <p class="ph-lead">We exist to close the gap between the intelligence we've built into our networks and the tragedy we continue to allow on our roads.</p>
+  </div>
+</div>
+<div class="mission-hero-quote">
+  <div class="mission-hero-quote-inner fade-up">
+    <span class="quote-mark">"</span>
+    <p class="quote-text">Roads are not neutral infrastructure. They are decisions — and right now, those decisions <em>cost lives every single day</em>. Animal lives. Human lives. The lives of communities whose ecosystems are quietly collapsing around them.</p>
+    <span class="quote-source">Ætheris Automation Technologies · Founding Statement</span>
+  </div>
+</div>
+<section class="problem-section">
+  <div class="problem-layout">
+    <div>
+      <p class="eyebrow eyebrow--crimson fade-up">The Crisis</p>
+      <h2 class="section-title fade-up delay-1">A Preventable<br>Emergency</h2>
+      <div class="problem-body fade-up delay-2">
+        <p>Every year in the United States, <strong>1 to 2 million animals</strong> are killed on roads that cut through their habitat. These aren't just statistics — they represent the slow unraveling of ecological systems that took millions of years to develop.</p>
+        <p>For humans, the toll is staggering: roadway departures account for <strong>48% of all U.S. traffic fatalities</strong> — 20,514 deaths in 2022 alone (NHTSA). Wildlife corridors and roadway departure zones overlap almost entirely. The same rural, low-visibility roads where animals cross are where crashes go unwitnessed for hours.</p>
+        <p>The tragedy is that we've known about this problem for decades. We've built the sensors, the AI, the networking infrastructure. What we haven't built is the <strong>political and institutional will</strong> to connect these systems to the roads where they're needed.</p>
+        <p>That's what Ætheris is here to change. Not just the technology — the deployment. The partnerships. The grant funding. The actual hardware on actual roads in actual communities.</p>
+      </div>
+    </div>
+    <div class="crisis-grid stat-animate fade-up delay-1">
+      <div class="crisis-cell"><span class="crisis-num" data-target="8" data-prefix="$" data-suffix="B+">$8B+</span><span class="crisis-label">Annual economic damage from wildlife-vehicle collisions — public costs exceed $10B with injuries and response</span></div>
+      <div class="crisis-cell"><span class="crisis-num" data-target="48" data-suffix="%">48%</span><span class="crisis-label">Of all U.S. traffic fatalities are roadway departures — AWCMP's second mission addresses this directly</span></div>
+      <div class="crisis-cell"><span class="crisis-num" data-target="1" data-suffix="–2M">1–2M</span><span class="crisis-label">Wildlife–vehicle collisions per year in the U.S. — per FHWA Report to Congress</span></div>
+      <div class="crisis-cell"><span class="crisis-num" data-target="12">12</span><span class="crisis-label">Federally endangered species facing major collision risk on US roads</span></div>
+    </div>
+  </div>
+</section>
+<hr class="rule">
+<section class="why-section">
+  <div style="max-width:1100px;margin:0 auto;">
+    <p class="eyebrow eyebrow--gold fade-up">Why This Matters</p>
+    <h2 class="section-title fade-up delay-1">Beyond the<br>Road</h2>
+    <p class="section-lead fade-up delay-2">Wildlife-vehicle collisions aren't an isolated problem. They're a symptom of infrastructure that was built without considering the living systems it cuts through.</p>
+  </div>
+  <div class="why-grid">
+    <div class="why-card fade-up"><div class="why-icon">🌿</div><h3>Ecosystem Fragmentation</h3><p>Roads divide wildlife habitats into isolated pockets, preventing the movement needed for genetic diversity, migration, and species survival. Every crossing that fails is another step toward local extinction.</p></div>
+    <div class="why-card fade-up delay-1"><div class="why-icon">👨‍👩‍👧‍👦</div><h3>Rural Community Impact</h3><p>The communities most affected by wildlife collisions are often rural — underserved by both technology and policy. Families in these corridors bear the economic and emotional cost of preventable accidents every day.</p></div>
+    <div class="why-card fade-up delay-2"><div class="why-icon">⚖️</div><h3>Legal &amp; Civic Responsibility</h3><p>Legal precedent now establishes that states can be held liable for failure to prevent wildlife collisions. Communities and transportation agencies face growing accountability — and need solutions that work.</p></div>
+    <div class="why-card fade-up"><div class="why-icon">🚗</div><h3>The Future of Transportation</h3><p>As autonomous vehicles become a reality, wildlife detection becomes a prerequisite for safe operation. The systems we build today form the foundation for the intelligent transportation networks of tomorrow.</p></div>
+    <div class="why-card fade-up delay-1"><div class="why-icon">🌍</div><h3>Climate Change Acceleration</h3><p>As climate shifts force species to expand their ranges and migration timing, the collision problem will grow. Roads that were historically low-risk are now becoming high-risk corridors as animals move into new territories.</p></div>
+    <div class="why-card fade-up delay-2"><div class="why-icon">💰</div><h3>Economic Opportunity</h3><p>$350 million in federal infrastructure funding is available right now for wildlife crossing and detection systems. Communities with the right partnerships and technology in place are positioned to access this funding.</p></div>
+  </div>
+</section>
+<hr class="rule">
+<section class="vision-section">
+  <div class="vision-inner">
+    <div class="vision-cols">
+      <div>
+        <p class="eyebrow eyebrow--teal fade-up">Our Vision</p>
+        <h2 class="section-title fade-up delay-1">The Living<br>Road Network</h2>
+        <p class="section-lead fade-up delay-2" style="margin-bottom:2rem;">We envision a future where every road is also an information system — where sensors, AI, and connectivity transform static infrastructure into a living, responsive network that protects everyone who shares it.</p>
+        <p class="fade-up delay-3" style="font-size:.95rem;color:var(--ash);line-height:1.85;">This isn't science fiction. The technology exists. The funding is available. What's been missing is the organization willing to do the work of connecting all of it — the sensors, the grants, the communities, the agencies — into deployable, real-world systems.</p>
+      </div>
+      <div class="vision-timeline fade-up delay-1">
+        <div class="vt-item"><span class="vt-num">01</span><div class="vt-content"><h4>Detect</h4><p>AI-powered sensors identify animals near roadways in real time — day or night, in any weather — using thermal imaging and radar detection that doesn't require visual light.</p></div></div>
+        <div class="vt-item"><span class="vt-num">02</span><div class="vt-content"><h4>Alert</h4><p>The moment an animal is confirmed near the road, drivers receive real-time warnings through digital roadside signage — triggered warnings that drivers learn to trust because they only fire on confirmed detections.</p></div></div>
+        <div class="vt-item"><span class="vt-num">03</span><div class="vt-content"><h4>Learn</h4><p>Every detection contributes to a growing dataset — tracking where, when, and which species cross roads. This intelligence improves future alerts and informs long-term infrastructure planning.</p></div></div>
+        <div class="vt-item"><span class="vt-num">04</span><div class="vt-content"><h4>Protect</h4><p>Over time, the network becomes a full ecosystem safety layer — integrated with conservation databases, traffic management systems, and eventually autonomous vehicle platforms.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+<hr class="rule">
+<section class="principles-section">
+  <div style="max-width:900px;margin:0 auto;">
+    <p class="eyebrow eyebrow--crimson fade-up" style="justify-content:center;">How We Work</p>
+    <h2 class="section-title fade-up delay-1 text-center">Our Guiding Principles</h2>
+    <div class="principles-list fade-up delay-2">
+      <div class="principle-row"><span class="pr-num">01</span><span class="pr-icon">🔒</span><div class="pr-body"><h4>Privacy Is Not Negotiable</h4><p>Our systems protect lives — human first. Drivers receive warnings before a crash is possible. Roadway departures are detected in seconds and emergency services dispatched automatically. When a vehicle leaves the road in a rural corridor at night, our network knows — and responds — without waiting for a witness. That same network extends its protection to every animal crossing the road and every community that lives alongside it. What our systems will never do is identify, track, or profile the people they protect. No license plate recognition, no facial recognition, no persistent human tracking. This is an architectural decision, not a policy preference — privacy is built into the hardware, not bolted on afterward.</p></div></div>
+      <div class="principle-row"><span class="pr-num">02</span><span class="pr-icon">📊</span><div class="pr-body"><h4>Evidence Before Claims</h4><p>We don't market what we can't prove. Every capability we describe is backed by real field data, published research, or honest documentation of what our systems cannot yet do. There is no vague AI hype here.</p></div></div>
+      <div class="principle-row"><span class="pr-num">03</span><span class="pr-icon">🌿</span><div class="pr-body"><h4>Ecology as Engineering Input</h4><p>The biology of the species we protect is an engineering constraint, not a brochure afterthought. How animals move, when they move, and why — these are design requirements that shape our systems from the ground up.</p></div></div>
+      <div class="principle-row"><span class="pr-num">04</span><span class="pr-icon">🤝</span><div class="pr-body"><h4>Community Before Technology</h4><p>Technology that communities don't trust doesn't work. We build stakeholder relationships before we build infrastructure — with public agencies, tribal nations, conservation organizations, and the residents who live in affected corridors.</p></div></div>
+      <div class="principle-row"><span class="pr-num">05</span><span class="pr-icon">🛡️</span><div class="pr-body"><h4>Safety Is the Product</h4><p>We are not a technology company that happens to work in safety. We are a safety company that uses technology. That distinction shapes every decision we make — from how systems fail to how we communicate uncertainty.</p></div></div>
+    </div>
+  </div>
+</section>
+<section class="cta-mission">
+  <p class="eyebrow eyebrow--crimson fade-up" style="justify-content:center;">Take Action</p>
+  <h2 class="fade-up delay-1">Join the Mission to<br>Preserve All Life</h2>
+  <p class="fade-up delay-2">Roads can protect every life that travels them — if we build the right systems together. Whether you're a transportation agency, conservation organization, or community advocate, there is a role for you in this work.</p>
+  <div class="flex flex-center gap-1 fade-up delay-3" style="flex-wrap:wrap;">
+    <a class="btn btn--primary" href="contact.html">Get In Touch</a>
+    <a class="btn btn--outline" href="awcmp.html">See Our Technology</a>
+  </div>
+</section>
+</main>
+
+
+<footer class="site-footer">
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand-hex">Æ</div>
+      <div class="footer-brand-name">Ætheris Automation Technologies</div>
+      <div class="footer-brand-sub">Sentinels of the Wild</div>
+      <p class="footer-brand-desc">AI-powered safety for every road, every life — protecting humans, wildlife, and communities through intelligent highway infrastructure.</p>
+    </div>
+    <div>
+      <div class="footer-col-title">Navigate</div>
+      <ul class="footer-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="mission.html">Our Mission</a></li>
+        <li><a href="awcmp.html">Sentinels of the Wild</a></li>
+        <li><a href="products.html">What We Build</a></li>
+        <li><a href="stakeholders.html">Stakeholders</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="sitemap.html">Site Map</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Stakeholders</div>
+      <ul class="footer-links">
+        <li><a href="fire.html">Fire &amp; Rescue</a></li>
+        <li><a href="police.html">Law Enforcement</a></li>
+        <li><a href="ems.html">Emergency Medical</a></li>
+        <li><a href="insurance.html">Insurance</a></li>
+        <li><a href="tow.html">Towing &amp; Recovery</a></li>
+        <li><a href="dot-state.html">State DOTs</a></li>
+        <li><a href="wildlife.html">Wildlife Agencies</a></li>
+        <li><a href="community.html">Communities</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Grant Partners</div>
+      <ul class="footer-links">
+        <li><a href="usdot.html">USDOT</a></li>
+        <li><a href="fhwa.html">FHWA</a></li>
+        <li><a href="usfws.html">USFWS</a></li>
+        <li><a href="nsf.html">NSF</a></li>
+      </ul>
+      <div class="footer-col-title" style="margin-top:1.5rem;">Contact</div>
+      <ul class="footer-links">
+        <li><a href="contact.html">Tyler, Texas, USA</a></li>
+        <li><a href="contact.html">Partner Inquiries</a></li>
+        <li><a href="contact.html">Pilot Programs</a></li>
+        <li><a href="contact.html">Research Collaboration</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2026 Ætheris Automation Technologies LLC · Tyler, Texas · Privacy by Architecture</div>
+    <div class="footer-tagline">Protecting Every Life · See the Complete Path Ahead</div>
+  </div>
+</footer>
+</div>
+<script src="main.js"></script>
+</body>
+</html>

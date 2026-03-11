@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ætheris Automation Technologies — The Neural Network for America's Roads</title>
+<meta name="description" content="Ætheris is the AI nervous system for highway infrastructure — detecting crashes, wildlife, hazards, and road conditions in real time to protect every life on every road.">
+<link rel="stylesheet" href="style.css">
+<style>
+/* ── HOME-SPECIFIC ── */
+.hero {
+  min-height: 100vh;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  text-align: center;
+  padding: 8rem 3rem 5rem;
+  position: relative; overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse at 50% 40%, rgba(177,31,42,0.08) 0%, transparent 65%);
+}
+.hero-badge { margin-bottom: 2rem; animation: fadeUp 0.8s ease both; }
+.hero-title {
+  font-family: 'Orbitron', monospace;
+  font-size: clamp(2.8rem, 6vw, 6rem);
+  font-weight: 900; line-height: 1.05;
+  letter-spacing: -0.02em; margin-bottom: 0.5rem;
+  animation: fadeUp 0.9s 0.1s ease both;
+}
+.hero-title .ae { color: var(--crimson); }
+.hero-sub {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: clamp(0.9rem, 2vw, 1.3rem);
+  font-weight: 300; letter-spacing: 0.35em;
+  text-transform: uppercase; color: var(--ash);
+  margin-bottom: 2rem; animation: fadeUp 1s 0.2s ease both;
+}
+.hero-desc {
+  font-size: 1.15rem; font-weight: 300;
+  color: var(--ash); max-width: 660px;
+  line-height: 1.85; margin-bottom: 3rem;
+  animation: fadeUp 1s 0.3s ease both;
+}
+.hero-desc em { color: var(--frost); font-style: normal; font-weight: 500; }
+.hero-actions {
+  display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center;
+  animation: fadeUp 1s 0.4s ease both; margin-bottom: 5rem;
+}
+.hero-divider {
+  width: 1px; height: 60px;
+  background: linear-gradient(var(--crimson), transparent);
+  animation: fadeUp 1s 0.5s ease both;
+}
+.hero-scroll-label {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.58rem; letter-spacing: 0.4em; color: var(--ash);
+  text-transform: uppercase; animation: fadeUp 1s 0.6s ease both;
+}
+.corner { position: absolute; width: 50px; height: 50px; border-color: rgba(177,31,42,0.3); border-style: solid; }
+.corner-tl { top: 5.5rem; left: 2rem; border-width: 1px 0 0 1px; }
+.corner-tr { top: 5.5rem; right: 2rem; border-width: 1px 1px 0 0; }
+.corner-bl { bottom: 1.5rem; left: 2rem; border-width: 0 0 1px 1px; }
+.corner-br { bottom: 1.5rem; right: 2rem; border-width: 0 1px 1px 0; }
+.impact-band { background: var(--abyss); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 4rem 3rem; }
+.impact-grid { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; }
+.impact-item { padding: 1.5rem 2rem; border-right: 1px solid var(--border); text-align: center; }
+.impact-item:last-child { border-right: none; }
+.impact-num { font-family: 'Orbitron', monospace; font-size: 2.8rem; font-weight: 900; color: var(--crimson); line-height: 1; margin-bottom: 0.5rem; display: block; }
+.impact-label { font-family: 'Barlow Condensed', sans-serif; font-size: 0.78rem; letter-spacing: 0.1em; color: var(--ash); line-height: 1.4; }
+.mission-strip { padding: 5rem 3rem; background: var(--deep); }
+.mission-strip-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+.mission-strip blockquote { font-family: 'Barlow Condensed', sans-serif; font-size: clamp(1.4rem, 2.5vw, 2rem); font-weight: 300; line-height: 1.5; color: var(--frost); border-left: 3px solid var(--crimson); padding-left: 1.5rem; font-style: italic; }
+.mission-strip blockquote span { color: var(--crimson); font-style: normal; font-weight: 600; }
+.pillars { padding: 6rem 3rem; background: var(--abyss); }
+.pillars-grid { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); }
+.pillar { background: var(--abyss); padding: 2.5rem 2rem; position: relative; overflow: hidden; transition: background 0.3s; }
+.pillar:hover { background: var(--deep); }
+.pillar-line { position: absolute; top: 0; left: 0; right: 0; height: 2px; transform: scaleX(0); transform-origin: left; transition: transform 0.4s ease; }
+.pillar:hover .pillar-line { transform: scaleX(1); }
+.pillar--crimson .pillar-line { background: var(--crimson); }
+.pillar--gold    .pillar-line { background: var(--gold); }
+.pillar--teal    .pillar-line { background: var(--teal); }
+.pillar-icon { font-size: 2rem; margin-bottom: 1rem; opacity: 0.8; }
+.pillar h3 { font-family: 'Orbitron', monospace; font-size: 1rem; font-weight: 600; margin-bottom: 0.75rem; }
+.pillar p { font-size: 0.92rem; color: var(--ash); line-height: 1.75; }
+.pillar-link { display: inline-flex; align-items: center; gap: 0.4rem; font-family: 'Barlow Condensed', sans-serif; font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase; text-decoration: none; margin-top: 1rem; transition: gap 0.2s; }
+.pillar--crimson .pillar-link { color: var(--crimson); }
+.pillar--gold    .pillar-link { color: var(--gold); }
+.pillar--teal    .pillar-link { color: var(--teal); }
+.pillar-link:hover { gap: 0.75rem; }
+.ticker-band { overflow: hidden; padding: 1.25rem 0; background: var(--void); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.ticker-track { display: flex; width: max-content; animation: tickroll 35s linear infinite; white-space: nowrap; }
+.ticker-item { display: flex; align-items: center; gap: 1.5rem; padding: 0 2.5rem; border-right: 1px solid var(--border); font-family: 'Barlow Condensed', sans-serif; font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ash); }
+.ticker-item .t-dot { color: var(--crimson); font-size: 0.9rem; }
+@keyframes tickroll { to { transform: translateX(-50%); } }
+.cta-band { padding: 7rem 3rem; text-align: center; background: var(--deep); border-top: 1px solid var(--border); }
+.cta-band h2 { font-family: 'Orbitron', monospace; font-size: clamp(1.8rem, 3.5vw, 3rem); font-weight: 700; margin-bottom: 1rem; }
+.cta-band p { font-size: 1.05rem; color: var(--ash); max-width: 520px; margin: 0 auto 2.5rem; line-height: 1.8; }
+@keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: none; } }
+@media (max-width: 900px) {
+  .impact-grid { grid-template-columns: 1fr 1fr; }
+  .impact-item:nth-child(2) { border-right: none; }
+  .mission-strip-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+  .pillars-grid { grid-template-columns: 1fr; background: none; border: 1px solid var(--border); }
+  .pillar { border-bottom: 1px solid var(--border); }
+}
+@media (max-width: 600px) {
+  .impact-grid { grid-template-columns: 1fr; }
+  .impact-item { border-right: none; border-bottom: 1px solid var(--border); }
+}
+</style>
+</head>
+<body>
+<canvas id="starfield"></canvas>
+<div class="page-wrapper">
+
+<!-- NAV -->
+<nav class="site-nav">
+  <a class="nav-logo" href="index.html">
+    <span class="nav-hex">Æ</span>
+    <span class="nav-wordmark">Ætheris<small>Automation Technologies</small></span>
+  </a>
+  <ul class="nav-menu">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="mission.html">Our Mission</a></li>
+    <li><a href="awcmp.html">Sentinels of the Wild</a></li>
+    <li><a href="products.html">What We Build</a></li>
+    <li><a href="stakeholders.html">Stakeholders</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="community.html">Community</a></li>
+  </ul>
+  <div class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></div>
+  <a class="nav-cta" href="contact.html">Partner With Us</a>
+</nav>
+
+<main class="page-body">
+<section class="hero">
+  <canvas id="neural-highway" style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:0;opacity:1;"></canvas>
+  <div class="corner corner-tl"></div><div class="corner corner-tr"></div>
+  <div class="corner corner-bl"></div><div class="corner corner-br"></div>
+  <div class="hero-badge fade-up">
+    <span class="badge badge--green"><span class="badge-dot"></span>Active Operations · Tyler, Texas</span>
+  </div>
+  <h1 class="hero-title"><span class="ae">Æ</span>theris<br>Automation<br>Technologies</h1>
+  <p class="hero-sub">The AI Nervous System for Highway Infrastructure</p>
+  <p class="hero-desc">
+    Every road is a corridor of risk. Every vehicle a node. Every life — human, animal, community —
+    a signal worth protecting. Ætheris is the <em>living neural network</em> woven into America's
+    highway infrastructure: sensing, thinking, and responding in real time so that everyone
+    who enters a road <em>sees the complete path ahead</em> and arrives safely where they need to go.
+  </p>
+  <div class="hero-actions">
+    <a class="btn btn--primary" href="awcmp.html">See the Technology</a>
+    <a class="btn btn--outline" href="contact.html">Become a Partner</a>
+  </div>
+  <div class="hero-divider"></div>
+  <span class="hero-scroll-label">Scroll to explore</span>
+</section>
+
+<div class="impact-band">
+  <div class="impact-grid stat-animate">
+    <div class="impact-item"><span class="impact-num">40,000+</span><span class="impact-label">Americans lost to roadway crashes every year — the number one preventable cause of death</span></div>
+    <div class="impact-item"><span class="impact-num">1.5M</span><span class="impact-label">Wildlife-vehicle collisions annually — $8B+ in damage, and human lives lost alongside wildlife</span></div>
+    <div class="impact-item"><span class="impact-num">48%</span><span class="impact-label">Of all U.S. traffic fatalities involve roadway departure — detectable and survivable with early warning</span></div>
+    <div class="impact-item"><span class="impact-num">70%</span><span class="impact-label">Of rural crash fatalities worsen because emergency response arrives too late — Ætheris closes that gap</span></div>
+  </div>
+</div>
+
+<hr class="rule">
+
+<div class="mission-strip">
+  <div class="mission-strip-inner">
+    <div class="fade-up">
+      <blockquote>"Every road is a corridor of risk. Ætheris is the <span>nervous system</span> that makes every road aware — so every life that travels it arrives safely."</blockquote>
+    </div>
+    <div class="fade-up delay-1">
+      <p class="eyebrow eyebrow--crimson">What Ætheris Is</p>
+      <p style="font-size:1rem;color:var(--ash);line-height:1.85;margin-bottom:1.5rem;">We deploy intelligent sensor networks along highway corridors that function as a distributed nervous system. Each node detects what is happening at that exact location — a vehicle leaving the road, an animal stepping onto the pavement, a hazard forming ahead — and instantly signals outward through the network.</p>
+      <p style="font-size:1rem;color:var(--ash);line-height:1.85;margin-bottom:2rem;">Drivers receive real-time warnings before a collision is possible. Emergency services receive automatic alerts the moment an incident occurs. The road itself becomes intelligent — not reactive, but predictive.</p>
+      <a class="btn btn--primary" href="mission.html">Read Our Mission</a>
+    </div>
+  </div>
+</div>
+
+<hr class="rule">
+
+<div class="ticker-band">
+  <div class="ticker-track">
+    <div class="ticker-item"><span class="t-dot">◆</span> Preserving All Life</div>
+    <div class="ticker-item"><span class="t-dot">◆</span> Wildlife Safety · Human Safety · Community Safety</div>
+    <div class="ticker-item"><span class="t-dot">◆</span> Real-Time Road Intelligence</div>
+    <div class="ticker-item"><span class="t-dot">◆</span> Tyler, Texas · Founded 2026</div>
+    <div class="ticker-item"><span class="t-dot">◆</span> Privacy by Design · No Surveillance</div>
+    <div class="ticker-item"><span class="t-dot">◆</span> Sentinels of the Wild</div>
+    <div class="ticker-item"><span class="t-dot">◆</span> See the Complete Path Ahead</div>
+    <div class="ticker-item"><span class="t-dot">◆</span> AI Neural Network for Highway Infrastructure</div>
+    <div class="ticker-item"><span class="t-dot">◆</span> Human Safety First</div>
+    <div class="ticker-item"><span class="t-dot">◆</span> Crash Detection · Roadway Departure · Wildlife Collision Prevention</div>
+    <div class="ticker-item"><span class="t-dot">◆</span> Real-Time Road Intelligence</div>
+    <div class="ticker-item"><span class="t-dot">◆</span> Tyler, Texas · Founded 2026</div>
+    <div class="ticker-item"><span class="t-dot">◆</span> Privacy by Design · No Surveillance</div>
+    <div class="ticker-item"><span class="t-dot">◆</span> Sentinels of the Wild</div>
+    <div class="ticker-item"><span class="t-dot">◆</span> See the Complete Path Ahead</div>
+    <div class="ticker-item"><span class="t-dot">◆</span> AI Neural Network for Highway Infrastructure</div>
+  </div>
+</div>
+
+<section class="pillars">
+  <div style="max-width:1100px;margin:0 auto 3rem;">
+    <p class="eyebrow eyebrow--crimson fade-up">What We Do</p>
+    <h2 class="section-title fade-up delay-1">Three Ways We<br>Protect Life</h2>
+  </div>
+  <div class="pillars-grid">
+    <div class="pillar pillar--crimson fade-up">
+      <div class="pillar-line"></div>
+      <div class="pillar-icon">🦌</div>
+      <h3>Wildlife Protection</h3>
+      <p>Our Sentinels of the Wild system detects animals near roadways and alerts drivers in real time — preventing collisions, saving lives, and protecting species that have no other voice in infrastructure planning.</p>
+      <a class="pillar-link" href="awcmp.html">Explore Sentinels →</a>
+    </div>
+    <div class="pillar pillar--gold fade-up delay-1">
+      <div class="pillar-line"></div>
+      <div class="pillar-icon">🚨</div>
+      <h3>Roadway Departure Detection</h3>
+      <p>The same network that watches for wildlife also detects vehicles leaving the roadway — automatically alerting emergency services when crashes happen in rural corridors where help can be far away and discovery can take days.</p>
+      <a class="pillar-link" href="awcmp.html">See the Dual Mission →</a>
+    </div>
+    <div class="pillar pillar--teal fade-up delay-2">
+      <div class="pillar-line"></div>
+      <div class="pillar-icon">🌐</div>
+      <h3>Road Intelligence Network</h3>
+      <p>Every node generates insight — aggregated, anonymized, and shared with transportation agencies, conservation organizations, and communities. Pattern intelligence that informs infrastructure investment, species protection, and the decisions communities make about the roads they depend on.</p>
+      <a class="pillar-link" href="mission.html">Our Vision →</a>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<section class="cta-band">
+  <p class="eyebrow eyebrow--crimson fade-up" style="justify-content:center;">Join the Mission</p>
+  <h2 class="fade-up delay-1">Ready to Protect<br>What Matters?</h2>
+  <p class="fade-up delay-2">Whether you're a federal agency, transportation authority, conservation organization, or community partner — there is a role for you in this mission. Let's talk.</p>
+  <div class="flex flex-center gap-1 fade-up delay-3" style="flex-wrap:wrap;">
+    <a class="btn btn--primary" href="contact.html">Get In Touch</a>
+    <a class="btn btn--outline" href="about.html">About Ætheris</a>
+  </div>
+</section>
+</main>
+
+
+<footer class="site-footer">
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand-hex">Æ</div>
+      <div class="footer-brand-name">Ætheris Automation Technologies</div>
+      <div class="footer-brand-sub">Sentinels of the Wild</div>
+      <p class="footer-brand-desc">AI-powered safety for every road, every life — protecting humans, wildlife, and communities through intelligent highway infrastructure.</p>
+    </div>
+    <div>
+      <div class="footer-col-title">Navigate</div>
+      <ul class="footer-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="mission.html">Our Mission</a></li>
+        <li><a href="awcmp.html">Sentinels of the Wild</a></li>
+        <li><a href="products.html">What We Build</a></li>
+        <li><a href="stakeholders.html">Stakeholders</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="sitemap.html">Site Map</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Stakeholders</div>
+      <ul class="footer-links">
+        <li><a href="fire.html">Fire &amp; Rescue</a></li>
+        <li><a href="police.html">Law Enforcement</a></li>
+        <li><a href="ems.html">Emergency Medical</a></li>
+        <li><a href="insurance.html">Insurance</a></li>
+        <li><a href="tow.html">Towing &amp; Recovery</a></li>
+        <li><a href="dot-state.html">State DOTs</a></li>
+        <li><a href="wildlife.html">Wildlife Agencies</a></li>
+        <li><a href="community.html">Communities</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Grant Partners</div>
+      <ul class="footer-links">
+        <li><a href="usdot.html">USDOT</a></li>
+        <li><a href="fhwa.html">FHWA</a></li>
+        <li><a href="usfws.html">USFWS</a></li>
+        <li><a href="nsf.html">NSF</a></li>
+      </ul>
+      <div class="footer-col-title" style="margin-top:1.5rem;">Contact</div>
+      <ul class="footer-links">
+        <li><a href="contact.html">Tyler, Texas, USA</a></li>
+        <li><a href="contact.html">Partner Inquiries</a></li>
+        <li><a href="contact.html">Pilot Programs</a></li>
+        <li><a href="contact.html">Research Collaboration</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2026 Ætheris Automation Technologies LLC · Tyler, Texas · Privacy by Architecture</div>
+    <div class="footer-tagline">Protecting Every Life · See the Complete Path Ahead</div>
+  </div>
+</footer>
+
+</div><!-- /page-wrapper -->
+<script src="main.js"></script>
+<script>
+/* ── NEURAL HIGHWAY ANIMATION ── */
+(function () {
+  const canvas = document.getElementById('neural-highway');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+  const COLS = ['rgba(177,31,42,','rgba(46,168,168,','rgba(77,163,255,','rgba(217,164,0,'];
+  let W, H, nodes = [], pulses = [];
+  function resize() {
+    W = canvas.width = canvas.offsetWidth;
+    H = canvas.height = canvas.offsetHeight;
+    buildNodes();
+  }
+  function buildNodes() {
+    nodes = [];
+    const cols = 10, rows = 7;
+    for (let r = 0; r < rows; r++) {
+      for (let c = 0; c < cols; c++) {
+        nodes.push({ x: (c/(cols-1))*W, y: (r/(rows-1))*H, ox: (c/(cols-1))*W, oy: (r/(rows-1))*H, vx: (Math.random()-0.5)*0.15, vy: (Math.random()-0.5)*0.15, r: Math.random()*2+1.5, phase: Math.random()*Math.PI*2, col: COLS[Math.floor(Math.random()*COLS.length)] });
+      }
+    }
+    for (let i = 0; i < 50; i++) {
+      nodes.push({ x: Math.random()*W, y: Math.random()*H, ox: Math.random()*W, oy: Math.random()*H, vx: (Math.random()-0.5)*0.2, vy: (Math.random()-0.5)*0.2, r: Math.random()*1.5+0.8, phase: Math.random()*Math.PI*2, col: COLS[Math.floor(Math.random()*COLS.length)] });
+    }
+  }
+  function getEdges() {
+    const edges = [], maxDist = W*0.22;
+    for (let i = 0; i < nodes.length; i++) {
+      const dists = [];
+      for (let j = 0; j < nodes.length; j++) {
+        if (i===j) continue;
+        const dx=nodes[j].x-nodes[i].x, dy=nodes[j].y-nodes[i].y;
+        const d=Math.sqrt(dx*dx+dy*dy);
+        if (d<maxDist) dists.push({j,d});
+      }
+      dists.sort((a,b)=>a.d-b.d);
+      dists.slice(0,3).forEach(({j})=>{ if(i<j) edges.push([i,j]); });
+    }
+    return edges;
+  }
+  let t = 0;
+  function draw() {
+    window._neuralRAF = requestAnimationFrame(draw);
+    ctx.clearRect(0,0,W,H); t+=0.008;
+    for (const n of nodes) { n.x+=n.vx; n.y+=n.vy; const dx=n.x-n.ox,dy=n.y-n.oy; if(Math.sqrt(dx*dx+dy*dy)>40){n.vx*=-1;n.vy*=-1;} }
+    const edges = getEdges();
+    for (const [i,j] of edges) {
+      const a=nodes[i],b=nodes[j];
+      const mx=(a.x+b.x)/2+(Math.random()-0.5)*20, my=(a.y+b.y)/2+(Math.random()-0.5)*20;
+      const dx=b.x-a.x,dy=b.y-a.y,d=Math.sqrt(dx*dx+dy*dy);
+      const alpha=Math.max(0,0.35-d/(W*1.5));
+      ctx.beginPath(); ctx.moveTo(a.x,a.y); ctx.quadraticCurveTo(mx,my,b.x,b.y);
+      ctx.strokeStyle=a.col+alpha+')'; ctx.lineWidth=1.0; ctx.stroke();
+    }
+    if (Math.random()<0.04&&edges.length) { const [i,j]=edges[Math.floor(Math.random()*edges.length)]; pulses.push({i,j,p:0,speed:0.008+Math.random()*0.012,col:nodes[i].col}); }
+    for (let k=pulses.length-1;k>=0;k--) {
+      const pu=pulses[k]; pu.p+=pu.speed;
+      if(pu.p>1){pulses.splice(k,1);continue;}
+      const a=nodes[pu.i],b=nodes[pu.j];
+      const px=a.x+(b.x-a.x)*pu.p, py=a.y+(b.y-a.y)*pu.p;
+      const g=ctx.createRadialGradient(px,py,0,px,py,6);
+      g.addColorStop(0,pu.col+'0.9)'); g.addColorStop(1,pu.col+'0)');
+      ctx.beginPath(); ctx.arc(px,py,6,0,Math.PI*2); ctx.fillStyle=g; ctx.fill();
+    }
+    for (const n of nodes) {
+      const pulse=0.5+0.5*Math.sin(t*2+n.phase), r=n.r*(0.8+0.4*pulse), alpha=0.55+0.45*pulse;
+      const g=ctx.createRadialGradient(n.x,n.y,0,n.x,n.y,r*5);
+      g.addColorStop(0,n.col+alpha+')'); g.addColorStop(1,n.col+'0)');
+      ctx.beginPath(); ctx.arc(n.x,n.y,r*5,0,Math.PI*2); ctx.fillStyle=g; ctx.fill();
+      ctx.beginPath(); ctx.arc(n.x,n.y,r,0,Math.PI*2); ctx.fillStyle=n.col+'1)'; ctx.fill();
+    }
+  }
+  function start() {
+    cancelAnimationFrame(window._neuralRAF);
+    resize();
+    draw();
+  }
+  start();
+  window.addEventListener('resize', () => { cancelAnimationFrame(window._neuralRAF); resize(); draw(); });
+  document.addEventListener('visibilitychange', () => { if (!document.hidden) { cancelAnimationFrame(window._neuralRAF); draw(); } });
+  // Fix bfcache: when user navigates back, cancel any stale loop and restart cleanly
+  window.addEventListener('pageshow', (e) => { if (e.persisted) { cancelAnimationFrame(window._neuralRAF); pulses = []; start(); } });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Community — Ætheris Automation Technologies · Tyler, Texas</title>
+<meta name="description" content="Ætheris is rooted in Tyler, Texas. Learn about our home corridors, local agency partners, and our commitment to Smith County and East Texas.">
+<link rel="stylesheet" href="style.css">
+<style>
+/* ── TYLER, TEXAS SECTION ── */
+.tyler-section {
+  background: var(--deep);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 6rem 3rem;
+  position: relative; overflow: hidden;
+}
+.tyler-section::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse 70% 60% at 15% 50%, rgba(177,31,42,0.05) 0%, transparent 60%);
+  pointer-events: none;
+}
+.tyler-inner { max-width: 1100px; margin: 0 auto; position: relative; z-index: 1; }
+
+.tyler-header-row {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start;
+  margin-bottom: 4rem;
+}
+.tyler-intro h2 {
+  font-family: 'Orbitron', monospace;
+  font-size: clamp(1.6rem, 3vw, 2.4rem); font-weight: 800;
+  line-height: 1.1; margin-bottom: 1.25rem;
+}
+.tyler-intro h2 .ae { color: var(--crimson); }
+.tyler-intro p { font-size: 0.95rem; color: var(--ash); line-height: 1.9; margin-bottom: 1rem; }
+.tyler-intro p strong { color: var(--frost); }
+
+.tyler-identity {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  position: relative; overflow: hidden;
+}
+.tyler-identity::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; height: 3px;
+  background: linear-gradient(90deg, var(--crimson) 0%, var(--gold) 50%, var(--teal) 100%);
+}
+.ti-header {
+  padding: 1.5rem 1.75rem;
+  border-bottom: 1px solid var(--border);
+  display: flex; align-items: center; gap: 1rem;
+}
+.ti-flag { font-size: 2rem; }
+.ti-name { font-family: 'Orbitron', monospace; font-size: 1.1rem; font-weight: 700; }
+.ti-sub { font-family: 'Barlow Condensed', sans-serif; font-size: 0.62rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--ash); margin-top: 0.15rem; }
+.ti-facts { padding: 0; }
+.ti-fact {
+  display: flex; align-items: flex-start; gap: 1rem;
+  padding: 1rem 1.75rem;
+  border-bottom: 1px solid rgba(242,245,247,0.05);
+  font-size: 0.88rem; transition: background 0.2s;
+}
+.ti-fact:last-child { border-bottom: none; }
+.ti-fact:hover { background: rgba(255,255,255,0.02); }
+.ti-fact-icon { font-size: 1rem; flex-shrink: 0; width: 1.25rem; text-align: center; padding-top: 0.05rem; }
+.ti-fact-body { color: var(--ash); line-height: 1.6; }
+.ti-fact-body strong { color: var(--frost); font-weight: 500; }
+.ti-footer {
+  padding: 1rem 1.75rem;
+  background: rgba(177,31,42,0.06);
+  border-top: 1px solid rgba(177,31,42,0.12);
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--crimson); text-align: center;
+}
+
+/* ── CORRIDORS ── */
+.corridors-section { margin-bottom: 4rem; }
+.corridors-section h3 {
+  font-family: 'Orbitron', monospace; font-size: 1.1rem; font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+.corridors-section .sub { font-size: 0.88rem; color: var(--ash); margin-bottom: 2rem; line-height: 1.7; }
+.corridor-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 1px; background: var(--border);
+  border: 1px solid var(--border);
+}
+.corridor-card {
+  background: var(--abyss); padding: 1.75rem 1.5rem;
+  position: relative; overflow: hidden;
+  transition: background 0.3s;
+}
+.corridor-card:hover { background: var(--panel); }
+.corridor-top { position: absolute; top: 0; left: 0; right: 0; height: 2px; transform: scaleX(0); transform-origin: left; transition: transform 0.4s; }
+.corridor-card:hover .corridor-top { transform: scaleX(1); }
+.corridor-card--primary .corridor-top { background: var(--crimson); }
+.corridor-card--secondary .corridor-top { background: var(--gold); }
+.corridor-card--tertiary .corridor-top { background: var(--teal); }
+.corridor-route {
+  font-family: 'Orbitron', monospace; font-size: 1rem; font-weight: 700;
+  margin-bottom: 0.3rem;
+}
+.corridor-card--primary .corridor-route { color: var(--crimson); }
+.corridor-card--secondary .corridor-route { color: var(--gold); }
+.corridor-card--tertiary .corridor-route { color: var(--teal); }
+.corridor-name {
+  font-family: 'Barlow Condensed', sans-serif; font-size: 0.65rem;
+  letter-spacing: 0.2em; text-transform: uppercase; color: var(--ash);
+  margin-bottom: 0.85rem;
+}
+.corridor-desc { font-size: 0.85rem; color: var(--ash); line-height: 1.7; margin-bottom: 0.75rem; }
+.corridor-desc strong { color: var(--frost); }
+.corridor-tags { display: flex; flex-wrap: wrap; gap: 0.35rem; }
+.ctag {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.58rem; letter-spacing: 0.12em; text-transform: uppercase;
+  padding: 0.2rem 0.55rem;
+  border: 1px solid rgba(242,245,247,0.1);
+  color: var(--ash);
+}
+
+/* ── LOCAL AGENCIES ── */
+.agencies-section { }
+.agencies-section h3 {
+  font-family: 'Orbitron', monospace; font-size: 1.1rem; font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+.agencies-section .sub { font-size: 0.88rem; color: var(--ash); margin-bottom: 2rem; line-height: 1.7; }
+.agencies-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 1px; background: var(--border);
+  border: 1px solid var(--border);
+}
+.agency-card {
+  background: var(--abyss); padding: 1.5rem 1.25rem;
+  transition: background 0.25s; position: relative; overflow: hidden;
+}
+.agency-card:hover { background: var(--panel); }
+.agency-stripe { position: absolute; top: 0; left: 0; right: 0; height: 2px; background: var(--crimson); transform: scaleX(0); transform-origin: left; transition: transform 0.35s; }
+.agency-card:hover .agency-stripe { transform: scaleX(1); }
+.agency-icon { font-size: 1.4rem; margin-bottom: 0.6rem; }
+.agency-name { font-family: 'Barlow Condensed', sans-serif; font-size: 0.85rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; color: var(--frost); margin-bottom: 0.3rem; line-height: 1.3; }
+.agency-type { font-family: 'Barlow Condensed', sans-serif; font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ash); margin-bottom: 0.5rem; }
+.agency-note { font-size: 0.8rem; color: var(--ash); line-height: 1.6; }
+
+@media(max-width:900px){
+  .tyler-header-row { grid-template-columns: 1fr; gap: 3rem; }
+  .corridor-grid { grid-template-columns: 1fr 1fr; }
+  .agencies-grid { grid-template-columns: 1fr 1fr; }
+  .tyler-section { padding: 4rem 1.5rem; }
+}
+@media(max-width:600px){
+  .corridor-grid { grid-template-columns: 1fr; }
+  .agencies-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+<canvas id="starfield"></canvas>
+<div class="page-wrapper">
+
+<nav class="site-nav">
+  <a class="nav-logo" href="index.html">
+    <span class="nav-hex">Æ</span>
+    <span class="nav-wordmark">Ætheris<small>Automation Technologies</small></span>
+  </a>
+  <ul class="nav-menu">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="mission.html">Our Mission</a></li>
+    <li><a href="awcmp.html">Sentinels of the Wild</a></li>
+    <li><a href="products.html">What We Build</a></li>
+    <li><a href="stakeholders.html">Stakeholders</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="community.html" class="nav-active">Community</a></li>
+  </ul>
+  <div class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></div>
+  <a class="nav-cta" href="contact.html">Partner With Us</a>
+</nav>
+
+<main class="page-body">
+
+<div class="page-header">
+  <div class="page-header-inner">
+    <p class="ph-eyebrow">Tyler, Texas · Smith County</p>
+    <h1 class="ph-title"><span style="color:var(--crimson);">Æ</span>theris &amp;<br><span class="accent">Our Community</span></h1>
+    <p class="ph-lead">Rooted in East Texas. Built for the corridors, agencies, and people of Tyler and Smith County — and every road that connects them.</p>
+  </div>
+</div>
+
+<section class="tyler-section">
+  <div class="tyler-inner">
+
+    <div class="tyler-header-row">
+      <!-- LEFT: Intro -->
+      <div class="tyler-intro fade-up">
+        <p class="eyebrow eyebrow--crimson" style="margin-bottom:1.25rem;">Home Base</p>
+        <h2><span class="ae">Æ</span>theris is<br>Tyler, Texas</h2>
+        <p>We didn't choose Tyler arbitrarily. <strong>Tyler is ground zero for the problem we solve.</strong> The Piney Woods highways that radiate from Smith County — Loop 49, US 69, SH 31, FM 14, SH 64 — are exactly the corridors where deer strikes, roadway departures, and crash discovery delays cost lives every year.</p>
+        <p>East Texas is rose country, lake country, pine forest country. It's also rural highway country — two-lane roads where a crash at 11pm may not be discovered until dawn. <strong>That's the gap Ætheris was built to close.</strong> Starting here. Starting with the roads we know.</p>
+        <p style="margin-bottom:0;">Tyler is the <strong>Rose Capital of America</strong>. It's also the city where we intend to build the first proof that intelligent highway infrastructure can protect both the people who drive these roads — and the wildlife that crosses them.</p>
+      </div>
+
+      <!-- RIGHT: Identity card -->
+      <div class="tyler-identity fade-up delay-1">
+        <div class="ti-header">
+          <span class="ti-flag">🌹</span>
+          <div>
+            <div class="ti-name">Tyler, Texas</div>
+            <div class="ti-sub">Smith County · East Texas · Founded 1846</div>
+          </div>
+        </div>
+        <div class="ti-facts">
+          <div class="ti-fact">
+            <span class="ti-fact-icon">🌹</span>
+            <span class="ti-fact-body"><strong>Rose Capital of America</strong> — Tyler grows the majority of U.S. commercially cultivated roses. The Rose Festival has run since 1933.</span>
+          </div>
+          <div class="ti-fact">
+            <span class="ti-fact-icon">🌲</span>
+            <span class="ti-fact-body"><strong>Piney Woods gateway</strong> — Tyler sits at the western edge of the East Texas pine forest, where whitetail deer, feral hogs, and other wildlife routinely cross rural highways at night.</span>
+          </div>
+          <div class="ti-fact">
+            <span class="ti-fact-icon">🏥</span>
+            <span class="ti-fact-body"><strong>Regional medical hub</strong> — UT Health East Texas and CHRISTUS Mother Frances make Tyler the trauma care destination for a 35-county region. Faster crash notification saves those transfer minutes.</span>
+          </div>
+          <div class="ti-fact">
+            <span class="ti-fact-icon">🎓</span>
+            <span class="ti-fact-body"><strong>University of Texas at Tyler</strong> — A research partner in our backyard for AI, engineering, and transportation safety collaboration.</span>
+          </div>
+          <div class="ti-fact">
+            <span class="ti-fact-icon">🛣️</span>
+            <span class="ti-fact-body"><strong>TxDOT District 11 seat</strong> — Tyler is the administrative home of TxDOT's Atlanta District, our primary state DOT partner for corridor deployment across ETX.</span>
+          </div>
+        </div>
+        <div class="ti-footer">East Texas · Rose Capital · Where the mission meets the road</div>
+      </div>
+    </div>
+
+    <!-- CORRIDORS -->
+    <div class="corridors-section fade-up">
+      <p class="eyebrow eyebrow--crimson" style="margin-bottom:0.75rem;">Priority Corridors</p>
+      <h3>The Roads <span style="color:var(--crimson);">We're Here to Protect</span></h3>
+      <p class="sub">These are the Tyler-area and East Texas corridors where Ætheris seeks its first pilot deployments — roads with documented wildlife collision histories, high deer crossing frequency, rural character, and the emergency response geography that makes early crash detection most critical.</p>
+
+      <div class="corridor-grid">
+        <div class="corridor-card corridor-card--primary fade-up">
+          <div class="corridor-top"></div>
+          <div class="corridor-route">Loop 49</div>
+          <div class="corridor-name">Tyler Outer Loop · Smith County</div>
+          <p class="corridor-desc"><strong>The highest-priority corridor in our pilot plan.</strong> Loop 49 encircles Tyler through transitional terrain — suburban edges giving way to wooded floodplains and brushy lowlands where deer movement is highest. The loop's partial completion means long rural segments with minimal lighting, high speed limits, and sparse emergency services coverage on the eastern and southern arcs.</p>
+          <div class="corridor-tags">
+            <span class="ctag">Primary Pilot Target</span>
+            <span class="ctag">Deer Crossing Density</span>
+            <span class="ctag">Rural Segments</span>
+            <span class="ctag">TxDOT District 11</span>
+          </div>
+        </div>
+
+        <div class="corridor-card corridor-card--secondary fade-up delay-1">
+          <div class="corridor-top"></div>
+          <div class="corridor-route">US 69 / US 271</div>
+          <div class="corridor-name">North–South Spine · Tyler to Lufkin</div>
+          <p class="corridor-desc">The primary north-south corridor through deep East Texas pine country. US 69 connects Tyler to Jacksonville, Rusk, Alto, Lufkin — threading through the Davy Crockett and Angelina National Forest zones where wildlife pressure is extreme and nighttime crash discovery delays are among the longest in the state.</p>
+          <div class="corridor-tags">
+            <span class="ctag">National Forest Adjacent</span>
+            <span class="ctag">High Wildlife Pressure</span>
+            <span class="ctag">Long Isolation Segments</span>
+          </div>
+        </div>
+
+        <div class="corridor-card corridor-card--tertiary fade-up delay-2">
+          <div class="corridor-top"></div>
+          <div class="corridor-route">SH 31</div>
+          <div class="corridor-name">East–West Corridor · Tyler to Longview</div>
+          <p class="corridor-desc">SH 31 runs east-west through the agricultural and timber transition zone between Tyler and Longview — two-lane segments across creek bottoms and cattle land where deer crossings are frequent and emergency response is thin. A key inter-city corridor with rural character and high accident-to-response delay ratios.</p>
+          <div class="corridor-tags">
+            <span class="ctag">Rural Two-Lane</span>
+            <span class="ctag">Creek Crossings</span>
+            <span class="ctag">Agricultural Transition</span>
+          </div>
+        </div>
+
+        <div class="corridor-card corridor-card--secondary fade-up">
+          <div class="corridor-top"></div>
+          <div class="corridor-route">FM 14 / SH 155</div>
+          <div class="corridor-name">Northeast Smith County · Lake Country</div>
+          <p class="corridor-desc">FM 14 and SH 155 wind through the Lake Tyler and Lake Palestine lake country northeast of Tyler — narrow rural roads through dense timber, heavy recreational traffic on weekends, and the creek and riparian zones that produce consistent deer-vehicle conflicts. These roads also serve communities with limited cell coverage.</p>
+          <div class="corridor-tags">
+            <span class="ctag">Lake Country</span>
+            <span class="ctag">No Cell Coverage</span>
+            <span class="ctag">Riparian Crossings</span>
+          </div>
+        </div>
+
+        <div class="corridor-card corridor-card--primary fade-up delay-1">
+          <div class="corridor-top"></div>
+          <div class="corridor-route">SH 64</div>
+          <div class="corridor-name">West Corridor · Tyler to Mineola</div>
+          <p class="corridor-desc">SH 64 heads west from Tyler through the rolling timber country toward Mineola and the Sabine River valley — a corridor where nighttime deer strikes are well-documented and the nearest trauma center for a western segment crash is back in Tyler, making response time a life-or-death variable.</p>
+          <div class="corridor-tags">
+            <span class="ctag">Sabine Valley</span>
+            <span class="ctag">Nighttime Deer Strikes</span>
+            <span class="ctag">Long EMS Response</span>
+          </div>
+        </div>
+
+        <div class="corridor-card corridor-card--tertiary fade-up delay-2">
+          <div class="corridor-top"></div>
+          <div class="corridor-route">US 80 / I-20</div>
+          <div class="corridor-name">Eastern Bypass · ETX Freight Spine</div>
+          <p class="corridor-desc">The I-20/US 80 corridor east of Tyler toward Kilgore and Longview carries high freight volume through pine flatlands and river crossings. While the interstate itself is well-monitored, the adjacent frontage roads and parallel rural routes see wildlife pressure and low supervision — secondary corridor for our regional network.</p>
+          <div class="corridor-tags">
+            <span class="ctag">Freight Corridor</span>
+            <span class="ctag">Rural Adjacency</span>
+            <span class="ctag">Secondary Priority</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- LOCAL AGENCIES -->
+    <div class="agencies-section fade-up" style="margin-top:4rem;">
+      <p class="eyebrow eyebrow--crimson" style="margin-bottom:0.75rem;">Local Partners</p>
+      <h3>Agencies We Work With in <span style="color:var(--crimson);">Tyler &amp; Smith County</span></h3>
+      <p class="sub">These are the local and regional agencies whose operations are directly improved by Ætheris corridor intelligence — the first relationships we're building as we move toward our first East Texas pilot deployment.</p>
+
+      <div class="agencies-grid">
+        <div class="agency-card fade-up">
+          <div class="agency-stripe"></div>
+          <div class="agency-icon">🚒</div>
+          <div class="agency-name">Tyler Fire Department</div>
+          <div class="agency-type">Fire · Rescue · Hazmat</div>
+          <p class="agency-note">Auto-dispatch notification for roadway departure events on corridors within Tyler city limits and response zones. Reduces crash-to-notification time on every covered road.</p>
+        </div>
+        <div class="agency-card fade-up delay-1">
+          <div class="agency-stripe"></div>
+          <div class="agency-icon">⭐</div>
+          <div class="agency-name">Smith County Sheriff</div>
+          <div class="agency-type">Law Enforcement · Rural Patrol</div>
+          <p class="agency-note">Sheriff's patrol deputies cover the rural county roads and unincorporated corridors where crash discovery delays are longest. Direct notification closes the gap between incident and response.</p>
+        </div>
+        <div class="agency-card fade-up delay-2">
+          <div class="agency-stripe"></div>
+          <div class="agency-icon">🚑</div>
+          <div class="agency-name">ETMC / UT Health EMS</div>
+          <div class="agency-type">Emergency Medical Services</div>
+          <p class="agency-note">East Texas Medical Center and UT Health East Texas EMS serve as the primary trauma transport system for Smith County and 35 surrounding counties. Every minute gained on rural crash notification is a clinical advantage.</p>
+        </div>
+        <div class="agency-card fade-up delay-3">
+          <div class="agency-stripe"></div>
+          <div class="agency-icon">🏥</div>
+          <div class="agency-name">UT Health East Texas</div>
+          <div class="agency-type">Trauma Center · Regional Hospital</div>
+          <p class="agency-note">Tyler's Level II Trauma Center is the destination for crash victims across the region. Advance notification of incoming trauma — enabled by Ætheris crash detection — supports trauma team pre-activation and improves outcomes.</p>
+        </div>
+        <div class="agency-card fade-up">
+          <div class="agency-stripe"></div>
+          <div class="agency-icon">🛣️</div>
+          <div class="agency-name">TxDOT District 11</div>
+          <div class="agency-type">State DOT · Atlanta District</div>
+          <p class="agency-note">TxDOT's Atlanta District is headquartered in Tyler and maintains the state highway system across all of East Texas. Loop 49, US 69, SH 31, and SH 64 all fall under District 11 jurisdiction — our primary state infrastructure partner.</p>
+        </div>
+        <div class="agency-card fade-up delay-1">
+          <div class="agency-stripe"></div>
+          <div class="agency-icon">🏛️</div>
+          <div class="agency-name">Smith County Commissioners</div>
+          <div class="agency-type">County Government · Road &amp; Bridge</div>
+          <p class="agency-note">Smith County's Road &amp; Bridge department maintains the FM and county road system that connects rural communities to Tyler. County Commissioners control local infrastructure investment and can authorize corridor pilot agreements.</p>
+        </div>
+        <div class="agency-card fade-up delay-2">
+          <div class="agency-stripe"></div>
+          <div class="agency-icon">🦌</div>
+          <div class="agency-name">TPWD Region 3</div>
+          <div class="agency-type">Texas Parks &amp; Wildlife</div>
+          <p class="agency-note">Texas Parks &amp; Wildlife Department's Region 3 covers East Texas and monitors white-tailed deer populations, feral hog pressure, and wildlife corridor health. TPWD collision data and habitat maps directly inform Ætheris sensor placement.</p>
+        </div>
+        <div class="agency-card fade-up delay-3">
+          <div class="agency-stripe"></div>
+          <div class="agency-icon">🎓</div>
+          <div class="agency-name">University of Texas Tyler</div>
+          <div class="agency-type">Research Partner · Academic</div>
+          <p class="agency-note">UT Tyler's engineering and data science programs provide a research collaboration opportunity in Ætheris' own backyard — for AI model development, field study design, and joint grant applications with NSF and DOT.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section section--void" style="text-align:center;padding:7rem 3rem;">
+  <p class="eyebrow eyebrow--crimson fade-up" style="justify-content:center;">Connect</p>
+  <h2 class="section-title fade-up delay-1">Ready to Partner<br>With Us?</h2>
+  <p style="font-size:1.05rem;color:var(--ash);max-width:500px;margin:0 auto 2.5rem;line-height:1.8;" class="fade-up delay-2">If you're a Tyler or Smith County agency, organization, or institution — we want to hear from you. These are the partnerships that make the mission real.</p>
+  <div class="flex flex-center gap-1 fade-up delay-3" style="flex-wrap:wrap;">
+    <a class="btn btn--primary" href="contact.html">Reach Out</a>
+    <a class="btn btn--outline" href="awcmp.html">Explore Our Technology</a>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand-hex">Æ</div>
+      <div class="footer-brand-name">Ætheris Automation Technologies</div>
+      <div class="footer-brand-sub">Sentinels of the Wild</div>
+      <p class="footer-brand-desc">AI-powered safety for every road, every life — protecting humans, wildlife, and communities through intelligent highway infrastructure.</p>
+    </div>
+    <div>
+      <div class="footer-col-title">Navigate</div>
+      <ul class="footer-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="mission.html">Our Mission</a></li>
+        <li><a href="awcmp.html">Sentinels of the Wild</a></li>
+        <li><a href="products.html">What We Build</a></li>
+        <li><a href="stakeholders.html">Stakeholders</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="community.html">Community</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="sitemap.html">Site Map</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Stakeholders</div>
+      <ul class="footer-links">
+        <li><a href="fire.html">Fire &amp; Rescue</a></li>
+        <li><a href="police.html">Law Enforcement</a></li>
+        <li><a href="ems.html">Emergency Medical</a></li>
+        <li><a href="insurance.html">Insurance</a></li>
+        <li><a href="tow.html">Towing &amp; Recovery</a></li>
+        <li><a href="dot-state.html">State DOTs</a></li>
+        <li><a href="wildlife.html">Wildlife Agencies</a></li>
+        <li><a href="community.html">Communities</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Grant Partners</div>
+      <ul class="footer-links">
+        <li><a href="usdot.html">USDOT</a></li>
+        <li><a href="fhwa.html">FHWA</a></li>
+        <li><a href="usfws.html">USFWS</a></li>
+        <li><a href="nsf.html">NSF</a></li>
+      </ul>
+      <div class="footer-col-title" style="margin-top:1.5rem;">Contact</div>
+      <ul class="footer-links">
+        <li><a href="contact.html">Tyler, Texas, USA</a></li>
+        <li><a href="contact.html">Partner Inquiries</a></li>
+        <li><a href="contact.html">Pilot Programs</a></li>
+        <li><a href="contact.html">Research Collaboration</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2026 Ætheris Automation Technologies LLC · Tyler, Texas · Privacy by Architecture</div>
+    <div class="footer-tagline">Protecting Every Life · See the Complete Path Ahead</div>
+  </div>
+</footer>
+
+</div>
+<script src="main.js"></script>
+</body>
+</html>

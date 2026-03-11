@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Emergency Medical Services — Ætheris Stakeholders</title>
+<meta name="description" content="How Ætheris AWCMP serves EMS agencies with automatic crash detection, instant dispatch, and rural trauma response intelligence.">
+<link rel="stylesheet" href="style.css">
+<style>
+.partner-hero { padding: 5rem 3rem; background: var(--deep); border-bottom: 1px solid var(--border); }
+.partner-hero-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1.4fr; gap: 5rem; align-items: center; }
+.partner-emblem-block { display: flex; flex-direction: column; align-items: center; gap: 1.5rem; }
+.partner-hex { width: 120px; height: 120px; background: var(--green); clip-path: polygon(50% 0%,100% 25%,100% 75%,50% 100%,0% 75%,0% 25%); display: flex; align-items: center; justify-content: center; font-size: 3.5rem; animation: hexPulse 4s ease-in-out infinite; }
+@keyframes hexPulse { 50% { box-shadow: 0 0 40px rgba(60,203,127,0.5); } }
+.partner-desc { font-size: 1rem; color: var(--ash); line-height: 1.9; }
+.partner-desc strong { color: var(--frost); }
+.exchange-section--a { padding: 5rem 3rem; background: var(--abyss); }
+.exchange-section--b { padding: 5rem 3rem; background: var(--deep); }
+.exchange-inner { max-width: 1100px; margin: 0 auto; }
+.exchange-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--border); border: 1px solid var(--border); margin-top: 2.5rem; }
+.ex-card { background: var(--abyss); padding: 2rem 1.75rem; position: relative; transition: background 0.3s; }
+.exchange-section--b .ex-card { background: var(--deep); }
+.ex-card:hover { background: var(--panel); }
+.ex-stripe { position: absolute; top: 0; left: 0; right: 0; height: 2px; background: var(--green); transform: scaleX(0); transform-origin: left; transition: transform 0.4s; }
+.ex-card:hover .ex-stripe { transform: scaleX(1); }
+.ex-icon { font-size: 1.75rem; margin-bottom: 0.75rem; }
+.ex-card h4 { font-family: 'Barlow Condensed', sans-serif; font-size: 1rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 0.5rem; color: var(--frost); }
+.ex-card p { font-size: 0.88rem; color: var(--ash); line-height: 1.75; }
+.golden-hour { max-width: 800px; margin: 2.5rem auto 0; padding: 2.5rem 3rem; border: 1px solid rgba(60,203,127,0.25); background: rgba(60,203,127,0.04); }
+.golden-hour p { font-size: 1.1rem; color: var(--frost); line-height: 1.8; font-weight: 300; }
+.golden-hour strong { color: var(--green); font-weight: 600; }
+.cta-section { padding: 6rem 3rem; background: var(--void); text-align: center; }
+@media(max-width:900px){ .partner-hero-inner { grid-template-columns: 1fr; gap: 3rem; } .exchange-grid { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<canvas id="starfield"></canvas>
+<div class="page-wrapper">
+<nav class="site-nav">
+  <a class="nav-logo" href="index.html"><span class="nav-hex">Æ</span><span class="nav-wordmark"><span style="color:var(--crimson);">Æ</span>theris<small>Automation Technologies</small></span></a>
+  <ul class="nav-menu">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="mission.html">Our Mission</a></li>
+    <li><a href="awcmp.html">Sentinels of the Wild</a></li>
+    <li><a href="products.html">What We Build</a></li>
+    <li><a href="stakeholders.html">Stakeholders</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="community.html">Community</a></li>
+  </ul>
+  <div class="nav-toggle"><span></span><span></span><span></span></div>
+  <a class="nav-cta" href="contact.html">Partner With Us</a>
+</nav>
+
+<main class="page-body">
+<div class="page-header">
+  <div class="page-header-inner">
+    <p class="ph-eyebrow">Stakeholders · Emergency Medical</p>
+    <h1 class="ph-title"><span style="color:var(--crimson);">Æ</span>theris for<br><span style="color:var(--green);">EMS Agencies</span></h1>
+    <p class="ph-lead">The golden hour is not metaphor — it is medicine. AWCMP automatically notifies EMS the moment a vehicle departs the roadway, reclaiming the minutes that determine whether a rural crash victim survives.</p>
+  </div>
+</div>
+
+<div class="partner-hero">
+  <div class="partner-hero-inner">
+    <div class="partner-emblem-block fade-up">
+      <div class="partner-hex">🚑</div>
+      <div style="font-family:'Orbitron',monospace;font-size:1.4rem;font-weight:900;color:var(--green);letter-spacing:0.1em;">EMS</div>
+      <div style="font-family:'Barlow Condensed',sans-serif;font-size:0.72rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--ash);">Paramedics · EMTs · Air Medical · Trauma Teams</div>
+      <span class="badge badge--green" style="margin-top:0.5rem;">Trauma Response Partner</span>
+    </div>
+    <div class="partner-desc fade-up delay-1">
+      <p>The average crash-to-EMS arrival time in rural corridors without automatic detection exceeds 30 minutes — not because medics are slow, but because nobody called. In low-traffic rural zones, a crash can sit unwitnessed through multiple daylight cycles. <strong>That delay is the difference between a trauma patient and a fatality statistic.</strong></p>
+      <p><span style="color:var(--crimson);">Æ</span>theris AWCMP eliminates the discovery gap entirely. When a vehicle departs the roadway, sensors confirm the event and push a notification directly to EMS dispatch within seconds — with GPS coordinates, corridor identification, and departure severity data. Paramedics are activated while the crash scene is still hot.</p>
+      <p>For EMS agencies stretching thin resources across vast rural territories, AWCMP is the early warning system that turns impossible coverage ratios into manageable ones.</p>
+    </div>
+  </div>
+</div>
+
+<hr class="rule">
+
+<section class="exchange-section--a">
+  <div class="exchange-inner">
+    <p class="eyebrow eyebrow--green fade-up">What <span style="color:var(--crimson);">Æ</span>theris Brings</p>
+    <h2 class="section-title fade-up delay-1">What EMS Gets<br>from AWCMP</h2>
+    <div class="golden-hour fade-up delay-2">
+      <p><strong>The Golden Hour is a real medical window.</strong> For traumatic brain injury, internal hemorrhage, spinal cord trauma, and crush injuries, outcomes degrade rapidly after the first 60 minutes. In rural corridors today, EMS often arrives 45–90 minutes post-crash — not because of slow response, but because no one triggered the response. AWCMP triggers it automatically.</p>
+    </div>
+    <div class="exchange-grid fade-up delay-1" style="margin-top:1.5rem;">
+      <div class="ex-card"><div class="ex-stripe"></div><div class="ex-icon">⚡</div><h4>Instant CAD Crash Notification</h4><p>Confirmed vehicle departure events push directly to Computer-Aided Dispatch in seconds. EMS units are activated before any 911 call — often before bystanders have even noticed the crash.</p></div>
+      <div class="ex-card"><div class="ex-stripe"></div><div class="ex-icon">📍</div><h4>Precise GPS Scene Location</h4><p>Exact coordinates for every event — no rural address ambiguity, no wrong-turn delays. Medics navigate directly to the point of impact, not to a general vicinity.</p></div>
+      <div class="ex-card"><div class="ex-stripe"></div><div class="ex-icon">📡</div><h4>Off-Grid Alert Reliability</h4><p>AWCMP operates on mesh radio with satellite backup — alert capability survives in zero-cell zones where rural crashes are most likely to go undiscovered. No cellular service required for life-saving notification.</p></div>
+      <div class="ex-card"><div class="ex-stripe"></div><div class="ex-icon">🗺️</div><h4>Air Medical Routing Intelligence</h4><p>Corridor data from AWCMP — including terrain profiles, landing zone proximity, and crash frequency mapping — informs air medical pre-positioning and routing decisions for high-volume wildlife corridors.</p></div>
+      <div class="ex-card"><div class="ex-stripe"></div><div class="ex-icon">📊</div><h4>Response Time Documentation</h4><p>Automated event timestamps and notification logs provide EMS agencies with verifiable response time data — valuable for grant applications, performance reporting, and service area planning.</p></div>
+      <div class="ex-card"><div class="ex-stripe"></div><div class="ex-icon">🦌</div><h4>Wildlife Strike Severity Context</h4><p>Large animal collision events (deer, bear, elk) carry predictable injury patterns — airbag deployment, windshield intrusion, sudden deceleration trauma. AWCMP species data helps medics anticipate trauma profiles before arrival.</p></div>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<section class="exchange-section--b">
+  <div class="exchange-inner">
+    <p class="eyebrow eyebrow--green fade-up">What EMS Brings</p>
+    <h2 class="section-title fade-up delay-1">What EMS Agencies<br>Unlock for <span style="color:var(--crimson);">Æ</span>theris</h2>
+    <div class="exchange-grid fade-up delay-1">
+      <div class="ex-card"><div class="ex-stripe"></div><div class="ex-icon">🏥</div><h4>Outcome Data</h4><p>EMS run reports contain patient outcome data that no other source provides — linking AWCMP crash detections to clinical results and enabling genuine measurement of whether faster notification saves lives.</p></div>
+      <div class="ex-card"><div class="ex-stripe"></div><div class="ex-icon">📋</div><h4>Incident Confirmation</h4><p>EMS arrival reports confirm true-positive detections — crash occurred, injuries present, scene secured. This validated data improves AWCMP detection accuracy and reduces false activations over time.</p></div>
+      <div class="ex-card"><div class="ex-stripe"></div><div class="ex-icon">🔬</div><h4>Research Partnership Potential</h4><p>Outcome-linked crash data creates publishable research on rural EMS response time improvement — valuable for NSF research funding, academic partnerships, and peer-reviewed validation of AWCMP's safety impact.</p></div>
+      <div class="ex-card"><div class="ex-stripe"></div><div class="ex-icon">📣</div><h4>Advocacy for Deployment</h4><p>EMS medical directors and agency leadership carry credibility with county health authorities, state EMS offices, and rural hospital networks — all of whom influence where AWCMP deployment is prioritized.</p></div>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<section class="cta-section">
+  <p class="eyebrow eyebrow--green fade-up" style="justify-content:center;">Partnership Pathway</p>
+  <h2 class="section-title fade-up delay-1">Give Your Crews the<br>Call They Need</h2>
+  <p style="font-size:1.05rem;color:var(--ash);max-width:520px;margin:0 auto 2.5rem;line-height:1.8;" class="fade-up delay-2">We are building partnerships with EMS agencies and trauma centers in rural Texas corridors. If your service area has roads that swallow crashes in the dark, we need to talk.</p>
+  <div class="flex flex-center gap-1 fade-up delay-3" style="flex-wrap:wrap;">
+    <a class="btn btn--primary" href="contact.html">Start a Conversation</a>
+    <a class="btn btn--outline" href="stakeholders.html">All Stakeholders</a>
+  </div>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-grid">
+    <div><div class="footer-brand-hex">Æ</div><div class="footer-brand-name"><span style="color:var(--crimson);">Æ</span>theris Automation Technologies</div><div class="footer-brand-sub">Sentinels of the Wild</div><p class="footer-brand-desc">AI-powered safety for every road, every life — protecting humans, wildlife, and communities through intelligent highway infrastructure.</p></div>
+    <div><div class="footer-col-title">Navigate</div><ul class="footer-links"><li><a href="index.html">Home</a></li><li><a href="mission.html">Our Mission</a></li><li><a href="awcmp.html">Sentinels of the Wild</a></li><li><a href="products.html">What We Build</a></li><li><a href="stakeholders.html">Stakeholders</a></li><li><a href="about.html">About</a></li><li><a href="community.html">Community</a></li><li><a href="sitemap.html">Site Map</a></li></ul></div>
+    <div><div class="footer-col-title">Stakeholders</div><ul class="footer-links"><li><a href="fire.html">Fire &amp; Rescue</a></li><li><a href="police.html">Law Enforcement</a></li><li><a href="ems.html">Emergency Medical</a></li><li><a href="insurance.html">Insurance</a></li><li><a href="tow.html">Towing &amp; Recovery</a></li><li><a href="dot-state.html">State DOTs</a></li><li><a href="wildlife.html">Wildlife Agencies</a></li><li><a href="community.html">Communities</a></li></ul></div>
+    <div><div class="footer-col-title">Grant Partners</div><ul class="footer-links"><li><a href="usdot.html">USDOT</a></li><li><a href="fhwa.html">FHWA</a></li><li><a href="usfws.html">USFWS</a></li><li><a href="nsf.html">NSF</a></li></ul></div>
+  </div>
+  <div class="footer-bottom"><div class="footer-copy">© 2026 <span style="color:var(--crimson);">Æ</span>theris Automation Technologies LLC · Tyler, Texas · Privacy by Architecture</div><div class="footer-tagline">Protecting Every Life · See the Complete Path Ahead</div></div>
+</footer>
+</div>
+<script src="main.js"></script>
+</body>
+</html>

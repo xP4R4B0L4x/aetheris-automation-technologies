@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Site Map — Ætheris Automation Technologies</title>
+<meta name="description" content="Complete site map for Ætheris Automation Technologies — every page, every stakeholder, every federal partner, and all technology pages in one place.">
+<link rel="stylesheet" href="style.css">
+<style>
+/* SITEMAP PAGE */
+.sitemap-page-section {
+  padding: 5rem 3rem 6rem;
+  background: var(--abyss);
+}
+.sitemap-page-inner { max-width: 1100px; margin: 0 auto; }
+
+.sitemap-page-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+  margin-top: 3rem;
+}
+
+.sm-block {
+  border: 1px solid var(--border);
+  background: var(--deep);
+  padding: 2rem;
+  transition: border-color 0.3s, background 0.3s;
+}
+.sm-block:hover { border-color: rgba(177,31,42,0.3); background: var(--panel); }
+.sm-block-title {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.65rem; letter-spacing: 0.3em; text-transform: uppercase;
+  color: var(--crimson); margin-bottom: 1.25rem;
+  padding-bottom: 0.75rem; border-bottom: 1px solid var(--border);
+  font-weight: 600;
+}
+.sm-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 0.5rem; }
+.sm-list li a {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.9rem; letter-spacing: 0.04em;
+  color: var(--ash); text-decoration: none;
+  display: flex; align-items: center; gap: 0.5rem;
+  transition: color 0.2s, gap 0.2s; padding: 0.15rem 0;
+}
+.sm-list li a:hover { color: var(--frost); gap: 0.75rem; }
+.sm-list li a::before { content: '›'; color: var(--crimson); font-weight: 700; font-size: 1rem; line-height: 1; flex-shrink: 0; }
+.sm-divider { height: 1px; background: var(--border); margin: 1rem 0; }
+.sm-sub-title {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.6rem; letter-spacing: 0.25em; text-transform: uppercase;
+  color: var(--ash); margin: 0.75rem 0 0.5rem;
+}
+
+@media(max-width:900px){ .sitemap-page-grid { grid-template-columns: 1fr 1fr; } }
+@media(max-width:600px){ .sitemap-page-grid { grid-template-columns: 1fr; } }
+
+/* SITEMAP FOOTER SECTION */
+.sitemap-section { padding: 4rem 3rem 3rem; background: var(--void); border-top: 1px solid var(--border); }
+.sitemap-inner { max-width: 1100px; margin: 0 auto; }
+.sitemap-eyebrow { font-family: 'Barlow Condensed', sans-serif; font-size: 0.62rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--crimson); display: flex; align-items: center; justify-content: center; gap: 0.6rem; margin-bottom: 2rem; }
+.sitemap-eyebrow::before, .sitemap-eyebrow::after { content: ''; flex: 1; max-width: 80px; height: 1px; background: var(--border); }
+.sitemap-grid { display: grid; grid-template-columns: 1.2fr 1.5fr 1fr; gap: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--border); }
+.sitemap-col-title { font-family: 'Barlow Condensed', sans-serif; font-size: 0.62rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--crimson); margin-bottom: 0.8rem; font-weight: 600; }
+.sitemap-links { list-style: none; display: flex; flex-direction: column; gap: 0.4rem; margin: 0; padding: 0; }
+.sitemap-links li a { font-family: 'Barlow Condensed', sans-serif; font-size: 0.85rem; letter-spacing: 0.04em; color: var(--ash); text-decoration: none; transition: color 0.2s; }
+.sitemap-links li a:hover { color: var(--frost); }
+@media(max-width:800px){ .sitemap-grid { grid-template-columns: 1fr 1fr; } }
+@media(max-width:500px){ .sitemap-grid { grid-template-columns: 1fr; gap: 2rem; } }
+</style>
+</head>
+<body>
+<canvas id="starfield"></canvas>
+<div class="page-wrapper">
+
+<!-- NAV -->
+<nav class="site-nav">
+  <a class="nav-logo" href="index.html">
+    <span class="nav-hex">Æ</span>
+    <span class="nav-wordmark">Ætheris<small>Automation Technologies</small></span>
+  </a>
+  <ul class="nav-menu">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="mission.html">Our Mission</a></li>
+    <li><a href="awcmp.html">Sentinels of the Wild</a></li>
+    <li><a href="products.html">What We Build</a></li>
+    <li><a href="stakeholders.html">Stakeholders</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="community.html">Community</a></li>
+  </ul>
+  <div class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></div>
+  <a class="nav-cta" href="contact.html">Partner With Us</a>
+</nav>
+
+<main class="page-body">
+
+<!-- PAGE HEADER -->
+<div class="page-header">
+  <div class="page-header-inner">
+    <p class="eyebrow eyebrow--crimson ph-eyebrow">Navigation</p>
+    <h1 class="ph-title">Complete <span class="accent">Site Map</span></h1>
+    <p class="ph-lead">Every page on the Ætheris platform — organized by section so you can find exactly what you're looking for.</p>
+  </div>
+</div>
+
+<!-- SITEMAP CONTENT -->
+<section class="sitemap-page-section">
+  <div class="sitemap-page-inner">
+
+    <div class="sitemap-page-grid">
+
+      <!-- MAIN PAGES -->
+      <div class="sm-block fade-up">
+        <div class="sm-block-title">Main Pages</div>
+        <ul class="sm-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="mission.html">Our Mission</a></li>
+          <li><a href="awcmp.html">Sentinels of the Wild</a></li>
+          <li><a href="products.html">What We Build</a></li>
+          <li><a href="about.html">About Ætheris</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+        <div class="sm-divider"></div>
+        <div class="sm-sub-title">Federal Grant Partners</div>
+        <ul class="sm-list">
+          <li><a href="usdot.html">USDOT — U.S. Dept. of Transportation</a></li>
+          <li><a href="fhwa.html">FHWA — Federal Highway Administration</a></li>
+          <li><a href="usfws.html">USFWS — Fish &amp; Wildlife Service</a></li>
+          <li><a href="nsf.html">NSF — National Science Foundation</a></li>
+        </ul>
+      </div>
+
+      <!-- STAKEHOLDERS -->
+      <div class="sm-block fade-up delay-1">
+        <div class="sm-block-title">Stakeholders</div>
+        <ul class="sm-list">
+          <li><a href="stakeholders.html">All Stakeholders — Overview</a></li>
+          <li><a href="fire.html">Fire Departments &amp; Rescue</a></li>
+          <li><a href="police.html">Law Enforcement &amp; Sheriff</a></li>
+          <li><a href="ems.html">Emergency Medical Services</a></li>
+          <li><a href="insurance.html">Insurance Companies</a></li>
+          <li><a href="tow.html">Towing &amp; Recovery</a></li>
+          <li><a href="dot-state.html">State DOTs &amp; Highway Agencies</a></li>
+          <li><a href="wildlife.html">Wildlife &amp; Conservation Agencies</a></li>
+          <li><a href="community.html">Communities &amp; Tribal Nations</a></li>
+        </ul>
+      </div>
+
+      <!-- TECHNOLOGY + CONNECT -->
+      <div class="sm-block fade-up delay-2">
+        <div class="sm-block-title">Our Technology</div>
+        <ul class="sm-list">
+          <li><a href="awcmp.html">AWCMP System Overview</a></li>
+          <li><a href="products.html">Sentinel Node</a></li>
+          <li><a href="products.html">WatchPost</a></li>
+          <li><a href="products.html">PathSign</a></li>
+          <li><a href="products.html">CorridorLink</a></li>
+        </ul>
+        <div class="sm-divider"></div>
+        <div class="sm-sub-title">Connect With Us</div>
+        <ul class="sm-list">
+          <li><a href="contact.html">Partner With Us</a></li>
+          <li><a href="contact.html">Pilot Programs</a></li>
+          <li><a href="contact.html">Research Collaboration</a></li>
+          <li><a href="contact.html">Tyler, Texas, USA</a></li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- SITEMAP FOOTER SECTION -->
+<section class="sitemap-section">
+  <div class="sitemap-inner">
+    <p class="sitemap-eyebrow">Site Map</p>
+    <div class="sitemap-grid">
+      <div class="sitemap-col">
+        <div class="sitemap-col-title">Main Pages</div>
+        <ul class="sitemap-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="mission.html">Our Mission</a></li>
+          <li><a href="awcmp.html">Sentinels of the Wild</a></li>
+          <li><a href="products.html">What We Build</a></li>
+          <li><a href="about.html">About Ætheris</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="sitemap.html">Site Map</a></li>
+        </ul>
+        <div class="sitemap-col-title" style="margin-top:1.75rem;">Federal Partners</div>
+        <ul class="sitemap-links">
+          <li><a href="usdot.html">USDOT — U.S. Dept. of Transportation</a></li>
+          <li><a href="fhwa.html">FHWA — Federal Highway Administration</a></li>
+          <li><a href="usfws.html">USFWS — Fish &amp; Wildlife Service</a></li>
+          <li><a href="nsf.html">NSF — National Science Foundation</a></li>
+        </ul>
+      </div>
+      <div class="sitemap-col">
+        <div class="sitemap-col-title">Stakeholders</div>
+        <ul class="sitemap-links">
+          <li><a href="stakeholders.html">All Stakeholders — Overview</a></li>
+          <li><a href="fire.html">Fire Departments &amp; Rescue</a></li>
+          <li><a href="police.html">Law Enforcement &amp; Sheriff</a></li>
+          <li><a href="ems.html">Emergency Medical Services</a></li>
+          <li><a href="insurance.html">Insurance Companies</a></li>
+          <li><a href="tow.html">Towing &amp; Recovery</a></li>
+          <li><a href="dot-state.html">State DOTs &amp; Highway Agencies</a></li>
+          <li><a href="wildlife.html">Wildlife &amp; Conservation Agencies</a></li>
+          <li><a href="community.html">Communities &amp; Tribal Nations</a></li>
+        </ul>
+      </div>
+      <div class="sitemap-col">
+        <div class="sitemap-col-title">Connect</div>
+        <ul class="sitemap-links">
+          <li><a href="contact.html">Partner With Us</a></li>
+          <li><a href="contact.html">Pilot Programs</a></li>
+          <li><a href="contact.html">Research Collaboration</a></li>
+          <li><a href="contact.html">Tyler, Texas, USA</a></li>
+        </ul>
+        <div class="sitemap-col-title" style="margin-top:1.75rem;">Our Technology</div>
+        <ul class="sitemap-links">
+          <li><a href="awcmp.html">AWCMP System</a></li>
+          <li><a href="products.html">Sentinel Node</a></li>
+          <li><a href="products.html">WatchPost</a></li>
+          <li><a href="products.html">PathSign</a></li>
+          <li><a href="products.html">CorridorLink</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand-hex">Æ</div>
+      <div class="footer-brand-name">Ætheris Automation Technologies</div>
+      <div class="footer-brand-sub">Sentinels of the Wild</div>
+      <p class="footer-brand-desc">AI-powered safety for every road, every life — protecting humans, wildlife, and communities through intelligent highway infrastructure.</p>
+    </div>
+    <div>
+      <div class="footer-col-title">Navigate</div>
+      <ul class="footer-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="mission.html">Our Mission</a></li>
+        <li><a href="awcmp.html">Sentinels of the Wild</a></li>
+        <li><a href="products.html">What We Build</a></li>
+        <li><a href="stakeholders.html">Stakeholders</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="sitemap.html">Site Map</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Stakeholders</div>
+      <ul class="footer-links">
+        <li><a href="fire.html">Fire &amp; Rescue</a></li>
+        <li><a href="police.html">Law Enforcement</a></li>
+        <li><a href="ems.html">Emergency Medical</a></li>
+        <li><a href="insurance.html">Insurance</a></li>
+        <li><a href="tow.html">Towing &amp; Recovery</a></li>
+        <li><a href="dot-state.html">State DOTs</a></li>
+        <li><a href="wildlife.html">Wildlife Agencies</a></li>
+        <li><a href="community.html">Communities</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Grant Partners</div>
+      <ul class="footer-links">
+        <li><a href="usdot.html">USDOT</a></li>
+        <li><a href="fhwa.html">FHWA</a></li>
+        <li><a href="usfws.html">USFWS</a></li>
+        <li><a href="nsf.html">NSF</a></li>
+      </ul>
+      <div class="footer-col-title" style="margin-top:1.5rem;">Contact</div>
+      <ul class="footer-links">
+        <li><a href="contact.html">Tyler, Texas, USA</a></li>
+        <li><a href="contact.html">Partner Inquiries</a></li>
+        <li><a href="contact.html">Pilot Programs</a></li>
+        <li><a href="contact.html">Research Collaboration</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2026 Ætheris Automation Technologies LLC · Tyler, Texas · Privacy by Architecture</div>
+    <div class="footer-tagline">Protecting Every Life · See the Complete Path Ahead</div>
+  </div>
+</footer>
+
+</div><!-- /page-wrapper -->
+<script src="main.js"></script>
+</body>
+</html>

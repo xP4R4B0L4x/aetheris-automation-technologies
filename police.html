@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Law Enforcement — Ætheris Stakeholders</title>
+<meta name="description" content="How Ætheris Sentinels of the Wild supports law enforcement with instant crash detection, rural scene intelligence, and wildlife corridor data.">
+<link rel="stylesheet" href="style.css">
+<style>
+.partner-hero { padding: 5rem 3rem; background: var(--deep); border-bottom: 1px solid var(--border); }
+.partner-hero-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1.4fr; gap: 5rem; align-items: center; }
+.partner-emblem-block { display: flex; flex-direction: column; align-items: center; gap: 1.5rem; }
+.partner-hex { width: 120px; height: 120px; background: var(--ion); clip-path: polygon(50% 0%,100% 25%,100% 75%,50% 100%,0% 75%,0% 25%); display: flex; align-items: center; justify-content: center; font-size: 3.5rem; animation: hexPulse 4s ease-in-out infinite; }
+@keyframes hexPulse { 50% { box-shadow: 0 0 40px rgba(77,163,255,0.5); } }
+.partner-code { font-family: 'Orbitron', monospace; font-size: 1.4rem; font-weight: 900; color: var(--ion); letter-spacing: 0.1em; }
+.partner-fullname { font-family: 'Barlow Condensed', sans-serif; font-size: 0.72rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--ash); }
+.partner-desc { font-size: 1rem; color: var(--ash); line-height: 1.9; }
+.partner-desc strong { color: var(--frost); }
+.exchange-section--a { padding: 5rem 3rem; background: var(--abyss); }
+.exchange-section--b { padding: 5rem 3rem; background: var(--deep); }
+.exchange-inner { max-width: 1100px; margin: 0 auto; }
+.exchange-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--border); border: 1px solid var(--border); margin-top: 2.5rem; }
+.ex-card { background: var(--abyss); padding: 2rem 1.75rem; position: relative; transition: background 0.3s; }
+.exchange-section--b .ex-card { background: var(--deep); }
+.ex-card:hover { background: var(--panel); }
+.ex-stripe { position: absolute; top: 0; left: 0; right: 0; height: 2px; background: var(--ion); transform: scaleX(0); transform-origin: left; transition: transform 0.4s; }
+.ex-card:hover .ex-stripe { transform: scaleX(1); }
+.ex-icon { font-size: 1.75rem; margin-bottom: 0.75rem; }
+.ex-card h4 { font-family: 'Barlow Condensed', sans-serif; font-size: 1rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 0.5rem; color: var(--frost); }
+.ex-card p { font-size: 0.88rem; color: var(--ash); line-height: 1.75; }
+.stat-bar { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; background: rgba(77,163,255,0.15); border: 1px solid rgba(77,163,255,0.2); margin-top: 2.5rem; }
+.stat-cell { background: var(--abyss); padding: 1.75rem; text-align: center; }
+.stat-num { font-family: 'Orbitron', monospace; font-size: 2rem; font-weight: 900; color: var(--ion); display: block; margin-bottom: 0.35rem; }
+.stat-lbl { font-family: 'Barlow Condensed', sans-serif; font-size: 0.7rem; letter-spacing: 0.08em; color: var(--ash); }
+.cta-section { padding: 6rem 3rem; background: var(--void); text-align: center; }
+@media(max-width:900px){ .partner-hero-inner { grid-template-columns: 1fr; gap: 3rem; } .exchange-grid { grid-template-columns: 1fr; } .stat-bar { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<canvas id="starfield"></canvas>
+<div class="page-wrapper">
+<nav class="site-nav">
+  <a class="nav-logo" href="index.html"><span class="nav-hex">Æ</span><span class="nav-wordmark">Ætheris<small>Automation Technologies</small></span></a>
+  <ul class="nav-menu">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="mission.html">Our Mission</a></li>
+    <li><a href="awcmp.html">Sentinels of the Wild</a></li>
+    <li><a href="products.html">What We Build</a></li>
+    <li><a href="stakeholders.html">Stakeholders</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="community.html">Community</a></li>
+  </ul>
+  <div class="nav-toggle"><span></span><span></span><span></span></div>
+  <a class="nav-cta" href="contact.html">Partner With Us</a>
+</nav>
+
+<main class="page-body">
+<div class="page-header">
+  <div class="page-header-inner">
+    <p class="ph-eyebrow">Stakeholders · Law Enforcement</p>
+    <h1 class="ph-title">Ætheris for<br><span style="color:var(--ion);">Law Enforcement</span></h1>
+    <p class="ph-lead">AWCMP gives deputies and troopers what no radio dispatch system can: an autonomous alert the moment a vehicle leaves the roadway — before a witness calls, before a body is found, before the evidence is washed away.</p>
+  </div>
+</div>
+
+<div class="partner-hero">
+  <div class="partner-hero-inner">
+    <div class="partner-emblem-block fade-up">
+      <div class="partner-hex">🚔</div>
+      <div class="partner-code" style="color:var(--ion);">LAW ENFORCEMENT</div>
+      <div class="partner-fullname">Sheriff · State Troopers · Municipal Police · Game Wardens</div>
+      <span class="badge badge--ion partner-badge" style="background:rgba(77,163,255,0.1);border:1px solid rgba(77,163,255,0.3);color:var(--ion);">Public Safety Partner</span>
+    </div>
+    <div class="partner-desc fade-up delay-1">
+      <p>In rural Texas counties, a single deputy may be responsible for hundreds of square miles. A crash in a remote corridor can go undiscovered for hours while the driver remains trapped, injured, or worse. The call that finally brings help is often from the next morning's traffic — not from that night's dispatch.</p>
+      <p><strong>AWCMP changes this for every corridor it covers.</strong> Vehicle departure events trigger automatic notifications to law enforcement dispatch within seconds. Officers are rolling with GPS coordinates before the scene is cold — before evidence degrades, before golden-hour trauma becomes fatality, before the family gets a call.</p>
+      <p>And for wildlife-vehicle collisions — which deputies respond to thousands of times per year — AWCMP data helps identify the highest-risk locations so enforcement resources can be deployed where they matter most.</p>
+    </div>
+  </div>
+</div>
+
+<hr class="rule">
+
+<section class="exchange-section--a">
+  <div class="exchange-inner">
+    <p class="eyebrow fade-up" style="color:var(--ion)">What Ætheris Brings</p>
+    <h2 class="section-title fade-up delay-1">What Law Enforcement<br>Gets from AWCMP</h2>
+    <div class="stat-bar fade-up delay-2">
+      <div class="stat-cell"><span class="stat-num">Seconds</span><span class="stat-lbl">Crash-to-notification — not hours</span></div>
+      <div class="stat-cell"><span class="stat-num">GPS</span><span class="stat-lbl">Exact coordinates to every incident, every time</span></div>
+      <div class="stat-cell"><span class="stat-num">24/7</span><span class="stat-lbl">Autonomous monitoring — no deputy required on-site</span></div>
+    </div>
+    <div class="exchange-grid fade-up delay-1" style="margin-top:1px;">
+      <div class="ex-card"><div class="ex-stripe"></div><div class="ex-icon">🚨</div><h4>Automatic Crash Dispatch Notification</h4><p>Confirmed vehicle departure events push directly to CAD systems. No witness required. Officers respond to the incident — not to a reported possibility of an incident.</p></div>
+      <div class="ex-card"><div class="ex-stripe"></div><div class="ex-icon">📍</div><h4>Exact Scene Coordinates</h4><p>GPS location data for every detected event — corridor milepost, lateral offset, and direction. Eliminates the "where exactly?" problem that costs critical minutes on rural responses.</p></div>
+      <div class="ex-card"><div class="ex-stripe"></div><div class="ex-icon">📊</div><h4>Corridor Risk Intelligence</h4><p>Data on crash frequency, high-risk time windows, and historically dangerous corridor segments — actionable intelligence for patrol prioritization, speed enforcement deployment, and mutual aid pre-staging.</p></div>
+      <div class="ex-card"><div class="ex-stripe"></div><div class="ex-icon">🦌</div><h4>Wildlife Strike Data for Incident Reports</h4><p>When a wildlife-vehicle collision occurs, AWCMP provides species confirmation, time, and sensor-validated event data — reducing the time officers spend documenting and improving report accuracy.</p></div>
+      <div class="ex-card"><div class="ex-stripe"></div><div class="ex-icon">🔐</div><h4>No Surveillance, No Liability</h4><p>AWCMP carries no license plate readers, facial recognition, or persistent human tracking — meaning no FOIA complications, no civil liberties exposure, and no community friction from a system designed to protect, not monitor, residents.</p></div>
+      <div class="ex-card"><div class="ex-stripe"></div><div class="ex-icon">🌐</div><h4>Offline-Capable Communication</h4><p>The AWCMP mesh network maintains alert capability even in zero-cell coverage areas — precisely where rural law enforcement needs it most and where existing systems fail.</p></div>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<section class="exchange-section--b">
+  <div class="exchange-inner">
+    <p class="eyebrow fade-up" style="color:var(--ion)">What Law Enforcement Brings</p>
+    <h2 class="section-title fade-up delay-1">What Law Enforcement<br>Unlocks for Ætheris</h2>
+    <div class="exchange-grid fade-up delay-1">
+      <div class="ex-card"><div class="ex-stripe"></div><div class="ex-icon">📋</div><h4>Incident Ground Truth</h4><p>Deputy incident reports validate our detection data — confirming crashes, near-misses, and wildlife strikes that AWCMP flagged. This feedback loop is critical for improving AI model accuracy in real-world corridor conditions.</p></div>
+      <div class="ex-card"><div class="ex-stripe"></div><div class="ex-icon">🗺️</div><h4>Historical Incident Knowledge</h4><p>Law enforcement records contain years of crash history, location data, and contributing factors that don't exist anywhere else. That data shapes where AWCMP is most urgently needed.</p></div>
+      <div class="ex-card"><div class="ex-stripe"></div><div class="ex-icon">📣</div><h4>Institutional Endorsement</h4><p>Sheriff and DPS endorsement carries enormous weight with county commissioners, TxDOT district offices, and state safety funding programs. A law enforcement partnership accelerates deployment approvals significantly.</p></div>
+      <div class="ex-card"><div class="ex-stripe"></div><div class="ex-icon">🔗</div><h4>Inter-Agency Coordination</h4><p>Law enforcement already coordinates with fire, EMS, and game wardens. Their existing mutual aid infrastructure provides the network AWCMP alerts can flow through — expanding reach without building new channels.</p></div>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<section class="cta-section">
+  <p class="eyebrow fade-up" style="color:var(--ion);justify-content:center;">Partnership Pathway</p>
+  <h2 class="section-title fade-up delay-1">Cover Your Corridor.<br>Protect Your Community.</h2>
+  <p style="font-size:1.05rem;color:var(--ash);max-width:520px;margin:0 auto 2.5rem;line-height:1.8;" class="fade-up delay-2">We're building partnerships with county sheriffs, state troopers, and game wardens across Texas. If your jurisdiction has corridors that swallow crashes in the dark, we want to talk.</p>
+  <div class="flex flex-center gap-1 fade-up delay-3" style="flex-wrap:wrap;">
+    <a class="btn btn--primary" href="contact.html">Start a Conversation</a>
+    <a class="btn btn--outline" href="stakeholders.html">All Stakeholders</a>
+  </div>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand-hex">Æ</div>
+      <div class="footer-brand-name">Ætheris Automation Technologies</div>
+      <div class="footer-brand-sub">Sentinels of the Wild</div>
+      <p class="footer-brand-desc">AI-powered safety for every road, every life — protecting humans, wildlife, and communities through intelligent highway infrastructure.</p>
+    </div>
+    <div>
+      <div class="footer-col-title">Navigate</div>
+      <ul class="footer-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="mission.html">Our Mission</a></li>
+        <li><a href="awcmp.html">Sentinels of the Wild</a></li>
+        <li><a href="products.html">What We Build</a></li>
+        <li><a href="stakeholders.html">Stakeholders</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="sitemap.html">Site Map</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Stakeholders</div>
+      <ul class="footer-links">
+        <li><a href="fire.html">Fire &amp; Rescue</a></li>
+        <li><a href="police.html">Law Enforcement</a></li>
+        <li><a href="ems.html">Emergency Medical</a></li>
+        <li><a href="insurance.html">Insurance</a></li>
+        <li><a href="tow.html">Towing &amp; Recovery</a></li>
+        <li><a href="dot-state.html">State DOTs</a></li>
+        <li><a href="wildlife.html">Wildlife Agencies</a></li>
+        <li><a href="community.html">Communities</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Grant Partners</div>
+      <ul class="footer-links">
+        <li><a href="usdot.html">USDOT</a></li>
+        <li><a href="fhwa.html">FHWA</a></li>
+        <li><a href="usfws.html">USFWS</a></li>
+        <li><a href="nsf.html">NSF</a></li>
+      </ul>
+      <div class="footer-col-title" style="margin-top:1.5rem;">Contact</div>
+      <ul class="footer-links">
+        <li><a href="contact.html">Tyler, Texas, USA</a></li>
+        <li><a href="contact.html">Partner Inquiries</a></li>
+        <li><a href="contact.html">Pilot Programs</a></li>
+        <li><a href="contact.html">Research Collaboration</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2026 Ætheris Automation Technologies LLC · Tyler, Texas · Privacy by Architecture</div>
+    <div class="footer-tagline">Protecting Every Life · See the Complete Path Ahead</div>
+  </div>
+</footer>
+</div>
+<script src="main.js"></script>
+</body>
+</html>

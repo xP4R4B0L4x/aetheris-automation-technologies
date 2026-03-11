@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stakeholders — Ætheris Automation Technologies</title>
+<meta name="description" content="Ætheris AWCMP serves fire departments, law enforcement, EMS, insurance companies, towing companies, state DOTs, wildlife agencies, and rural communities. Every stakeholder benefits.">
+<link rel="stylesheet" href="style.css">
+<style>
+.stakeholder-hub { padding: 6rem 3rem; background: var(--deep); }
+.hub-inner { max-width: 1100px; margin: 0 auto; }
+.sh-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px;
+  background: var(--border); border: 1px solid var(--border);
+  margin-top: 3rem;
+}
+.sh-card {
+  background: var(--deep); padding: 2.5rem 2rem;
+  position: relative; overflow: hidden;
+  transition: background 0.3s;
+  display: flex; flex-direction: column; gap: 1rem;
+  text-decoration: none; color: inherit;
+}
+.sh-card:hover { background: var(--panel); }
+.sh-top { position: absolute; top: 0; left: 0; right: 0; height: 3px; transform: scaleX(0); transform-origin: left; transition: transform 0.4s; }
+.sh-card:hover .sh-top { transform: scaleX(1); }
+.sh-icon { font-size: 2.5rem; }
+.sh-label {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.58rem; letter-spacing: 0.3em; text-transform: uppercase;
+}
+.sh-name {
+  font-family: 'Orbitron', monospace;
+  font-size: 0.9rem; font-weight: 600; line-height: 1.3;
+}
+.sh-desc { font-size: 0.85rem; color: var(--ash); line-height: 1.7; }
+.sh-link {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase;
+  margin-top: auto; padding-top: 0.5rem;
+  display: flex; align-items: center; gap: 0.4rem;
+}
+.sh-link::after { content: '→'; }
+
+.principle-row {
+  max-width: 1100px; margin: 5rem auto 0;
+  display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem;
+}
+.principle-card {
+  padding: 2rem; border: 1px solid var(--border);
+  transition: border-color 0.25s, background 0.25s;
+}
+.principle-card:hover { border-color: rgba(177,31,42,0.3); background: var(--panel); }
+.pr-num { font-family: 'Orbitron', monospace; font-size: 0.55rem; letter-spacing: 0.25em; color: var(--crimson); margin-bottom: 0.75rem; }
+.pr-icon { font-size: 1.8rem; margin-bottom: 0.75rem; }
+.principle-card h3 { font-family: 'Barlow Condensed', sans-serif; font-size: 0.95rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 0.5rem; }
+.principle-card p { font-size: 0.88rem; color: var(--ash); line-height: 1.7; }
+
+.cta-section { padding: 6rem 3rem; background: var(--void); text-align: center; }
+@media(max-width:1000px){ .sh-grid { grid-template-columns: repeat(2,1fr); } }
+@media(max-width:600px){ .sh-grid { grid-template-columns: 1fr; } .principle-row { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<canvas id="starfield"></canvas>
+<div class="page-wrapper">
+<nav class="site-nav">
+  <a class="nav-logo" href="index.html"><span class="nav-hex">Æ</span><span class="nav-wordmark">Ætheris<small>Automation Technologies</small></span></a>
+  <ul class="nav-menu">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="mission.html">Our Mission</a></li>
+    <li><a href="awcmp.html">Sentinels of the Wild</a></li>
+    <li><a href="products.html">What We Build</a></li>
+    <li><a href="stakeholders.html" class="nav-active">Stakeholders</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="community.html">Community</a></li>
+  </ul>
+  <div class="nav-toggle"><span></span><span></span><span></span></div>
+  <a class="nav-cta" href="contact.html">Partner With Us</a>
+</nav>
+
+<main class="page-body">
+<div class="page-header">
+  <div class="page-header-inner">
+    <p class="ph-eyebrow">Who We Serve</p>
+    <h1 class="ph-title">One System.<br><span class="accent">Every Stakeholder.</span></h1>
+    <p class="ph-lead">AWCMP is not built for one agency or one mission. A single corridor deployment serves eight distinct stakeholder groups simultaneously — each receiving value that no existing single-purpose system provides.</p>
+  </div>
+</div>
+
+<!-- STAKEHOLDER GRID -->
+<section class="stakeholder-hub">
+  <div class="hub-inner">
+    <p class="eyebrow eyebrow--crimson fade-up">Who Benefits</p>
+    <h2 class="section-title fade-up delay-1">Every Stakeholder.<br>Real Value.</h2>
+    <p class="section-lead fade-up delay-2">Click any stakeholder to see exactly what AWCMP offers them — and what they bring to the partnership.</p>
+    <div class="sh-grid fade-up delay-1">
+
+      <a class="sh-card" href="fire.html">
+        <div class="sh-top" style="background:var(--crimson);"></div>
+        <div class="sh-icon">🚒</div>
+        <div class="sh-label" style="color:var(--crimson);">First Responders</div>
+        <div class="sh-name">Fire Departments &amp; Rescue</div>
+        <div class="sh-desc">Automatic crash-to-dispatch notification. GPS coordinates before any 911 call. Early vegetation fire detection. Off-grid alert capability.</div>
+        <div class="sh-link" style="color:var(--crimson);">Learn More</div>
+      </a>
+
+      <a class="sh-card" href="police.html">
+        <div class="sh-top" style="background:var(--ion);"></div>
+        <div class="sh-icon">🚔</div>
+        <div class="sh-label" style="color:var(--ion);">Public Safety</div>
+        <div class="sh-name">Law Enforcement</div>
+        <div class="sh-desc">Instant crash detection and dispatch. Exact scene coordinates. Corridor risk intelligence for patrol prioritization. Zero surveillance exposure.</div>
+        <div class="sh-link" style="color:var(--ion);">Learn More</div>
+      </a>
+
+      <a class="sh-card" href="ems.html">
+        <div class="sh-top" style="background:var(--green);"></div>
+        <div class="sh-icon">🚑</div>
+        <div class="sh-label" style="color:var(--green);">Emergency Medical</div>
+        <div class="sh-name">EMS Agencies</div>
+        <div class="sh-desc">Reclaim the golden hour. Automatic EMS notification the moment a vehicle departs the roadway — before any witness calls 911.</div>
+        <div class="sh-link" style="color:var(--green);">Learn More</div>
+      </a>
+
+      <a class="sh-card" href="insurance.html">
+        <div class="sh-top" style="background:var(--gold);"></div>
+        <div class="sh-icon">🏛️</div>
+        <div class="sh-label" style="color:var(--gold);">Risk Management</div>
+        <div class="sh-name">Insurance Companies</div>
+        <div class="sh-desc">Reduce wildlife collision claim frequency. Actuarial-grade corridor risk data. Validated incident documentation. Bodily injury severity reduction.</div>
+        <div class="sh-link" style="color:var(--gold);">Learn More</div>
+      </a>
+
+      <a class="sh-card" href="tow.html">
+        <div class="sh-top" style="background:var(--teal);"></div>
+        <div class="sh-icon">🚛</div>
+        <div class="sh-label" style="color:var(--teal);">Scene Response</div>
+        <div class="sh-name">Towing &amp; Recovery</div>
+        <div class="sh-desc">Faster dispatch notification. GPS location — no ambiguity. Wildlife obstruction alerts. Scene context before arrival.</div>
+        <div class="sh-link" style="color:var(--teal);">Learn More</div>
+      </a>
+
+      <a class="sh-card" href="dot-state.html">
+        <div class="sh-top" style="background:var(--ion);"></div>
+        <div class="sh-icon">🛣️</div>
+        <div class="sh-label" style="color:var(--ion);">Infrastructure</div>
+        <div class="sh-name">State DOTs</div>
+        <div class="sh-desc">Federal reporting data. MUTCD-compliant systems. ATMS integration. Off-grid deployment. FHWA Wildlife Crossing Program alignment.</div>
+        <div class="sh-link" style="color:var(--ion);">Learn More</div>
+      </a>
+
+      <a class="sh-card" href="wildlife.html">
+        <div class="sh-top" style="background:var(--green);"></div>
+        <div class="sh-icon">🦅</div>
+        <div class="sh-label" style="color:var(--green);">Conservation</div>
+        <div class="sh-name">Wildlife Agencies</div>
+        <div class="sh-desc">Real-time species crossing data. Endangered species protection. Corridor movement mapping. Conservation database integration.</div>
+        <div class="sh-link" style="color:var(--green);">Learn More</div>
+      </a>
+
+      <a class="sh-card" href="community.html">
+        <div class="sh-top" style="background:var(--mist);"></div>
+        <div class="sh-icon">🏘️</div>
+        <div class="sh-label" style="color:var(--mist);">Governance</div>
+        <div class="sh-name">Communities &amp; Tribal Nations</div>
+        <div class="sh-desc">Safer roads for residents. Data governance rights. No surveillance architecture. Local wildlife protection. Community-owned corridor data.</div>
+        <div class="sh-link" style="color:var(--mist);">Learn More</div>
+      </a>
+
+    </div>
+
+    <!-- OPERATING PRINCIPLES -->
+    <div class="principle-row fade-up delay-2">
+      <div class="principle-card">
+        <div class="pr-num">PRINCIPLE 01</div>
+        <div class="pr-icon">🔄</div>
+        <h3>One Infrastructure, Many Missions</h3>
+        <p>AWCMP does not ask each stakeholder to fund a separate system. A single corridor deployment delivers value to all eight groups simultaneously — multiplying impact from every dollar invested.</p>
+      </div>
+      <div class="principle-card">
+        <div class="pr-num">PRINCIPLE 02</div>
+        <div class="pr-icon">🤝</div>
+        <h3>Partnership, Not Extraction</h3>
+        <p>Every stakeholder relationship is designed to be genuinely mutual. We document what we bring and what we need in return — and we honor both sides of that exchange before asking for anything else.</p>
+      </div>
+      <div class="principle-card">
+        <div class="pr-num">PRINCIPLE 03</div>
+        <div class="pr-icon">🔐</div>
+        <h3>No Surveillance. Ever.</h3>
+        <p>No stakeholder relationship — including law enforcement — gives AWCMP permission to surveil people. License plate recognition, facial recognition, and persistent human tracking are excluded in hardware. Not policy. Hardware.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- GRANT PARTNERS -->
+<section style="padding:5rem 3rem;background:var(--abyss);">
+  <div style="max-width:1100px;margin:0 auto;">
+    <p class="eyebrow eyebrow--gold fade-up">Federal Partners</p>
+    <h2 class="section-title fade-up delay-1">Grant &amp; Agency Partners</h2>
+    <p class="section-lead fade-up delay-2">AWCMP is designed to satisfy the requirements of multiple federal grant programs simultaneously. See how we align with each agency's mandate.</p>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(217,164,0,0.1);border:1px solid rgba(217,164,0,0.15);margin-top:2.5rem;" class="fade-up delay-1">
+      <a href="usdot.html" style="background:var(--abyss);padding:2rem;text-decoration:none;transition:background 0.3s;display:block;" onmouseover="this.style.background='var(--panel)'" onmouseout="this.style.background='var(--abyss)'">
+        <div style="font-family:'Orbitron',monospace;font-size:1.2rem;font-weight:700;color:var(--ion);margin-bottom:0.4rem;">USDOT</div>
+        <div style="font-family:'Barlow Condensed',sans-serif;font-size:0.68rem;letter-spacing:0.1em;color:var(--ash);margin-bottom:0.75rem;">U.S. Dept. of Transportation</div>
+        <div style="font-size:0.85rem;color:var(--ash);line-height:1.65;">Safe System approach. Highway safety innovation. Roadway departure and zero fatalities mandate.</div>
+      </a>
+      <a href="fhwa.html" style="background:var(--abyss);padding:2rem;text-decoration:none;transition:background 0.3s;display:block;" onmouseover="this.style.background='var(--panel)'" onmouseout="this.style.background='var(--abyss)'">
+        <div style="font-family:'Orbitron',monospace;font-size:1.2rem;font-weight:700;color:var(--gold);margin-bottom:0.4rem;">FHWA</div>
+        <div style="font-family:'Barlow Condensed',sans-serif;font-size:0.68rem;letter-spacing:0.1em;color:var(--ash);margin-bottom:0.75rem;">Federal Highway Administration</div>
+        <div style="font-size:0.85rem;color:var(--ash);line-height:1.65;">$350M Wildlife Crossing Pilot Program. MUTCD compliance. Clear-zone hardware eligibility.</div>
+      </a>
+      <a href="usfws.html" style="background:var(--abyss);padding:2rem;text-decoration:none;transition:background 0.3s;display:block;" onmouseover="this.style.background='var(--panel)'" onmouseout="this.style.background='var(--abyss)'">
+        <div style="font-family:'Orbitron',monospace;font-size:1.2rem;font-weight:700;color:var(--green);margin-bottom:0.4rem;">USFWS</div>
+        <div style="font-family:'Barlow Condensed',sans-serif;font-size:0.68rem;letter-spacing:0.1em;color:var(--ash);margin-bottom:0.75rem;">U.S. Fish &amp; Wildlife Service</div>
+        <div style="font-size:0.85rem;color:var(--ash);line-height:1.65;">Endangered species protection. Conservation technology. Road mortality reduction data.</div>
+      </a>
+      <a href="nsf.html" style="background:var(--abyss);padding:2rem;text-decoration:none;transition:background 0.3s;display:block;" onmouseover="this.style.background='var(--panel)'" onmouseout="this.style.background='var(--abyss)'">
+        <div style="font-family:'Orbitron',monospace;font-size:1.2rem;font-weight:700;color:var(--teal);margin-bottom:0.4rem;">NSF</div>
+        <div style="font-family:'Barlow Condensed',sans-serif;font-size:0.68rem;letter-spacing:0.1em;color:var(--ash);margin-bottom:0.75rem;">National Science Foundation</div>
+        <div style="font-size:0.85rem;color:var(--ash);line-height:1.65;">Edge AI, sensor fusion, ITS research. SBIR/STTR pathway. Academic partnership network.</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<section class="cta-section">
+  <p class="eyebrow eyebrow--crimson fade-up" style="justify-content:center;">Get Involved</p>
+  <h2 class="section-title fade-up delay-1">Find Your Role<br>in the Network</h2>
+  <p style="font-size:1.05rem;color:var(--ash);max-width:520px;margin:0 auto 2.5rem;line-height:1.8;" class="fade-up delay-2">Whether you're a fire chief, an insurance actuary, a wildlife biologist, or a county commissioner — there is a seat at this table for you. Reach out and tell us which corridor you're thinking about.</p>
+  <div class="flex flex-center gap-1 fade-up delay-3" style="flex-wrap:wrap;">
+    <a class="btn btn--primary" href="contact.html">Partner With Us</a>
+    <a class="btn btn--outline" href="awcmp.html">See the Technology</a>
+  </div>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand-hex">Æ</div>
+      <div class="footer-brand-name">Ætheris Automation Technologies</div>
+      <div class="footer-brand-sub">Sentinels of the Wild</div>
+      <p class="footer-brand-desc">AI-powered safety for every road, every life — protecting humans, wildlife, and communities through intelligent highway infrastructure.</p>
+    </div>
+    <div>
+      <div class="footer-col-title">Navigate</div>
+      <ul class="footer-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="mission.html">Our Mission</a></li>
+        <li><a href="awcmp.html">Sentinels of the Wild</a></li>
+        <li><a href="products.html">What We Build</a></li>
+        <li><a href="stakeholders.html">Stakeholders</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="sitemap.html">Site Map</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Stakeholders</div>
+      <ul class="footer-links">
+        <li><a href="fire.html">Fire &amp; Rescue</a></li>
+        <li><a href="police.html">Law Enforcement</a></li>
+        <li><a href="ems.html">Emergency Medical</a></li>
+        <li><a href="insurance.html">Insurance</a></li>
+        <li><a href="tow.html">Towing &amp; Recovery</a></li>
+        <li><a href="dot-state.html">State DOTs</a></li>
+        <li><a href="wildlife.html">Wildlife Agencies</a></li>
+        <li><a href="community.html">Communities</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Grant Partners</div>
+      <ul class="footer-links">
+        <li><a href="usdot.html">USDOT</a></li>
+        <li><a href="fhwa.html">FHWA</a></li>
+        <li><a href="usfws.html">USFWS</a></li>
+        <li><a href="nsf.html">NSF</a></li>
+      </ul>
+      <div class="footer-col-title" style="margin-top:1.5rem;">Contact</div>
+      <ul class="footer-links">
+        <li><a href="contact.html">Tyler, Texas, USA</a></li>
+        <li><a href="contact.html">Partner Inquiries</a></li>
+        <li><a href="contact.html">Pilot Programs</a></li>
+        <li><a href="contact.html">Research Collaboration</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2026 Ætheris Automation Technologies LLC · Tyler, Texas · Privacy by Architecture</div>
+    <div class="footer-tagline">Protecting Every Life · See the Complete Path Ahead</div>
+  </div>
+</footer>
+</div>
+<script src="main.js"></script>
+</body>
+</html>

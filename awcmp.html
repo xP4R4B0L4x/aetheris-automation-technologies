@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sentinels of the Wild — Ætheris Automation Technologies</title>
+<meta name="description" content="The Adaptive Wildlife Collision Mitigation and Prevention System — AI-powered roadway sentinels that protect wildlife and human lives.">
+<link rel="stylesheet" href="style.css">
+<style>
+/* AWCMP PAGE */
+.awcmp-identity {
+  padding: 5rem 3rem; background: var(--deep);
+  border-bottom: 1px solid var(--border);
+}
+.awcmp-id-inner {
+  max-width: 1100px; margin: 0 auto;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center;
+}
+.awcmp-brand-block {
+  display: flex; flex-direction: column; gap: 1rem;
+}
+.brand-sig {
+  display: flex; align-items: center; gap: 1.25rem;
+}
+.brand-emblem {
+  width: 72px; height: 72px;
+  background: var(--green); flex-shrink: 0;
+  clip-path: polygon(50% 0%,100% 25%,100% 75%,50% 100%,0% 75%,0% 25%);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 2rem;
+  animation: emblemPulse 4s ease-in-out infinite;
+}
+@keyframes emblemPulse { 50% { box-shadow: 0 0 30px rgba(60,203,127,0.4); } }
+.brand-name {
+  font-family: 'Orbitron', monospace;
+  font-size: 1.5rem; font-weight: 700; line-height: 1.2;
+}
+.brand-name small {
+  display: block;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.65rem; font-weight: 400;
+  letter-spacing: 0.3em; text-transform: uppercase;
+  color: var(--green);
+}
+.awcmp-desc { font-size: 0.95rem; color: var(--ash); line-height: 1.85; }
+.awcmp-desc strong { color: var(--frost); font-weight: 500; }
+.awcmp-stats {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 1px;
+  background: rgba(60,203,127,0.1); border: 1px solid rgba(60,203,127,0.15);
+}
+.awcmp-stat {
+  background: var(--deep); padding: 1.5rem;
+  transition: background 0.25s;
+}
+.awcmp-stat:hover { background: var(--panel); }
+.awcmp-stat-num {
+  font-family: 'Orbitron', monospace;
+  font-size: 2rem; font-weight: 900; color: var(--green);
+  line-height: 1; margin-bottom: 0.3rem; display: block;
+}
+.awcmp-stat-lbl {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.72rem; letter-spacing: 0.08em; color: var(--ash);
+}
+
+/* HOW IT WORKS */
+.how-section { padding: 6rem 3rem; background: var(--abyss); }
+.how-flow {
+  max-width: 1100px; margin: 3rem auto 0;
+  display: grid; grid-template-columns: repeat(4,1fr); gap: 0;
+  border: 1px solid rgba(60,203,127,0.12);
+}
+.how-step {
+  padding: 2.5rem 1.75rem;
+  border-right: 1px solid rgba(60,203,127,0.1);
+  position: relative; overflow: hidden;
+  transition: background 0.3s;
+}
+.how-step:last-child { border-right: none; }
+.how-step:hover { background: var(--deep); }
+.how-step::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+  background: var(--green); transform: scaleX(0); transform-origin: left;
+  transition: transform 0.4s ease;
+}
+.how-step:hover::before { transform: scaleX(1); }
+.step-num {
+  font-family: 'Orbitron', monospace;
+  font-size: 0.55rem; letter-spacing: 0.25em; color: var(--green);
+  margin-bottom: 1rem; display: block;
+}
+.step-icon { font-size: 2rem; margin-bottom: 1rem; }
+.step-title {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 1rem; font-weight: 600; letter-spacing: 0.06em;
+  text-transform: uppercase; margin-bottom: 0.6rem;
+}
+.step-desc { font-size: 0.88rem; color: var(--ash); line-height: 1.75; }
+
+/* CAPABILITY DEEP DIVE */
+.capability-section { padding: 6rem 3rem; background: var(--deep); }
+.cap-grid {
+  max-width: 1100px; margin: 3rem auto 0;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 1px;
+  background: var(--border); border: 1px solid var(--border);
+}
+.cap-card {
+  background: var(--deep); padding: 2.5rem 2rem;
+  transition: background 0.3s;
+  position: relative;
+}
+.cap-card:hover { background: var(--panel); }
+.cap-accent {
+  position: absolute; top: 0; left: 0; right: 0; height: 2px; background: var(--teal);
+  transform: scaleX(0); transform-origin: left;
+  transition: transform 0.4s;
+}
+.cap-card:hover .cap-accent { transform: scaleX(1); }
+.cap-tag {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.58rem; letter-spacing: 0.3em; text-transform: uppercase;
+  color: var(--teal); margin-bottom: 0.75rem; display: block;
+}
+.cap-card h3 {
+  font-family: 'Orbitron', monospace;
+  font-size: 0.95rem; font-weight: 600; margin-bottom: 0.75rem;
+}
+.cap-card p { font-size: 0.9rem; color: var(--ash); line-height: 1.75; }
+.cap-card ul {
+  list-style: none; margin-top: 0.75rem;
+  display: flex; flex-direction: column; gap: 0.3rem;
+}
+.cap-card li {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.82rem; color: var(--ash);
+  padding-left: 1rem; position: relative;
+}
+.cap-card li::before { content: '→'; position: absolute; left: 0; color: var(--teal); font-size: 0.7rem; top: 0.1rem; }
+
+/* PRIVACY SECTION */
+.privacy-section { padding: 6rem 3rem; background: var(--abyss); }
+.privacy-inner { max-width: 900px; margin: 0 auto; }
+.privacy-statement {
+  padding: 3rem; border: 1px solid rgba(60,203,127,0.2);
+  background: rgba(60,203,127,0.04);
+  margin: 2.5rem 0;
+}
+.privacy-statement p {
+  font-size: 1.05rem; line-height: 1.85; color: var(--frost);
+  font-weight: 300;
+}
+.privacy-statement strong { color: var(--green); font-weight: 600; }
+.privacy-points {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;
+}
+.pp {
+  display: flex; align-items: flex-start; gap: 0.75rem;
+  padding: 1.25rem; border: 1px solid var(--border);
+  transition: border-color 0.25s;
+}
+.pp:hover { border-color: rgba(60,203,127,0.3); }
+.pp-icon { font-size: 1.2rem; flex-shrink: 0; }
+.pp-text { font-size: 0.88rem; color: var(--ash); line-height: 1.65; }
+.pp-text strong { color: var(--frost); font-weight: 500; }
+
+/* GRANT ELIGIBILITY */
+.grant-section { padding: 6rem 3rem; background: var(--deep); }
+.grant-row {
+  max-width: 1100px; margin: 3rem auto 0;
+  display: grid; grid-template-columns: repeat(4,1fr); gap: 1px;
+  background: rgba(217,164,0,0.08); border: 1px solid rgba(217,164,0,0.12);
+}
+.grant-tile {
+  background: var(--deep); padding: 2rem 1.5rem;
+  transition: background 0.3s;
+}
+.grant-tile:hover { background: var(--panel); }
+.grant-code {
+  font-family: 'Orbitron', monospace;
+  font-size: 1.2rem; font-weight: 700;
+  color: var(--gold); margin-bottom: 0.4rem;
+}
+.grant-org {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.68rem; letter-spacing: 0.1em;
+  color: var(--ash); margin-bottom: 0.75rem;
+}
+.grant-note { font-size: 0.85rem; color: var(--ash); line-height: 1.65; }
+
+@media(max-width:900px){
+  .awcmp-id-inner { grid-template-columns: 1fr; gap: 3rem; }
+  .awcmp-stats { grid-template-columns: 1fr 1fr; }
+  .how-flow { grid-template-columns: 1fr 1fr; }
+  .how-step:nth-child(2) { border-right: none; }
+  .cap-grid { grid-template-columns: 1fr; }
+  .privacy-points { grid-template-columns: 1fr; }
+  .grant-row { grid-template-columns: 1fr 1fr; }
+}
+</style>
+</head>
+<body>
+<canvas id="starfield"></canvas>
+<div class="page-wrapper">
+
+<nav class="site-nav">
+  <a class="nav-logo" href="index.html">
+    <span class="nav-hex">Æ</span>
+    <span class="nav-wordmark">Ætheris<small>Automation Technologies</small></span>
+  </a>
+  <ul class="nav-menu">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="mission.html">Our Mission</a></li>
+    <li><a href="awcmp.html">Sentinels of the Wild</a></li>
+    <li><a href="products.html">What We Build</a></li>
+    <li><a href="stakeholders.html">Stakeholders</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="community.html">Community</a></li>
+  </ul>
+  <div class="nav-toggle"><span></span><span></span><span></span></div>
+  <a class="nav-cta" href="contact.html">Partner With Us</a>
+</nav>
+
+<main class="page-body">
+
+<div class="page-header">
+  <div class="page-header-inner">
+    <p class="ph-eyebrow">Flagship System</p>
+    <h1 class="ph-title">Sentinels of the Wild</h1>
+    <p class="ph-lead">A dual-mission roadside intelligence network: automatic roadway departure detection and real-time wildlife collision prevention — two life-safety mandates served by one infrastructure deployment.</p>
+  </div>
+</div>
+
+<!-- SYSTEM IDENTITY -->
+<div class="awcmp-identity">
+  <div class="awcmp-id-inner">
+    <div class="awcmp-brand-block fade-up">
+      <div class="brand-sig">
+        <div class="brand-emblem">🦌</div>
+        <div class="brand-name">
+          Sentinels of the Wild
+          <small>AWCMP System · Ætheris AT</small>
+        </div>
+      </div>
+      <p class="awcmp-desc">The most dangerous rural roads in America share two crises: vehicles that leave the roadway go unwitnessed for hours — and wildlife crossing those same corridors face lethal vehicle strikes with no warning. <strong>Sentinels of the Wild</strong> is built to solve both simultaneously: detecting vehicles that depart the roadway to summon emergency response, and detecting animals near the road to prevent collisions. One network. Two life-safety missions. No surveillance.</p>
+      <div class="flex gap-1" style="flex-wrap:wrap;margin-top:1rem;">
+        <span class="badge badge--green"><span class="badge-dot"></span>Development Active</span>
+        <span class="badge badge--gold">FHWA Eligible</span>
+      </div>
+    </div>
+    <div class="awcmp-stats stat-animate fade-up delay-1">
+      <div class="awcmp-stat">
+        <span class="awcmp-stat-num" data-target="48" data-suffix="%">0%</span>
+        <span class="awcmp-stat-lbl">Of all U.S. traffic fatalities involve roadway departure — AWCMP's primary mission</span>
+      </div>
+      <div class="awcmp-stat">
+        <span class="awcmp-stat-num" data-target="3" data-suffix="min">0min</span>
+        <span class="awcmp-stat-lbl">Average crash-to-EMS time in rural corridors — automatic notification cuts this to under 1 min</span>
+      </div>
+      <div class="awcmp-stat">
+        <span class="awcmp-stat-num" data-target="1" data-suffix="–2M">0</span>
+        <span class="awcmp-stat-lbl">Wildlife–vehicle collisions per year in the U.S. — AWCMP's second life-safety mandate</span>
+      </div>
+      <div class="awcmp-stat">
+        <span class="awcmp-stat-num" data-target="24" data-suffix="/7">0/7</span>
+        <span class="awcmp-stat-lbl">Continuous dual-mission operation — no cloud dependency for core alerting</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr class="rule">
+
+<!-- HOW IT WORKS -->
+<section class="how-section">
+  <div style="max-width:1100px;margin:0 auto;">
+    <p class="eyebrow eyebrow--green fade-up">How It Works</p>
+    <h2 class="section-title fade-up delay-1">Six Layers of<br>Life Protection</h2>
+    <p class="section-lead fade-up delay-2">Two parallel detection missions — roadway departure first, wildlife collision second — sharing one sensing infrastructure and multiplying safety value for every dollar of deployment cost.</p>
+  </div>
+  <div class="how-flow fade-up delay-1" style="grid-template-columns:repeat(3,1fr);">
+    <div class="how-step">
+      <span class="step-num">LAYER 01</span>
+      <div class="step-icon">📡</div>
+      <div class="step-title">Sense</div>
+      <p class="step-desc">Smart Marker Units (SMUs) — low-profile sensor clusters mounted near the roadway edge — combine radar, thermal imaging, acoustic sensors, and visible-light cameras. Near-ground placement improves roadside-level detection for both departed vehicles and wildlife. Breakaway-compatible for FHWA clear-zone compliance.</p>
+    </div>
+    <div class="how-step">
+      <span class="step-num">LAYER 02</span>
+      <div class="step-icon">🧠</div>
+      <div class="step-title">Fuse</div>
+      <p class="step-desc">Multi-sensor fusion cross-validates detections on-device. No single sensor decides — radar, thermal, acoustic, and optical data are compared before any alert fires. This directly addresses the false positive and downtime problems documented in single-sensor deployments across comparable systems.</p>
+    </div>
+    <div class="how-step">
+      <span class="step-num">LAYER 03</span>
+      <div class="step-icon">🦌</div>
+      <div class="step-title">Classify</div>
+      <p class="step-desc">Edge AI distinguishes vehicles from wildlife, debris, and environmental noise. For vehicles: trajectory analysis identifies departure events versus normal shoulder maneuvers. For wildlife: species classification against a library of 47+ animals. Both models run locally — no cloud dependency for core alerting.</p>
+    </div>
+    <div class="how-step">
+      <span class="step-num">LAYER 04</span>
+      <div class="step-icon">⚠️</div>
+      <div class="step-title">Alert</div>
+      <p class="step-desc">Vehicle departure confirmed: automatic EMS notification fires within seconds — eliminating the discovery delay that turns survivable rural crashes into fatalities. Wildlife confirmed: dynamic roadside warning signs activate simultaneously. All alerts fire only on confirmed events, building driver and responder trust through accuracy.</p>
+    </div>
+    <div class="how-step">
+      <span class="step-num">LAYER 05</span>
+      <div class="step-icon">📊</div>
+      <div class="step-title">Learn</div>
+      <p class="step-desc">Every detection builds corridor intelligence: crash-risk mapping, species movement profiles, high-risk time windows, and seasonal migration patterns. This dataset improves future alert accuracy and feeds long-term safety and conservation planning for agencies and communities.</p>
+    </div>
+    <div class="how-step">
+      <span class="step-num">LAYER 06</span>
+      <div class="step-icon">🌍</div>
+      <div class="step-title">Report</div>
+      <p class="step-desc">Aggregated corridor data flows to multi-agency dashboards — transportation departments, wildlife agencies, first responders, and conservation organizations each receive the data relevant to their mission. A single infrastructure investment serving multiple stakeholder mandates simultaneously.</p>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- CAPABILITY DEEP DIVE -->
+<section class="capability-section">
+  <div style="max-width:1100px;margin:0 auto;">
+    <p class="eyebrow eyebrow--teal fade-up">Technical Capabilities</p>
+    <h2 class="section-title fade-up delay-1">What the System<br>Can Do</h2>
+  </div>
+  <div class="cap-grid fade-up delay-1">
+    <div class="cap-card">
+      <div class="cap-accent"></div>
+      <span class="cap-tag">Sensing Hardware</span>
+      <h3>Multi-Modal Detection</h3>
+      <p>The sensor suite combines multiple detection modalities to achieve reliable performance in conditions where any single technology would fail:</p>
+      <ul>
+        <li>Thermal imaging — works in complete darkness</li>
+        <li>Visible-light cameras — high-resolution identification</li>
+        <li>Radar — penetrates fog, rain, and vegetation</li>
+        <li>300m detection range in all conditions</li>
+        <li>Low power profile — deployable off-grid</li>
+      </ul>
+    </div>
+    <div class="cap-card">
+      <div class="cap-accent"></div>
+      <span class="cap-tag">AI Classification</span>
+      <h3>Edge Wildlife Intelligence</h3>
+      <p>Machine learning models run entirely on local hardware at the sensor cluster, ensuring alerts fire even when connectivity is lost:</p>
+      <ul>
+        <li>47+ species classification library</li>
+        <li>Self-improving models with field data</li>
+        <li>Configurable confidence thresholds</li>
+        <li>Custom species training within weeks</li>
+        <li>No cloud dependency for core function</li>
+      </ul>
+    </div>
+    <div class="cap-card">
+      <div class="cap-accent"></div>
+      <span class="cap-tag">Driver Alerting</span>
+      <h3>Dynamic Warning Systems</h3>
+      <p>Warning signs are engineered to be trusted — which means they only fire when a real threat is confirmed:</p>
+      <ul>
+        <li>Triggered only on confirmed detections</li>
+        <li>Proven speed reduction at alert moments</li>
+        <li>Behavioral-science-tested messaging</li>
+        <li>Integration with existing traffic systems</li>
+        <li>AV-ready alert protocols</li>
+      </ul>
+    </div>
+    <div class="cap-card">
+      <div class="cap-accent"></div>
+      <span class="cap-tag">Data & Conservation</span>
+      <h3>Wildlife Intelligence Hub</h3>
+      <p>Every detection becomes data that serves both safety and conservation missions:</p>
+      <ul>
+        <li>Species movement pattern mapping</li>
+        <li>Seasonal and temporal risk modeling</li>
+        <li>Integration with wildlife databases</li>
+        <li>Multi-agency data sharing</li>
+        <li>Long-term corridor planning support</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- COMPETITIVE DIFFERENTIATION -->
+<section class="capability-section" style="background:var(--abyss);">
+  <div style="max-width:1100px;margin:0 auto;">
+    <p class="eyebrow eyebrow--crimson fade-up">What Makes Us Different</p>
+    <h2 class="section-title fade-up delay-1">No Competitor Combines<br>Both Missions</h2>
+    <p class="section-lead fade-up delay-2">Existing systems address roadway departure detection OR wildlife collision prevention — never both. AWCMP's dual-mission architecture in a single rural corridor deployment is a gap in the market with no current equivalent.</p>
+  </div>
+  <div class="cap-grid fade-up delay-1" style="margin-top:2.5rem;">
+    <div class="cap-card">
+      <div class="cap-accent" style="background:var(--teal);"></div>
+      <span class="cap-tag" style="color:var(--teal);">Roadway Departure Systems</span>
+      <h3>Crash Detection Only</h3>
+      <p>Lindsay ImpactAlert, Hill &amp; Smith, and Pi-Lit IDS detect vehicle impacts and departures — but are designed for construction zones and urban barriers, not rural wildlife corridors. No ecological sensing. No conservation data output.</p>
+    </div>
+    <div class="cap-card">
+      <div class="cap-accent" style="background:var(--crimson);"></div>
+      <span class="cap-tag" style="color:var(--crimson);">Single-Purpose Wildlife Systems</span>
+      <h3>Wildlife Detection Only</h3>
+      <p>AUG Signals (LADS radar), Navtech Radar, EIDS/Telonics, and Animex International all address animal-vehicle collision risk — but none detect vehicle departures or notify emergency services. Their infrastructure sits idle when a crash occurs right next to it.</p>
+    </div>
+    <div class="cap-card">
+      <div class="cap-accent" style="background:var(--gold);"></div>
+      <span class="cap-tag" style="color:var(--gold);">Smart Corridor Systems</span>
+      <h3>Traffic-Focused Only</h3>
+      <p>Iteris ClearMobility, Kapsch TrafficCom, and Yunex Traffic build intelligent corridor platforms for urban and suburban environments — optimized for traffic flow, not wildlife habitat. Rural deployment and conservation data are outside their mission.</p>
+    </div>
+    <div class="cap-card">
+      <div class="cap-accent" style="background:var(--green);"></div>
+      <span class="cap-tag" style="color:var(--green);">AWCMP — Sentinels of the Wild</span>
+      <h3>The Only Dual-Mission System</h3>
+      <p>AWCMP deploys one sensor infrastructure that simultaneously detects roadway departures and prevents wildlife collisions — serving transportation agencies, wildlife managers, and first responders from a single rural corridor installation. The gap no competitor has closed.</p>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- PRIVACY -->
+<section class="privacy-section">
+  <div class="privacy-inner">
+    <p class="eyebrow eyebrow--green fade-up">Our Privacy Commitment</p>
+    <h2 class="section-title fade-up delay-1">We Protect Lives.<br>Not Surveillance.</h2>
+    <div class="privacy-statement fade-up delay-2">
+      <p>Sentinels of the Wild detects two things: vehicles that leave the roadway, and wildlife near the road. It does not track people. We have made an architectural decision — enforced in hardware and firmware — to exclude all human surveillance capabilities from this system. This is not a policy that can be changed by a future software update. It is built into how the system works at its most fundamental level.</p>
+    </div>
+    <div class="privacy-points fade-up delay-2">
+      <div class="pp">
+        <span class="pp-icon">✅</span>
+        <div class="pp-text"><strong>USDOT & FHWA compliant</strong> — designed for federal procurement</div>
+      </div>
+      <div class="pp">
+        <span class="pp-icon">🚫</span>
+        <div class="pp-text"><strong>No license plate recognition</strong> — architecturally excluded, not suppressed</div>
+      </div>
+      <div class="pp">
+        <span class="pp-icon">✅</span>
+        <div class="pp-text"><strong>Transparent data retention</strong> — clear policies on what is stored and why</div>
+      </div>
+      <div class="pp">
+        <span class="pp-icon">🚫</span>
+        <div class="pp-text"><strong>No facial recognition</strong> — not present in any system component</div>
+      </div>
+      <div class="pp">
+        <span class="pp-icon">✅</span>
+        <div class="pp-text"><strong>Community governance</strong> — local stakeholders have oversight of deployment data</div>
+      </div>
+      <div class="pp">
+        <span class="pp-icon">🚫</span>
+        <div class="pp-text"><strong>No persistent human tracking</strong> — humans are not a detection target</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- GRANT ELIGIBILITY -->
+<section class="grant-section">
+  <div style="max-width:1100px;margin:0 auto;">
+    <p class="eyebrow eyebrow--gold fade-up">Funding Pathways</p>
+    <h2 class="section-title fade-up delay-1">Built for Federal<br>Partnership</h2>
+    <p class="section-lead fade-up delay-2">Sentinels of the Wild is specifically designed to qualify for multiple federal grant programs. Every engineering and governance decision was made with procurement eligibility in mind.</p>
+  </div>
+  <div class="grant-row fade-up delay-1">
+    <div class="grant-tile">
+      <div class="grant-code">USDOT</div>
+      <div class="grant-org">U.S. Dept. of Transportation</div>
+      <div class="grant-note">Highway safety innovation programs. AWCMP directly supports USDOT's roadway safety mandate and targets zero preventable fatalities.</div>
+    </div>
+    <div class="grant-tile">
+      <div class="grant-code">FHWA</div>
+      <div class="grant-org">Federal Highway Administration</div>
+      <div class="grant-note">Wildlife Crossing Pilot Program — $350M allocated by the Infrastructure Investment and Jobs Act for exactly the type of detection system we build.</div>
+    </div>
+    <div class="grant-tile">
+      <div class="grant-code">USFWS</div>
+      <div class="grant-org">U.S. Fish & Wildlife Service</div>
+      <div class="grant-note">Conservation technology for endangered species protection. 12 federally endangered species face critical road collision risk in the US.</div>
+    </div>
+    <div class="grant-tile">
+      <div class="grant-code">NSF</div>
+      <div class="grant-org">National Science Foundation</div>
+      <div class="grant-note">Applied AI research in environmental monitoring, edge computing, and transportation safety. Academic partnership pathways available.</div>
+    </div>
+  </div>
+  <div style="max-width:1100px;margin:2rem auto 0;padding:1.5rem 2rem;background:var(--gold-g);border:1px solid rgba(217,164,0,.2);display:flex;gap:2rem;align-items:center;flex-wrap:wrap;" class="fade-up delay-2">
+    <div>
+      <span class="badge badge--gold" style="margin-bottom:.5rem;display:inline-flex;"><span class="badge-dot"></span>Registration In Progress</span>
+      <p style="font-size:.9rem;color:var(--ash);line-height:1.7;margin:0;">Ætheris is actively completing SAM.gov registration and Grants.gov setup for federal grant eligibility. Pilot deployment planning for Texas corridor locations is underway.</p>
+    </div>
+    <a class="btn btn--gold" href="contact.html" style="flex-shrink:0;">Discuss Partnership</a>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section section--void" style="text-align:center;padding:7rem 3rem;">
+  <p class="eyebrow eyebrow--green fade-up" style="justify-content:center;">Get Involved</p>
+  <h2 class="section-title fade-up delay-1">Your Corridor Could Be<br>a Sentinel Zone</h2>
+  <p style="font-size:1.05rem;color:var(--ash);max-width:520px;margin:0 auto 2.5rem;line-height:1.8;" class="fade-up delay-2">We're identifying pilot deployment sites in Texas and beyond. Transportation agencies, conservation organizations, and tribal nations are encouraged to reach out about partnership opportunities.</p>
+  <div class="flex flex-center gap-1 fade-up delay-3" style="flex-wrap:wrap;">
+    <a class="btn btn--primary" href="contact.html">Become a Pilot Partner</a>
+    <a class="btn btn--outline" href="mission.html">Why This Matters</a>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand-hex">Æ</div>
+      <div class="footer-brand-name">Ætheris Automation Technologies</div>
+      <div class="footer-brand-sub">Sentinels of the Wild</div>
+      <p class="footer-brand-desc">AI-powered safety for every road, every life — protecting humans, wildlife, and communities through intelligent highway infrastructure.</p>
+    </div>
+    <div>
+      <div class="footer-col-title">Navigate</div>
+      <ul class="footer-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="mission.html">Our Mission</a></li>
+        <li><a href="awcmp.html">Sentinels of the Wild</a></li>
+        <li><a href="products.html">What We Build</a></li>
+        <li><a href="stakeholders.html">Stakeholders</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="sitemap.html">Site Map</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Stakeholders</div>
+      <ul class="footer-links">
+        <li><a href="fire.html">Fire &amp; Rescue</a></li>
+        <li><a href="police.html">Law Enforcement</a></li>
+        <li><a href="ems.html">Emergency Medical</a></li>
+        <li><a href="insurance.html">Insurance</a></li>
+        <li><a href="tow.html">Towing &amp; Recovery</a></li>
+        <li><a href="dot-state.html">State DOTs</a></li>
+        <li><a href="wildlife.html">Wildlife Agencies</a></li>
+        <li><a href="community.html">Communities</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Grant Partners</div>
+      <ul class="footer-links">
+        <li><a href="usdot.html">USDOT</a></li>
+        <li><a href="fhwa.html">FHWA</a></li>
+        <li><a href="usfws.html">USFWS</a></li>
+        <li><a href="nsf.html">NSF</a></li>
+      </ul>
+      <div class="footer-col-title" style="margin-top:1.5rem;">Contact</div>
+      <ul class="footer-links">
+        <li><a href="contact.html">Tyler, Texas, USA</a></li>
+        <li><a href="contact.html">Partner Inquiries</a></li>
+        <li><a href="contact.html">Pilot Programs</a></li>
+        <li><a href="contact.html">Research Collaboration</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2026 Ætheris Automation Technologies LLC · Tyler, Texas · Privacy by Architecture</div>
+    <div class="footer-tagline">Protecting Every Life · See the Complete Path Ahead</div>
+  </div>
+</footer>
+
+</div>
+<script src="main.js"></script>
+</body>
+</html>

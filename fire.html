@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fire Departments — Ætheris Stakeholders</title>
+<meta name="description" content="How Ætheris Sentinels of the Wild serves fire departments and rescue teams with instant crash detection, automatic dispatch, and rural corridor intelligence.">
+<link rel="stylesheet" href="style.css">
+<style>
+.partner-hero { padding: 5rem 3rem; background: var(--deep); border-bottom: 1px solid var(--border); }
+.partner-hero-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1.4fr; gap: 5rem; align-items: center; }
+.partner-emblem-block { display: flex; flex-direction: column; align-items: center; gap: 1.5rem; }
+.partner-hex { width: 120px; height: 120px; background: var(--crimson); clip-path: polygon(50% 0%,100% 25%,100% 75%,50% 100%,0% 75%,0% 25%); display: flex; align-items: center; justify-content: center; font-size: 3.5rem; animation: hexPulse 4s ease-in-out infinite; }
+@keyframes hexPulse { 50% { box-shadow: 0 0 40px rgba(177,31,42,0.5); } }
+.partner-code { font-family: 'Orbitron', monospace; font-size: 1.4rem; font-weight: 900; color: var(--crimson); letter-spacing: 0.1em; }
+.partner-fullname { font-family: 'Barlow Condensed', sans-serif; font-size: 0.72rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--ash); }
+.partner-badge { margin-top: 0.5rem; }
+.partner-desc { font-size: 1rem; color: var(--ash); line-height: 1.9; }
+.partner-desc strong { color: var(--frost); }
+.exchange-section--a { padding: 5rem 3rem; background: var(--abyss); }
+.exchange-section--b { padding: 5rem 3rem; background: var(--deep); }
+.exchange-inner { max-width: 1100px; margin: 0 auto; }
+.exchange-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--border); border: 1px solid var(--border); margin-top: 2.5rem; }
+.ex-card { background: var(--abyss); padding: 2rem 1.75rem; position: relative; transition: background 0.3s; }
+.exchange-section--b .ex-card { background: var(--deep); }
+.ex-card:hover { background: var(--panel); }
+.ex-stripe { position: absolute; top: 0; left: 0; right: 0; height: 2px; background: var(--crimson); transform: scaleX(0); transform-origin: left; transition: transform 0.4s; }
+.ex-card:hover .ex-stripe { transform: scaleX(1); }
+.ex-icon { font-size: 1.75rem; margin-bottom: 0.75rem; }
+.ex-card h4 { font-family: 'Barlow Condensed', sans-serif; font-size: 1rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 0.5rem; color: var(--frost); }
+.ex-card p { font-size: 0.88rem; color: var(--ash); line-height: 1.75; }
+.stat-bar { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; background: rgba(177,31,42,0.15); border: 1px solid rgba(177,31,42,0.2); margin-top: 2.5rem; }
+.stat-cell { background: var(--abyss); padding: 1.75rem; text-align: center; }
+.exchange-section--b .stat-bar { background: rgba(177,31,42,0.1); }
+.exchange-section--b .stat-cell { background: var(--deep); }
+.stat-num { font-family: 'Orbitron', monospace; font-size: 2rem; font-weight: 900; color: var(--crimson); display: block; margin-bottom: 0.35rem; }
+.stat-lbl { font-family: 'Barlow Condensed', sans-serif; font-size: 0.7rem; letter-spacing: 0.08em; color: var(--ash); }
+.cta-section { padding: 6rem 3rem; background: var(--void); text-align: center; }
+@media(max-width:900px){ .partner-hero-inner { grid-template-columns: 1fr; gap: 3rem; } .exchange-grid { grid-template-columns: 1fr; } .stat-bar { grid-template-columns: 1fr 1fr; } }
+</style>
+</head>
+<body>
+<canvas id="starfield"></canvas>
+<div class="page-wrapper">
+<nav class="site-nav">
+  <a class="nav-logo" href="index.html"><span class="nav-hex">Æ</span><span class="nav-wordmark">Ætheris<small>Automation Technologies</small></span></a>
+  <ul class="nav-menu">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="mission.html">Our Mission</a></li>
+    <li><a href="awcmp.html">Sentinels of the Wild</a></li>
+    <li><a href="products.html">What We Build</a></li>
+    <li><a href="stakeholders.html">Stakeholders</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="community.html">Community</a></li>
+  </ul>
+  <div class="nav-toggle"><span></span><span></span><span></span></div>
+  <a class="nav-cta" href="contact.html">Partner With Us</a>
+</nav>
+
+<main class="page-body">
+<div class="page-header">
+  <div class="page-header-inner">
+    <p class="ph-eyebrow">Stakeholders · Fire &amp; Rescue</p>
+    <h1 class="ph-title">Ætheris for<br><span style="color:var(--crimson);">Fire Departments</span></h1>
+    <p class="ph-lead">Every second a crash goes undiscovered is a second the fire crew doesn't have. Sentinels of the Wild eliminates the discovery delay entirely — delivering confirmed crash alerts to dispatch before any caller reaches 911.</p>
+  </div>
+</div>
+
+<!-- HERO IDENTITY -->
+<div class="partner-hero">
+  <div class="partner-hero-inner">
+    <div class="partner-emblem-block fade-up">
+      <div class="partner-hex">🚒</div>
+      <div class="partner-code" style="color:var(--crimson);">FIRE &amp; RESCUE</div>
+      <div class="partner-fullname">Fire Departments · Rescue Teams · Hazmat Units</div>
+      <span class="badge badge--crimson partner-badge">Life Safety Partner</span>
+    </div>
+    <div class="partner-desc fade-up delay-1">
+      <p>Rural fire departments face a crisis that begins before any truck rolls: they don't know a crash happened. In low-population corridors, vehicle crashes can go unwitnessed for hours. By the time someone calls 911, a survivable trauma has become a fatality — and a car fire has become a wildfire.</p>
+      <p><strong>Sentinels of the Wild changes that equation entirely.</strong> Our roadside sensor network detects vehicle departure events within seconds and fires an automatic notification directly to dispatch — no human caller required. Fire crews get the call faster, with location data, before smoke is visible from the road.</p>
+      <p>And for wildlife-vehicle crashes that ignite dry vegetation, our system provides the earliest possible detection — turning a potential wildland fire event into a rapid-response fire suppression call.</p>
+    </div>
+  </div>
+</div>
+
+<hr class="rule">
+
+<!-- WHAT AETHERIS OFFERS FIRE -->
+<section class="exchange-section--a">
+  <div class="exchange-inner">
+    <p class="eyebrow eyebrow--crimson fade-up">What Ætheris Brings</p>
+    <h2 class="section-title fade-up delay-1">What Fire Departments<br>Get from AWCMP</h2>
+    <div class="stat-bar stat-animate fade-up delay-2">
+      <div class="stat-cell"><span class="stat-num" data-target="3" data-suffix="min">0min</span><span class="stat-lbl">Avg rural crash-to-discovery — eliminated by auto-dispatch</span></div>
+      <div class="stat-cell"><span class="stat-num" data-target="60" data-suffix="sec">&lt;60sec</span><span class="stat-lbl">Crash-to-notification time with AWCMP active</span></div>
+      <div class="stat-cell"><span class="stat-num" data-target="48" data-suffix="%">0%</span><span class="stat-lbl">Of U.S. traffic fatalities involve roadway departure</span></div>
+    </div>
+    <div class="exchange-grid fade-up delay-1" style="margin-top:1px;">
+      <div class="ex-card"><div class="ex-stripe"></div><div class="ex-icon">🚨</div><h4>Automatic Crash-to-Dispatch Notification</h4><p>AWCMP detects vehicle departure events and pushes confirmed alerts directly to CAD (Computer-Aided Dispatch) systems within seconds. Fire crews are rolling before a single caller reaches 911.</p></div>
+      <div class="ex-card"><div class="ex-stripe"></div><div class="ex-icon">📍</div><h4>Precise GPS Corridor Location</h4><p>Every alert includes exact coordinates and corridor mileage — no ambiguous landmark directions. Crews arrive at the right location on the first pass, even in remote areas with no addresses.</p></div>
+      <div class="ex-card"><div class="ex-stripe"></div><div class="ex-icon">🔥</div><h4>Early Vegetation Fire Detection</h4><p>Wildlife-vehicle collisions in dry Texas corridors can ignite roadside vegetation instantly. AWCMP's multi-sensor detection gives fire departments the earliest possible alert for ignition events near the roadway.</p></div>
+      <div class="ex-card"><div class="ex-stripe"></div><div class="ex-icon">📡</div><h4>Off-Grid Operation — No Cell Dependency</h4><p>AWCMP operates on its own mesh radio network with satellite uplink backup. In the rural corridors where cellular is dead, the notification still fires. Your crew still gets the call.</p></div>
+      <div class="ex-card"><div class="ex-stripe"></div><div class="ex-icon">🧠</div><h4>Corridor Intelligence Reports</h4><p>Monthly and annual data on crash frequency, time patterns, and high-risk zones by corridor segment — actionable intelligence for fire station positioning, pre-deployment staging, and mutual aid planning.</p></div>
+      <div class="ex-card"><div class="ex-stripe"></div><div class="ex-icon">⚙️</div><h4>CAD System Integration</h4><p>AWCMP integrates with existing Computer-Aided Dispatch infrastructure used by fire departments and emergency communications centers — no new software required for dispatch staff.</p></div>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- WHAT FIRE BRINGS -->
+<section class="exchange-section--b">
+  <div class="exchange-inner">
+    <p class="eyebrow eyebrow--crimson fade-up">What Fire Brings</p>
+    <h2 class="section-title fade-up delay-1">What Fire Departments<br>Unlock for Ætheris</h2>
+    <div class="exchange-grid fade-up delay-1">
+      <div class="ex-card"><div class="ex-stripe"></div><div class="ex-icon">🗺️</div><h4>Corridor Hazard Knowledge</h4><p>Fire departments know which roads produce the most incidents, which times are highest risk, and which terrain features create the most dangerous crashes. That ground truth makes our AI smarter, faster.</p></div>
+      <div class="ex-card"><div class="ex-stripe"></div><div class="ex-icon">📋</div><h4>Incident Validation Data</h4><p>Post-incident reports from responding fire crews validate AWCMP detection events — confirming true positives and flagging edge cases that improve model accuracy over time.</p></div>
+      <div class="ex-card"><div class="ex-stripe"></div><div class="ex-icon">🤝</div><h4>Community Trust &amp; Credibility</h4><p>Fire departments are among the most trusted institutions in rural Texas. A formal partnership with local fire services signals that AWCMP is here to serve the community — not extract data from it.</p></div>
+      <div class="ex-card"><div class="ex-stripe"></div><div class="ex-icon">📣</div><h4>Deployment Advocacy</h4><p>Fire departments with direct operational benefit have the credibility to advocate for AWCMP deployment with county commissioners, TxDOT district offices, and state safety programs — accelerating our reach.</p></div>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- CTA -->
+<section class="cta-section">
+  <p class="eyebrow eyebrow--crimson fade-up" style="justify-content:center;">Partnership Pathway</p>
+  <h2 class="section-title fade-up delay-1">Let's Get Your Corridor<br>Protected</h2>
+  <p style="font-size:1.05rem;color:var(--ash);max-width:520px;margin:0 auto 2.5rem;line-height:1.8;" class="fade-up delay-2">We are actively identifying Texas pilot corridors and building relationships with fire departments who want to eliminate the crash discovery delay. If that's you, reach out.</p>
+  <div class="flex flex-center gap-1 fade-up delay-3" style="flex-wrap:wrap;">
+    <a class="btn btn--primary" href="contact.html">Start a Conversation</a>
+    <a class="btn btn--outline" href="stakeholders.html">All Stakeholders</a>
+  </div>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand-hex">Æ</div>
+      <div class="footer-brand-name">Ætheris Automation Technologies</div>
+      <div class="footer-brand-sub">Sentinels of the Wild</div>
+      <p class="footer-brand-desc">AI-powered safety for every road, every life — protecting humans, wildlife, and communities through intelligent highway infrastructure.</p>
+    </div>
+    <div>
+      <div class="footer-col-title">Navigate</div>
+      <ul class="footer-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="mission.html">Our Mission</a></li>
+        <li><a href="awcmp.html">Sentinels of the Wild</a></li>
+        <li><a href="products.html">What We Build</a></li>
+        <li><a href="stakeholders.html">Stakeholders</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="sitemap.html">Site Map</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Stakeholders</div>
+      <ul class="footer-links">
+        <li><a href="fire.html">Fire &amp; Rescue</a></li>
+        <li><a href="police.html">Law Enforcement</a></li>
+        <li><a href="ems.html">Emergency Medical</a></li>
+        <li><a href="insurance.html">Insurance</a></li>
+        <li><a href="tow.html">Towing &amp; Recovery</a></li>
+        <li><a href="dot-state.html">State DOTs</a></li>
+        <li><a href="wildlife.html">Wildlife Agencies</a></li>
+        <li><a href="community.html">Communities</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Grant Partners</div>
+      <ul class="footer-links">
+        <li><a href="usdot.html">USDOT</a></li>
+        <li><a href="fhwa.html">FHWA</a></li>
+        <li><a href="usfws.html">USFWS</a></li>
+        <li><a href="nsf.html">NSF</a></li>
+      </ul>
+      <div class="footer-col-title" style="margin-top:1.5rem;">Contact</div>
+      <ul class="footer-links">
+        <li><a href="contact.html">Tyler, Texas, USA</a></li>
+        <li><a href="contact.html">Partner Inquiries</a></li>
+        <li><a href="contact.html">Pilot Programs</a></li>
+        <li><a href="contact.html">Research Collaboration</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2026 Ætheris Automation Technologies LLC · Tyler, Texas · Privacy by Architecture</div>
+    <div class="footer-tagline">Protecting Every Life · See the Complete Path Ahead</div>
+  </div>
+</footer>
+</div>
+<script src="main.js"></script>
+</body>
+</html>

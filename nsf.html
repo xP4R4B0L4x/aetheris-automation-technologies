@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NSF Partnership — Ætheris Automation Technologies</title>
+<meta name="description" content="Ætheris and the National Science Foundation — advancing edge AI, environmental sensing, and transportation safety through applied research partnership.">
+<link rel="stylesheet" href="style.css">
+<style>
+.partner-hero { padding: 5rem 3rem; background: var(--deep); border-bottom: 1px solid var(--border); }
+.partner-hero-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+.agency-seal { display: flex; flex-direction: column; align-items: flex-start; gap: 1rem; }
+.agency-emblem { width: 80px; height: 80px; border: 2px solid rgba(46,168,168,0.4); background: rgba(46,168,168,0.08); display: flex; align-items: center; justify-content: center; font-size: 2.5rem; }
+.agency-code { font-family: 'Orbitron', monospace; font-size: 2.8rem; font-weight: 900; color: var(--teal); line-height: 1; }
+.agency-name { font-family: 'Barlow Condensed', sans-serif; font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ash); line-height: 1.6; }
+.agency-desc { font-size: 0.95rem; color: var(--ash); line-height: 1.85; }
+.agency-desc strong { color: var(--frost); font-weight: 500; }
+.exchange-section { padding: 6rem 3rem; }
+.exchange-section--a { background: var(--abyss); }
+.exchange-section--b { background: var(--deep); }
+.exchange-grid { max-width: 1100px; margin: 3rem auto 0; display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--border); border: 1px solid var(--border); }
+.exchange-card { background: var(--abyss); padding: 2.5rem 2rem; position: relative; transition: background 0.3s; }
+.exchange-card:hover { background: var(--panel); }
+.exchange-card--give { background: var(--deep); }
+.exchange-card--give:hover { background: var(--panel); }
+.exchange-stripe { position: absolute; top: 0; left: 0; right: 0; height: 2px; transform: scaleX(0); transform-origin: left; transition: transform 0.4s; }
+.exchange-card:hover .exchange-stripe { transform: scaleX(1); }
+.exchange-tag { font-family: 'Barlow Condensed', sans-serif; font-size: 0.58rem; letter-spacing: 0.3em; text-transform: uppercase; margin-bottom: 0.75rem; display: block; }
+.exchange-card h4 { font-family: 'Barlow Condensed', sans-serif; font-size: 1rem; font-weight: 600; letter-spacing: 0.05em; margin-bottom: 0.5rem; color: var(--frost); }
+.exchange-card p { font-size: 0.9rem; color: var(--ash); line-height: 1.75; margin: 0; }
+.research-areas { max-width: 1100px; margin: 3rem auto 0; display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; background: rgba(46,168,168,0.1); border: 1px solid rgba(46,168,168,0.15); }
+.ra-cell { background: var(--abyss); padding: 2rem 1.75rem; transition: background 0.25s; position: relative; overflow: hidden; }
+.ra-cell:hover { background: var(--deep); }
+.ra-cell::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: var(--teal); transform: scaleX(0); transform-origin: left; transition: transform 0.4s; }
+.ra-cell:hover::before { transform: scaleX(1); }
+.ra-num { font-family: 'Orbitron', monospace; font-size: 0.55rem; letter-spacing: 0.25em; color: var(--teal); margin-bottom: 0.75rem; display: block; }
+.ra-title { font-family: 'Barlow Condensed', sans-serif; font-size: 1rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 0.6rem; color: var(--frost); }
+.ra-desc { font-size: 0.88rem; color: var(--ash); line-height: 1.75; }
+.nsf-programs { max-width: 900px; margin: 3rem auto 0; display: flex; flex-direction: column; gap: 0; border: 1px solid var(--border); }
+.program-row { display: flex; align-items: flex-start; gap: 2rem; padding: 1.75rem 2.5rem; border-bottom: 1px solid var(--border); transition: background 0.25s; }
+.program-row:last-child { border-bottom: none; }
+.program-row:hover { background: var(--panel); }
+.prog-code { font-family: 'Orbitron', monospace; font-size: 0.65rem; color: var(--teal); letter-spacing: 0.15em; min-width: 80px; padding-top: 0.2rem; flex-shrink: 0; }
+.prog-body h4 { font-size: 0.95rem; font-weight: 600; margin-bottom: 0.3rem; color: var(--frost); }
+.prog-body p { font-size: 0.88rem; color: var(--ash); line-height: 1.7; margin: 0; }
+.alignment-row { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem; margin-top: 3rem; }
+.align-tile { padding: 2rem; border: 1px solid var(--border); transition: border-color 0.3s, background 0.3s; }
+.align-tile:hover { border-color: rgba(46,168,168,0.3); background: var(--panel); }
+.align-tile-icon { font-size: 2rem; margin-bottom: 1rem; }
+.align-tile h3 { font-family: 'Barlow Condensed', sans-serif; font-size: 0.95rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 0.5rem; }
+.align-tile p { font-size: 0.88rem; color: var(--ash); line-height: 1.7; margin: 0; }
+@media(max-width:900px){
+  .partner-hero-inner { grid-template-columns:1fr; gap:3rem; }
+  .exchange-grid { grid-template-columns:1fr; }
+  .research-areas { grid-template-columns:1fr 1fr; }
+  .alignment-row { grid-template-columns:1fr; }
+}
+</style>
+</head>
+<body>
+<canvas id="starfield"></canvas>
+<div class="page-wrapper">
+
+<nav class="site-nav">
+  <a class="nav-logo" href="index.html">
+    <span class="nav-hex">Æ</span>
+    <span class="nav-wordmark">Ætheris<small>Automation Technologies</small></span>
+  </a>
+  <ul class="nav-menu">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="mission.html">Our Mission</a></li>
+    <li><a href="awcmp.html">Sentinels of the Wild</a></li>
+    <li><a href="products.html">What We Build</a></li>
+    <li><a href="stakeholders.html">Stakeholders</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="community.html">Community</a></li>
+  </ul>
+  <div class="nav-toggle"><span></span><span></span><span></span></div>
+  <a class="nav-cta" href="contact.html">Partner With Us</a>
+</nav>
+
+<main class="page-body">
+
+<div class="page-header">
+  <div class="page-header-inner">
+    <p class="ph-eyebrow">Research Partnership</p>
+    <h1 class="ph-title">National Science<br><span class="accent">Foundation</span></h1>
+    <p class="ph-lead">Ætheris operates at the intersection of edge AI, environmental sensing, and transportation safety — three active NSF research frontiers. We offer a real-world deployment platform for the science NSF funds.</p>
+  </div>
+</div>
+
+<div class="partner-hero">
+  <div class="partner-hero-inner">
+    <div class="agency-seal fade-up">
+      <div class="agency-emblem">🔬</div>
+      <div class="agency-code">NSF</div>
+      <div class="agency-name">National Science Foundation<br>Alexandria, Virginia</div>
+      <div style="display:flex;gap:.75rem;flex-wrap:wrap;margin-top:.5rem;">
+        <span class="badge" style="color:var(--teal);border-color:rgba(46,168,168,0.35);background:var(--teal-g);"><span class="badge-dot" style="background:var(--teal);"></span>Research & SBIR Partner</span>
+      </div>
+    </div>
+    <div class="fade-up delay-1">
+      <p class="eyebrow eyebrow--teal">The Alignment</p>
+      <h2 class="section-title" style="font-size:1.8rem;">Applied Science<br>Meeting Real Problems</h2>
+      <div class="agency-desc">
+        <p>The National Science Foundation advances foundational research across every discipline of science and engineering — and Ætheris sits at the convergence of multiple active NSF research frontiers: <strong>edge AI, environmental monitoring, transportation systems, and human-centered computing</strong>.</p>
+        <p>NSF's Small Business Innovation Research (SBIR) program is specifically designed for companies like Ætheris — translating cutting-edge research into deployable commercial technology that addresses national challenges.</p>
+        <p>We offer NSF-affiliated researchers something valuable: a real-world deployment platform for AI, sensor fusion, and ecological monitoring research that generates publishable field data from live highway corridors.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr class="rule">
+
+<section class="exchange-section exchange-section--a">
+  <div style="max-width:1100px;margin:0 auto;">
+    <p class="eyebrow eyebrow--teal fade-up">Research Domains</p>
+    <h2 class="section-title fade-up delay-1">Where Ætheris Advances<br>NSF Research Frontiers</h2>
+    <p class="section-lead fade-up delay-2">The Ætheris platform generates novel research data across six active NSF priority areas — each deployment is simultaneously a safety system and a field research instrument.</p>
+  </div>
+  <div class="research-areas fade-up delay-1">
+    <div class="ra-cell">
+      <span class="ra-num">DOMAIN 01</span>
+      <div class="ra-title">Edge AI & On-Device Inference</div>
+      <p class="ra-desc">Ætheris runs multi-class wildlife and vehicle detection entirely on embedded edge hardware — without cloud connectivity. Field data from live deployments advances research in low-latency inference, model compression, and edge hardware reliability in harsh environments.</p>
+    </div>
+    <div class="ra-cell">
+      <span class="ra-num">DOMAIN 02</span>
+      <div class="ra-title">Multi-Modal Sensor Fusion</div>
+      <p class="ra-desc">Combining thermal, radar, and acoustic data for robust environmental detection under real-world conditions is an open research problem. Ætheris's fusion architecture generates ground-truth data for sensor weighting, cross-modal validation, and false-positive reduction.</p>
+    </div>
+    <div class="ra-cell">
+      <span class="ra-num">DOMAIN 03</span>
+      <div class="ra-title">Wildlife Movement Ecology</div>
+      <p class="ra-desc">Corridor-scale, longitudinal movement data for wildlife species crossing highways is scarce. Ætheris deployments generate the continuous, timestamped, species-classified detection records that movement ecology research has historically lacked access to.</p>
+    </div>
+    <div class="ra-cell">
+      <span class="ra-num">DOMAIN 04</span>
+      <div class="ra-title">Intelligent Transportation Systems</div>
+      <p class="ra-desc">Real-time hazard detection and V2X communication at the road edge are active ITS research areas. Ætheris's PathSign and CorridorLink hardware provide a field testbed for connected vehicle safety protocols and human-factor studies in dynamic warning systems.</p>
+    </div>
+    <div class="ra-cell">
+      <span class="ra-num">DOMAIN 05</span>
+      <div class="ra-title">Resilient Mesh Networking</div>
+      <p class="ra-desc">CorridorLink's self-healing mesh architecture operates in RF-challenged rural environments without infrastructure dependency. Field deployment generates novel data on mesh performance, latency, and reliability under real-world conditions.</p>
+    </div>
+    <div class="ra-cell">
+      <span class="ra-num">DOMAIN 06</span>
+      <div class="ra-title">Human-Centered Safety Systems</div>
+      <p class="ra-desc">Driver response to dynamic warning systems is a measurable behavioral science question. Before/after collision data and driver speed studies at Ætheris-equipped corridors provide field data for human factors research in roadway safety.</p>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<section class="exchange-section exchange-section--b">
+  <div style="max-width:900px;margin:0 auto;">
+    <p class="eyebrow eyebrow--teal fade-up">Funding Pathways</p>
+    <h2 class="section-title fade-up delay-1">NSF Programs<br>Aligned with Ætheris</h2>
+    <p class="section-lead fade-up delay-2">Multiple NSF programs are directly applicable to Ætheris's technology and mission — each representing a distinct funding pathway for research and development acceleration.</p>
+  </div>
+  <div class="nsf-programs fade-up delay-1">
+    <div class="program-row">
+      <span class="prog-code">SBIR / STTR</span>
+      <div class="prog-body">
+        <h4>Small Business Innovation Research</h4>
+        <p>NSF SBIR Phase I and II funding supports exactly the technology translation Ætheris is doing — moving edge AI and sensor fusion from research prototypes to deployable commercial systems. Up to $2M available across phases.</p>
+      </div>
+    </div>
+    <div class="program-row">
+      <span class="prog-code">CPS</span>
+      <div class="prog-body">
+        <h4>Cyber-Physical Systems Program</h4>
+        <p>Ætheris is a cyber-physical system by definition — embedded computation tightly integrated with physical sensing and actuation in safety-critical infrastructure. CPS funding supports the foundational research that underpins the platform.</p>
+      </div>
+    </div>
+    <div class="program-row">
+      <span class="prog-code">CNS / IIS</span>
+      <div class="prog-body">
+        <h4>Computer & Network Systems / Intelligent Information Systems</h4>
+        <p>Edge inference, mesh networking, and multi-modal sensor fusion all fall within CNS and IIS research scope — funding academic collaborators working on the core algorithmic challenges Ætheris is solving in deployment.</p>
+      </div>
+    </div>
+    <div class="program-row">
+      <span class="prog-code">DBI</span>
+      <div class="prog-body">
+        <h4>Division of Biological Infrastructure</h4>
+        <p>Ætheris's wildlife detection and corridor movement data platform represents new biological research infrastructure — the kind of continuous field monitoring capability that DBI is specifically mandated to fund.</p>
+      </div>
+    </div>
+    <div class="program-row">
+      <span class="prog-code">GCR</span>
+      <div class="prog-body">
+        <h4>Growing Convergence Research</h4>
+        <p>Ætheris's work explicitly converges computer science, ecology, transportation engineering, and public safety — a GCR-aligned research challenge requiring the interdisciplinary collaboration this program is designed to support.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<section class="exchange-section exchange-section--a">
+  <div style="max-width:1100px;margin:0 auto;">
+    <p class="eyebrow eyebrow--teal fade-up">What Ætheris Brings</p>
+    <h2 class="section-title fade-up delay-1">Our Offer to NSF<br>and Its Researchers</h2>
+  </div>
+  <div class="exchange-grid fade-up delay-1">
+    <div class="exchange-card">
+      <div class="exchange-stripe" style="background:var(--teal);"></div>
+      <span class="exchange-tag" style="color:var(--teal);">Field Platform</span>
+      <h4>Live Deployment Research Testbed</h4>
+      <p>Every Ætheris corridor deployment is a real-world research instrument — generating continuous, timestamped field data from operating AI systems in actual highway environments. No simulation, no lab conditions.</p>
+    </div>
+    <div class="exchange-card">
+      <div class="exchange-stripe" style="background:var(--teal);"></div>
+      <span class="exchange-tag" style="color:var(--teal);">Data</span>
+      <h4>Novel Ecological & Safety Datasets</h4>
+      <p>Wildlife detection records, vehicle behavior data, sensor fusion performance metrics, and corridor movement patterns — datasets that do not currently exist at scale and are directly publishable for research partners.</p>
+    </div>
+    <div class="exchange-card">
+      <div class="exchange-stripe" style="background:var(--teal);"></div>
+      <span class="exchange-tag" style="color:var(--teal);">Translation</span>
+      <h4>Research-to-Deployment Pipeline</h4>
+      <p>Ætheris provides academic research partners a direct path from algorithm development to field validation — models and methods developed in university labs can be tested against real highway corridor deployments.</p>
+    </div>
+    <div class="exchange-card">
+      <div class="exchange-stripe" style="background:var(--teal);"></div>
+      <span class="exchange-tag" style="color:var(--teal);">Collaboration</span>
+      <h4>Multi-University Research Network</h4>
+      <p>Ætheris welcomes structured research partnerships with university teams — co-development of AI models, sensor hardware, and data analysis methods that advance both the science and the deployment mission.</p>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<section class="exchange-section exchange-section--b">
+  <div style="max-width:1100px;margin:0 auto;">
+    <p class="eyebrow eyebrow--gold fade-up">What NSF Brings</p>
+    <h2 class="section-title fade-up delay-1">What This Partnership<br>Unlocks for Both Sides</h2>
+  </div>
+  <div class="alignment-row">
+    <div class="align-tile fade-up">
+      <div class="align-tile-icon">💰</div>
+      <h3>SBIR Phase I & II Funding</h3>
+      <p>NSF SBIR provides up to $2M in non-dilutive R&D funding for small businesses developing technology with strong commercial potential — directly applicable to Ætheris's edge AI and sensing platform.</p>
+    </div>
+    <div class="align-tile fade-up delay-1">
+      <div class="align-tile-icon">🎓</div>
+      <h3>Academic Research Partnerships</h3>
+      <p>NSF-funded university researchers bring deep expertise in AI, ecology, and transportation engineering — providing Ætheris access to cutting-edge methods and the graduate student talent needed to advance the platform.</p>
+    </div>
+    <div class="align-tile fade-up delay-2">
+      <div class="align-tile-icon">🏛️</div>
+      <h3>Peer-Reviewed Validation</h3>
+      <p>Research publications from NSF-partnered projects create independently validated performance claims — the scientific credibility that accelerates government procurement and investor confidence.</p>
+    </div>
+    <div class="align-tile fade-up">
+      <div class="align-tile-icon">🤝</div>
+      <h3>I-Corps Commercialization Support</h3>
+      <p>NSF's I-Corps program provides structured customer discovery and commercialization training — helping Ætheris validate product-market fit across the transportation agency, conservation, and research markets.</p>
+    </div>
+    <div class="align-tile fade-up delay-1">
+      <div class="align-tile-icon">🔗</div>
+      <h3>Interagency Research Network</h3>
+      <p>NSF's connections to DARPA, DOE, NIH, and other federal research agencies create pathways to additional funding and research partnerships that extend far beyond the initial NSF relationship.</p>
+    </div>
+    <div class="align-tile fade-up delay-2">
+      <div class="align-tile-icon">📡</div>
+      <h3>National Research Infrastructure</h3>
+      <p>NSF-funded computing and data infrastructure — including national data repositories and high-performance computing allocations — supports the large-scale data analysis that Ætheris corridor deployments will generate.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section section--void" style="text-align:center;padding:7rem 3rem;">
+  <p class="eyebrow eyebrow--teal fade-up" style="justify-content:center;">Begin the Conversation</p>
+  <h2 class="section-title fade-up delay-1">Great Science Needs<br>Real-World Data</h2>
+  <p style="font-size:1.05rem;color:var(--ash);max-width:520px;margin:0 auto 2.5rem;line-height:1.8;" class="fade-up delay-2">We're seeking NSF partnership through the SBIR program and direct academic collaboration — to accelerate our AI platform and generate the field research data that the science community needs.</p>
+  <div class="flex flex-center gap-1 fade-up delay-3" style="flex-wrap:wrap;">
+    <a class="btn btn--primary" href="contact.html">Contact Us</a>
+    <a class="btn btn--outline" href="awcmp.html">See the Technology</a>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand-hex">Æ</div>
+      <div class="footer-brand-name">Ætheris Automation Technologies</div>
+      <div class="footer-brand-sub">Sentinels of the Wild</div>
+      <p class="footer-brand-desc">AI-powered safety for every road, every life — protecting humans, wildlife, and communities through intelligent highway infrastructure.</p>
+    </div>
+    <div>
+      <div class="footer-col-title">Navigate</div>
+      <ul class="footer-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="mission.html">Our Mission</a></li>
+        <li><a href="awcmp.html">Sentinels of the Wild</a></li>
+        <li><a href="products.html">What We Build</a></li>
+        <li><a href="stakeholders.html">Stakeholders</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="sitemap.html">Site Map</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Stakeholders</div>
+      <ul class="footer-links">
+        <li><a href="fire.html">Fire &amp; Rescue</a></li>
+        <li><a href="police.html">Law Enforcement</a></li>
+        <li><a href="ems.html">Emergency Medical</a></li>
+        <li><a href="insurance.html">Insurance</a></li>
+        <li><a href="tow.html">Towing &amp; Recovery</a></li>
+        <li><a href="dot-state.html">State DOTs</a></li>
+        <li><a href="wildlife.html">Wildlife Agencies</a></li>
+        <li><a href="community.html">Communities</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Grant Partners</div>
+      <ul class="footer-links">
+        <li><a href="usdot.html">USDOT</a></li>
+        <li><a href="fhwa.html">FHWA</a></li>
+        <li><a href="usfws.html">USFWS</a></li>
+        <li><a href="nsf.html">NSF</a></li>
+      </ul>
+      <div class="footer-col-title" style="margin-top:1.5rem;">Contact</div>
+      <ul class="footer-links">
+        <li><a href="contact.html">Tyler, Texas, USA</a></li>
+        <li><a href="contact.html">Partner Inquiries</a></li>
+        <li><a href="contact.html">Pilot Programs</a></li>
+        <li><a href="contact.html">Research Collaboration</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2026 Ætheris Automation Technologies LLC · Tyler, Texas · Privacy by Architecture</div>
+    <div class="footer-tagline">Protecting Every Life · See the Complete Path Ahead</div>
+  </div>
+</footer>
+
+</div>
+<script src="main.js"></script>
+</body>
+</html>
