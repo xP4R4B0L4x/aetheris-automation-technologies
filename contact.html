@@ -224,19 +224,18 @@ document.getElementById('contactForm').addEventListener('submit', async function
     if (data.success) {
       // Fire confirmation email back to the client
       const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyJWr2CjYG7FV0AGbCOfCsaLOPGMRW20GmPZ-waIK-7cU9UWHhYNFBPG92j4vNwj7C9xA/exec';
+      const formPayload = new FormData();
+      formPayload.append('name', firstName + ' ' + lastName);
+      formPayload.append('email', email);
+      formPayload.append('company', org || '');
+      formPayload.append('subject', type || 'General Inquiry');
+      formPayload.append('message', message);
+      formPayload.append('formTitle', 'Aetheris Contact Form');
+      formPayload.append('submittedAt', new Date().toISOString());
       fetch(APPS_SCRIPT_URL, {
         method: 'POST',
         mode: 'no-cors',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          name: firstName + ' ' + lastName,
-          email: email,
-          company: org || '',
-          subject: type || 'General Inquiry',
-          message: message,
-          formTitle: 'Ætheris Contact Form',
-          submittedAt: new Date().toISOString(),
-        }),
+        body: formPayload,
       }).catch(function(){});
 
       this.style.display = 'none';
