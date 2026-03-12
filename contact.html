@@ -223,7 +223,7 @@ document.getElementById('contactForm').addEventListener('submit', async function
     const data = await res.json();
     if (data.success) {
       // Fire confirmation email back to the client
-      const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzYMSeYMLXa2ib4B0tAljigQwWvyLdNeBq8K0NxXUzfxCrdW-1rlaudvxmSlvBpLGbj/exec';
+      const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyJWr2CjYG7FV0AGbCOfCsaLOPGMRW20GmPZ-waIK-7cU9UWHhYNFBPG92j4vNwj7C9xA/exec';
       fetch(APPS_SCRIPT_URL, {
         method: 'POST',
         mode: 'no-cors',
