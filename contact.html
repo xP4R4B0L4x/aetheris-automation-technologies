@@ -214,6 +214,18 @@ document.getElementById('contactForm').addEventListener('submit', async function
     replyto: email,
   };
 
+  // Fire Apps Script confirmation email immediately — independent of Web3Forms
+  const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyJWr2CjYG7FV0AGbCOfCsaLOPGMRW20GmPZ-waIK-7cU9UWHhYNFBPG92j4vNwj7C9xA/exec';
+  const formPayload = new FormData();
+  formPayload.append('name', firstName + ' ' + lastName);
+  formPayload.append('email', email);
+  formPayload.append('company', org || '');
+  formPayload.append('subject', type || 'General Inquiry');
+  formPayload.append('message', message);
+  formPayload.append('formTitle', 'Aetheris Contact Form');
+  formPayload.append('submittedAt', new Date().toISOString());
+  fetch(APPS_SCRIPT_URL, { method: 'POST', mode: 'no-cors', body: formPayload }).catch(function(){});
+
   try {
     const res = await fetch('https://api.web3forms.com/submit', {
       method: 'POST',
@@ -222,22 +234,6 @@ document.getElementById('contactForm').addEventListener('submit', async function
     });
     const data = await res.json();
     if (data.success) {
-      // Fire confirmation email back to the client
-      const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyJWr2CjYG7FV0AGbCOfCsaLOPGMRW20GmPZ-waIK-7cU9UWHhYNFBPG92j4vNwj7C9xA/exec';
-      const formPayload = new FormData();
-      formPayload.append('name', firstName + ' ' + lastName);
-      formPayload.append('email', email);
-      formPayload.append('company', org || '');
-      formPayload.append('subject', type || 'General Inquiry');
-      formPayload.append('message', message);
-      formPayload.append('formTitle', 'Aetheris Contact Form');
-      formPayload.append('submittedAt', new Date().toISOString());
-      fetch(APPS_SCRIPT_URL, {
-        method: 'POST',
-        mode: 'no-cors',
-        body: formPayload,
-      }).catch(function(){});
-
       this.style.display = 'none';
       document.getElementById('formSuccess').style.display = 'block';
     } else {
