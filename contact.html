@@ -222,6 +222,23 @@ document.getElementById('contactForm').addEventListener('submit', async function
     });
     const data = await res.json();
     if (data.success) {
+      // Fire confirmation email back to the client
+      const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbybzKnhjndrZ9Uv4Zcy-kJDW3s-Dy5QegFRdETUd7uSld2WY6dpNI0uAzWC8aNs0MYT/exec';
+      fetch(APPS_SCRIPT_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: firstName + ' ' + lastName,
+          email: email,
+          company: org || '',
+          subject: type || 'General Inquiry',
+          message: message,
+          formTitle: 'Ætheris Contact Form',
+          submittedAt: new Date().toISOString(),
+        }),
+      }).catch(function(){});
+
       this.style.display = 'none';
       document.getElementById('formSuccess').style.display = 'block';
     } else {
