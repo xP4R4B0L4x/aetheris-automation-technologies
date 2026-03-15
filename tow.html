@@ -126,6 +126,15 @@ a{color:var(--teal);text-decoration:none;transition:color 0.2s}a:hover{color:var
 .ph-ey{font-family:"Barlow Condensed",sans-serif;font-size:0.62rem;letter-spacing:0.4em;text-transform:uppercase;color:var(--crimson);margin-bottom:0.6rem;display:flex;align-items:center;gap:0.75rem}.ph-ey::before{content:"";width:32px;height:1px;background:var(--crimson)}.ph-ey--c{justify-content:center}.eyc{font-family:"Barlow Condensed",sans-serif;font-size:0.55rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--crimson);margin-bottom:0.4rem;display:flex;align-items:center;gap:0.6rem}.eyc::before{content:"";width:20px;height:1px;background:currentColor}
 .skp{background:var(--deep);padding:1.5rem 2.5rem}.skp::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 40% 50%,rgba(177,31,42,0.05) 0%,transparent 65%);pointer-events:none}.ski{position:relative;z-index:2;max-width:800px;margin:0 auto;display:grid;grid-template-columns:1fr 1.2fr;gap:1.5rem;align-items:center;flex:1}.sk-icon{font-size:2rem;margin-bottom:0.5rem}.skb p{font-size:0.78rem;color:var(--ash);line-height:1.65;margin-bottom:0.5rem}.skb strong{color:var(--frost)}.skb ul{list-style:none;margin:0.5rem 0}.skb ul li{font-size:0.7rem;color:var(--ash);line-height:1.5;padding:0.15rem 0;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:0.4rem}.skb ul li::before{content:"\25C6";color:var(--crimson);font-size:0.35rem}@media(max-width:900px){.ski{grid-template-columns:1fr}}
 .back-btn{position:fixed;top:72px;left:1rem;z-index:899;font-family:"Barlow Condensed",sans-serif;font-size:0.6rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--ash);text-decoration:none;display:flex;align-items:center;gap:0.3rem;padding:0.3rem 0.6rem;border:1px solid var(--border);background:rgba(7,11,16,0.8);backdrop-filter:blur(10px);transition:color 0.2s,border-color 0.2s}.back-btn:hover{color:var(--frost);border-color:rgba(177,31,42,0.3)}
+
+.pn-nav{position:fixed;top:50%;z-index:898;transform:translateY(-50%)}
+.pn-prev{left:0.5rem}
+.pn-next{right:0.5rem}
+.pn-nav a{display:flex;align-items:center;gap:0.3rem;text-decoration:none;padding:0.4rem 0.6rem;background:rgba(7,11,16,0.85);backdrop-filter:blur(10px);border:1px solid var(--border);color:var(--ash);font-family:'Barlow Condensed',sans-serif;font-size:0.55rem;letter-spacing:0.1em;text-transform:uppercase;transition:color 0.2s,border-color 0.2s,background 0.2s}
+.pn-nav a:hover{color:var(--frost);border-color:rgba(177,31,42,0.4);background:rgba(7,11,16,0.95)}
+.pn-arrow{font-size:0.8rem;color:var(--crimson)}
+@media(max-width:900px){.pn-nav a span.pn-label{display:none}.pn-nav a{padding:0.5rem}}
+
 </style>
 </head>
 <body>
@@ -144,6 +153,8 @@ a{color:var(--teal);text-decoration:none;transition:color 0.2s}a:hover{color:var
   <a class="nav-cta" href="contact.html">Partner With Us</a>
 </nav>
 <a class="back-btn" href="javascript:history.back()">&#x25C0; Back</a>
+<div class="pn-nav pn-prev"><a href="insurance.html"><span class="pn-arrow">&#x25C0;</span><span class="pn-label">INSURANCE</span></a></div>
+<div class="pn-nav pn-next"><a href="dot-state.html"><span class="pn-label">STATE DOT</span><span class="pn-arrow">&#x25B6;</span></a></div>
 
 <!-- SNAP SCROLL CONTAINER -->
 <div class="snap-wrapper" id="snapWrapper">
