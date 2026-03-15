@@ -69,7 +69,9 @@ FUNDING: Pursuing federal grants from USDOT, FHWA, USFWS, NSF. Registered on SAM
 
 PRIVACY: Privacy by design. SEER uses thermal/radar/acoustic - no cameras capturing identifiable imagery. No raw footage leaves devices. Only event classifications transmitted.
 
-CONTACT: Email contact@aetherisautomationtechnologies.com, Tyler Texas. Do not share any phone number.`;
+CONTACT: Email contact@aetherisautomationtechnologies.com, Tyler Texas. Do not share any phone number.
+
+EMAIL COLLECTION: After answering 2-3 questions from a visitor, naturally ask if they would like to leave their email so the team can follow up with more information or schedule a conversation. Say something like "Would you like to leave your email so our team can follow up with you directly?" If they provide an email, thank them warmly and confirm that someone from Aetheris will reach out within 24-48 hours. If they decline, that is perfectly fine - just continue helping them.`;
 
 export default async function handler(req, res) {
   res.setHeader('Access-Control-Allow-Origin', '*');
