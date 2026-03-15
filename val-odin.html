@@ -96,7 +96,7 @@ a{color:var(--teal);text-decoration:none;transition:color 0.2s}a:hover{color:var
 .chat-header-title{font-family:'Orbitron',monospace;font-size:0.65rem;font-weight:600;letter-spacing:0.08em}
 .chat-header-close{background:none;border:none;color:var(--ash);cursor:pointer;font-size:1.1rem;transition:color 0.2s}
 .chat-header-close:hover{color:var(--frost)}
-.chat-messages{flex:1;;padding:0.75rem 1rem;display:flex;flex-direction:column;gap:0.6rem;scrollbar-width:thin;scrollbar-color:var(--border) transparent;min-height:200px;max-height:280px}
+.chat-messages{flex:1;overflow-y:auto;padding:0.75rem 1rem;display:flex;flex-direction:column;gap:0.6rem;scrollbar-width:thin;scrollbar-color:var(--border) transparent;min-height:200px;max-height:320px}
 .chat-msg{max-width:85%;padding:0.6rem 0.85rem;font-size:0.8rem;line-height:1.55;animation:chatIn 0.3s ease}
 @keyframes chatIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
 .chat-msg.bot{align-self:flex-start;background:var(--deep);border:1px solid var(--border);border-radius:0 10px 10px 10px;color:var(--frost)}
