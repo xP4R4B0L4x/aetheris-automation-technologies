@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>EMS — Ætheris Automation Technologies</title>
+<title>SEER — Roadside Hazard Sensor — Ætheris Automation Technologies</title>
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Barlow:ital,wght@0,300;0,400;0,500;0,600;1,300&family=Barlow+Condensed:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{--void:#070B10;--abyss:#0C1018;--deep:#111820;--panel:#171E28;--border:rgba(242,245,247,0.07);--frost:#F2F5F7;--ash:#8C9BAB;--mist:#C0CAD4;--crimson:#B11F2A;--crimson-d:#8A1820;--crimson-g:rgba(177,31,42,0.15);--gold:#D9A400;--gold-g:rgba(217,164,0,0.12);--teal:#2EA8A8;--teal-g:rgba(46,168,168,0.12);--green:#3CCB7F;--green-g:rgba(60,203,127,0.12);--ion:#4DA3FF}
@@ -123,8 +123,9 @@ a{color:var(--teal);text-decoration:none;transition:color 0.2s}a:hover{color:var
 /* RESPONSIVE */
 @media(max-width:900px){.site-nav{padding:0 1.5rem}.nav-menu,.nav-cta{display:none}.nav-toggle{display:flex}.nav-menu.open{display:flex;flex-direction:column;position:fixed;top:64px;left:0;right:0;background:rgba(7,11,16,0.97);backdrop-filter:blur(20px);padding:1.5rem;border-bottom:1px solid var(--border);gap:0.25rem}.impact-grid{grid-template-columns:1fr 1fr}.impact-item:nth-child(2){border-right:none}#chatPanel{width:calc(100vw - 2rem);right:1rem;bottom:5rem}}
 @media(max-width:600px){.impact-grid{grid-template-columns:1fr}.impact-item{border-right:none;border-bottom:1px solid var(--border)}#chatPanel{width:calc(100vw - 1rem);right:0.5rem}}
-.ph-ey{font-family:"Barlow Condensed",sans-serif;font-size:0.62rem;letter-spacing:0.4em;text-transform:uppercase;color:var(--crimson);margin-bottom:0.6rem;display:flex;align-items:center;gap:0.75rem}.ph-ey::before{content:"";width:32px;height:1px;background:var(--crimson)}.ph-ey--c{justify-content:center}.eyc{font-family:"Barlow Condensed",sans-serif;font-size:0.55rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--crimson);margin-bottom:0.4rem;display:flex;align-items:center;gap:0.6rem}.eyc::before{content:"";width:20px;height:1px;background:currentColor}
-.skp{background:var(--deep);padding:1.5rem 2.5rem}.skp::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 40% 50%,rgba(177,31,42,0.05) 0%,transparent 65%);pointer-events:none}.ski{position:relative;z-index:2;max-width:800px;margin:0 auto;display:grid;grid-template-columns:1fr 1.2fr;gap:1.5rem;align-items:center;flex:1}.sk-icon{font-size:2rem;margin-bottom:0.5rem}.skb p{font-size:0.78rem;color:var(--ash);line-height:1.65;margin-bottom:0.5rem}.skb strong{color:var(--frost)}.skb ul{list-style:none;margin:0.5rem 0}.skb ul li{font-size:0.7rem;color:var(--ash);line-height:1.5;padding:0.15rem 0;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:0.4rem}.skb ul li::before{content:"\25C6";color:var(--crimson);font-size:0.35rem}@media(max-width:900px){.ski{grid-template-columns:1fr}}
+.ph-ey{font-family:"Barlow Condensed",sans-serif;font-size:0.62rem;letter-spacing:0.4em;text-transform:uppercase;color:var(--crimson);margin-bottom:0.6rem;display:flex;align-items:center;gap:0.75rem}.ph-ey::before{content:"";width:32px;height:1px;background:var(--crimson)}.ph-ey--c{justify-content:center}
+.vp{background:var(--deep);padding:1.5rem 2.5rem}.vp::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 40% 50%,rgba(177,31,42,0.05) 0%,transparent 65%);pointer-events:none}.vi{position:relative;z-index:2;max-width:800px;margin:0 auto;display:grid;grid-template-columns:1fr 1.2fr;gap:2rem;align-items:center;flex:1}.v-code{font-family:"Orbitron",monospace;font-size:0.55rem;font-weight:700;letter-spacing:0.1em;margin-bottom:0.3rem}.v-pub{font-family:"Barlow Condensed",sans-serif;font-size:0.5rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--ash);margin-bottom:0.5rem}.vb p{font-size:0.78rem;color:var(--ash);line-height:1.6;margin-bottom:0.5rem}.vb strong{color:var(--frost)}.vb ul{list-style:none;margin:0.5rem 0}.vb ul li{font-size:0.7rem;color:var(--ash);line-height:1.5;padding:0.15rem 0;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:0.4rem}.vb ul li::before{content:"\25C6";color:var(--crimson);font-size:0.35rem}@media(max-width:900px){.vi{grid-template-columns:1fr}}
+.nav-cta-li{list-style:none}
 .back-btn{position:fixed;top:72px;left:1rem;z-index:899;font-family:"Barlow Condensed",sans-serif;font-size:0.6rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--ash);text-decoration:none;display:flex;align-items:center;gap:0.3rem;padding:0.3rem 0.6rem;border:1px solid var(--border);background:rgba(7,11,16,0.8);backdrop-filter:blur(10px);transition:color 0.2s,border-color 0.2s}.back-btn:hover{color:var(--frost);border-color:rgba(177,31,42,0.3)}
 </style>
 </head>
@@ -136,9 +137,10 @@ a{color:var(--teal);text-decoration:none;transition:color 0.2s}a:hover{color:var
   <ul class="nav-menu" id="navMenu">
     <li><a href="home.html">Home</a></li>
     <li><a href="mission.html">Mission</a></li>
-    <li><a href="solutions.html">Solutions</a></li>
-    <li><a href="stakeholders.html" class="active">Stakeholders</a></li>
+    <li><a href="solutions.html" class="active">Solutions</a></li>
+    <li><a href="stakeholders.html">Stakeholders</a></li>
     <li><a href="funding.html">Funding</a></li>
+  <li class="nav-cta-li"><a href="contact.html" style="color:var(--frost);background:var(--crimson);text-align:center;border:none;margin-top:0.5rem">Partner With Us</a></li>
   </ul>
   <div class="nav-toggle" id="navToggle"><span></span><span></span><span></span></div>
 </nav>
@@ -146,7 +148,7 @@ a{color:var(--teal);text-decoration:none;transition:color 0.2s}a:hover{color:var
 
 <!-- SNAP SCROLL CONTAINER -->
 <div class="snap-wrapper" id="snapWrapper">
-<section class="snap-page skp"><div class="ski"><div><div class="sk-icon">&#x1F691;</div><p class="ph-ey" style="color:var(--green)">Emergency Medical</p><h1 class="hero-title" style="font-size:clamp(1.8rem,4vw,3.2rem)">EMS</h1></div><div class="skb"><p><strong>Reclaim the golden hour.</strong> Instant EMS notification.</p><ul><li>Auto notification</li><li>Rapid response</li><li>Rural coverage</li><li>Golden hour</li><li>GPS</li></ul><div style="margin-top:0.6rem"><a class="btn btn--primary" href="contact.html">Partner With Us</a> <a class="btn btn--outline" href="stakeholders.html" style="margin-left:0.5rem">All Stakeholders</a></div></div></div><div class="snap-footer"><p class="footer-brand">Ætheris Automation Technologies</p><p class="footer-sub">Tyler, Texas &middot; Protecting Every Life &middot; &copy; 2026 Ætheris Automation Technologies LLC</p></div></section>
+<section class="snap-page vp"><div class="vi"><div><p class="ph-ey" style="color:var(--crimson)">VALKYRIE System</p><h1 class="hero-title" style="font-size:clamp(1.8rem,4vw,3.2rem)">SEER</h1><div class="v-code" style="color:var(--crimson)">Internal: SEER</div><div class="v-pub">Roadside Hazard Sensor</div></div><div class="vb"><p><strong>The eyes of the corridor.</strong> SEER is the primary edge detection sensor — thermal, radar, and acoustic. All-weather, no visual imagery captured. Only event classifications leave the device.</p><ul><li>Thermal + radar + acoustic</li><li>All-weather operation</li><li>No imagery captured</li><li>Edge AI classification</li><li>Privacy by hardware</li></ul><div style="margin-top:0.6rem"><a class="btn btn--primary" href="contact.html">Partner With Us</a> <a class="btn btn--outline" href="solutions.html" style="margin-left:0.5rem">All Systems</a></div></div></div><div class="snap-footer"><p class="footer-brand">Ætheris Automation Technologies</p><p class="footer-sub">Tyler, Texas &middot; Protecting Every Life &middot; &copy; 2026 Ætheris Automation Technologies LLC</p></div></section>
 </div>
 
 <!-- CHATBOT -->
