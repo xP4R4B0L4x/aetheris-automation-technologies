@@ -23,7 +23,7 @@ One network. Two missions. Human life always comes first. Tagline: Sentinels of 
 THE VALKYRIE PLATFORM - 24 SUBSYSTEMS IN 6 CATEGORIES:
 
 DETECTION AND SENSING:
-SEER (Sentinel Node) - Roadside Hazard Sensor using thermal, radar, acoustic. Privacy by design: no raw footage leaves the device.
+SEER (Sentinel Node) - Roadside Hazard Sensor using thermal, radar, sonar/seismic. Privacy by design: no raw footage leaves the device.
 VARA - Incident Verification. Confirms events before triggering response. Eliminates false positives.
 MUSPELL - Thermal Detection. Fire, overheated vehicles, hot debris, thermal anomalies.
 YMIR - Environmental Monitor. Weather, flooding, ice, environmental conditions.
@@ -67,7 +67,7 @@ STAKEHOLDERS: Fire and Rescue, Law Enforcement, EMS, Insurance Companies, Towing
 
 FUNDING: Pursuing federal grants from USDOT, FHWA, USFWS, NSF. Registered on SAM.gov and Grants.gov.
 
-PRIVACY: Privacy by design. SEER uses thermal/radar/acoustic - no cameras capturing identifiable imagery. No raw footage leaves devices. Only event classifications transmitted.
+PRIVACY: Privacy by design. SEER uses thermal/radar/sonar/seismic/LiDAR - no cameras capturing identifiable imagery. No raw footage leaves devices. Only event classifications transmitted.
 
 CONTACT: Email contact@aetherisautomationtechnologies.com, Tyler Texas. Do not share any phone number.
 

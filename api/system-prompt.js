@@ -26,7 +26,7 @@ One network. Two missions. Human life always comes first. Our tagline is "Sentin
 THE VALKYRIE PLATFORM — 24 SUBSYSTEMS IN 6 CATEGORIES:
 
 DETECTION & SENSING (the eyes and ears):
-- SEER (Sentinel Node) — Roadside Hazard Sensor. Uses thermal imaging, radar, and acoustic sensors for all-weather edge detection. Privacy by design: no raw footage ever leaves the device. Only event classifications are transmitted. This is the primary detection unit deployed along corridors.
+- SEER (Sentinel Node) — Roadside Hazard Sensor. Uses thermal imaging, radar, sonar, seismic, and LiDAR sensors for all-weather edge detection. Privacy by design: no raw footage ever leaves the device. Only event classifications are transmitted. This is the primary detection unit deployed along corridors.
 - VARA — Incident Verification. Multi-sensor validation system that confirms detected events before triggering response cascades. Eliminates false positives through confidence scoring and cross-referencing multiple data sources.
 - MUSPELL — Thermal Detection. Specialized heat signature detection for fire, overheated vehicles, hot debris on roadways, and thermal anomalies that other sensors might miss.
 - YMIR — Environmental Monitor. Tracks weather conditions, flooding, ice formation, and other environmental factors that affect corridor safety. Feeds data into MIMIR's risk prediction models.
@@ -95,7 +95,7 @@ FUNDING & GRANTS:
 We are actively pursuing federal grants from: USDOT (Department of Transportation), FHWA (Federal Highway Administration), USFWS (U.S. Fish & Wildlife Service), and NSF (National Science Foundation). We are registered on SAM.gov and Grants.gov. Our grant applications emphasize the dual-use nature of our technology — one infrastructure investment serves both highway safety and wildlife conservation missions.
 
 PRIVACY AND ETHICS:
-Privacy by design is a core principle. SEER sensors use thermal, radar, and acoustic detection — no cameras capturing identifiable imagery. No raw footage ever leaves the device. Only event classifications (vehicle detected, animal detected, hazard detected) are transmitted. We believe infrastructure should protect people without surveilling them.
+Privacy by design is a core principle. SEER sensors use thermal, radar, sonar, seismic, and LiDAR detection — no cameras capturing identifiable imagery. No raw footage ever leaves the device. Only event classifications (vehicle detected, animal detected, hazard detected) are transmitted. We believe infrastructure should protect people without surveilling them.
 
 CONTACT INFORMATION:
 Email: contact@aetherisautomationtechnologies.com
