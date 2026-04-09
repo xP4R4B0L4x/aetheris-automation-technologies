@@ -1,0 +1,5 @@
+{
+  "description": "AMLF node schema",
+  "fields": ["WHAT","WHY","HOW","WHERE","WHEN","APPLY"],
+  "note": "Replace with full schema from local source"
+}
