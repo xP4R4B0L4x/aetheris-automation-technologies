@@ -1,0 +1,1 @@
+Credential templates only. No secrets committed.
